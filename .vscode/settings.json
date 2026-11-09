@@ -1,0 +1,17 @@
+{
+  "java.project.sourcePaths": [
+    "ignitechsSms-rt/src",
+    "ignitechsSms-rt/srcTest"
+  ],
+  "java.project.outputPath": "build/vscode",
+  "java.project.referencedLibraries": [
+    "C:/Niagara/Niagara-4.14.0.162/modules/baja.jar",
+    "C:/Niagara/Niagara-4.14.0.162/modules/bql-rt.jar",
+    "C:/Niagara/Niagara-4.14.0.162/modules/driver-rt.jar",
+    "C:/Niagara/Niagara-4.14.0.162/modules/alarm-rt.jar",
+    "C:/Niagara/Niagara-4.14.0.162/modules/control-rt.jar",
+    "C:/Niagara/Niagara-4.14.0.162/modules/serial-rt.jar",
+    "C:/Niagara/Niagara-4.14.0.162/bin/ext/nre.jar"
+  ],
+  "java.configuration.updateBuildConfiguration": "automatic"
+}

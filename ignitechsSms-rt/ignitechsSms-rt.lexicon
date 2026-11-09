@@ -1,0 +1,66 @@
+#
+# Lexicon for the Ignitechs SMS Notification Driver (ignitechsSms-rt)
+#
+
+module.description=SMS Notification Driver (GSM modem, SMPP, HTTP) for Niagara 4
+
+# Component Types
+SmsNetwork=SMS Network
+SmsGatewayFolder=SMS Gateway Folder
+SmsGateway=SMS Gateway
+ModemGateway=Modem Gateway
+SerialModemGateway=Serial Modem Gateway
+TcpModemGateway=TCP Modem Gateway
+HttpGateway=HTTP Gateway
+SmppGateway=SMPP Gateway
+SmsContactFolder=SMS Contact Folder
+SmsContact=SMS Contact
+SmsGroupFolder=SMS Group Folder
+SmsGroup=SMS Group
+SmsRecipientList=SMS Recipient List
+SmsRuleFolder=SMS Rule Folder
+SmsPointRule=SMS Point Rule
+SmsSender=SMS Sender
+SmsAlarmRecipient=SMS Alarm Recipient
+SmsTestMessage=SMS Test Message
+
+# BHttpPreset enum display tags
+HttpPreset.custom=Custom HTTP Request
+HttpPreset.androidSmsGateway=Android SMS Gateway (Local HTTP)
+HttpPreset.playSms=playSMS Webservice
+HttpPreset.kannel=Kannel sendsms
+HttpPreset.teltonikaRouter=Teltonika Router (sms_send)
+HttpPreset.twilio=Twilio REST API
+
+# BSmsCondition enum display tags
+SmsCondition.valueEquals=Value equals (=)
+SmsCondition.valueNotEquals=Value not equals (!=)
+SmsCondition.greaterThan=Greater than (>)
+SmsCondition.lessThan=Less than (<)
+SmsCondition.greaterOrEqual=Greater or equal (>=)
+SmsCondition.lessOrEqual=Less or equal (<=)
+SmsCondition.outsideRange=Outside range
+SmsCondition.insideRange=Inside range
+SmsCondition.isTrue=Is true / active
+SmsCondition.isFalse=Is false / inactive
+SmsCondition.anyChange=Any value change
+SmsCondition.statusAlarm=Status is Alarm
+SmsCondition.statusFault=Status is Fault
+SmsCondition.statusDown=Status is Down (offline)
+SmsCondition.statusOverridden=Status is Overridden
+SmsCondition.statusNotOk=Status is Not OK
+
+# Properties & Actions with acronyms
+sendTestSms=Send Test SMS
+gsmFriendlyText=GSM Friendly Text
+allowSmsCommands=Allow SMS Commands
+simPin=SIM PIN
+smscNumber=SMSC Number
+receiveSms=Receive SMS
+url=URL
+useTls=Use TLS
+systemId=System ID
+senderId=Sender ID
+sourceOrd=Source ORD
+smsNetwork=SMS Network
+includeAckCode=Include ACK Code

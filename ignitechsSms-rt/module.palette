@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bajaObjectGraph version="1.0">
+<p m="b=baja" t="b:UnrestrictedFolder">
+  <p n="SmsNetwork" m="isms=ignitechsSms" t="isms:SmsNetwork"/>
+  <p n="Gateways" t="b:Folder">
+    <p n="SerialModem" t="isms:SerialModemGateway"/>
+    <p n="TcpModem" t="isms:TcpModemGateway"/>
+    <p n="HttpGateway" t="isms:HttpGateway"/>
+    <p n="AndroidSmsGateway" t="isms:HttpGateway">
+      <p n="preset" v="androidSmsGateway"/>
+      <p n="url" v="http://&lt;phone-ip&gt;:8080/message"/>
+    </p>
+    <p n="SmppGateway" t="isms:SmppGateway"/>
+  </p>
+  <p n="SmsContact" t="isms:SmsContact"/>
+  <p n="SmsGroup" t="isms:SmsGroup"/>
+  <p n="Rules" t="b:Folder">
+    <p n="SmsPointRule" t="isms:SmsPointRule"/>
+    <p n="HighValueRule" t="isms:SmsPointRule">
+      <p n="condition" v="greaterThan"/>
+      <p n="limit" v="30"/>
+      <p n="deadband" v="1"/>
+      <p n="activeDelay" v="300000"/>
+    </p>
+    <p n="StateRule" t="isms:SmsPointRule">
+      <p n="condition" v="valueEquals"/>
+      <p n="compareValue" v="Fault|Trip|Alarm"/>
+    </p>
+    <p n="OfflineRule" t="isms:SmsPointRule">
+      <p n="condition" v="statusDown"/>
+      <p n="activeDelay" v="120000"/>
+      <p n="alertText" v="{station} OFFLINE: {point} is not communicating {time}"/>
+      <p n="normalText" v="{station} ONLINE: {point} is communicating again {time}"/>
+    </p>
+    <p n="SmsSender" t="isms:SmsSender"/>
+  </p>
+  <p n="SmsAlarmRecipient" t="isms:SmsAlarmRecipient"/>
+</p>
+</bajaObjectGraph>

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module name="ignitechsSms-rt" bajaVersion="0" vendor="Ignitechs" vendorVersion="@VERSION@" description="SMS Notification Driver (GSM modem, SMPP, HTTP) for Niagara 4" preferredSymbol="isms" nre="true" autoload="true" installable="true" buildMillis="@BUILD_MILLIS@" buildHost="@BUILD_HOST@" moduleName="ignitechsSms" runtimeProfile="rt">
+ <dependencies>
+  <dependency name="alarm-rt" vendor="Tridium" vendorVersion="4.0"/>
+  <dependency name="baja" vendor="Tridium" vendorVersion="4.0"/>
+  <dependency name="bql-rt" vendor="Tridium" vendorVersion="4.0"/>
+  <dependency name="control-rt" vendor="Tridium" vendorVersion="4.0"/>
+  <dependency name="driver-rt" vendor="Tridium" vendorVersion="4.0"/>
+  <dependency name="serial-rt" vendor="Tridium" vendorVersion="4.0"/>
+ </dependencies>
+ <dirs/>
+ <installation/>
+ <types>
+  <type name="SmsNetwork" class="com.ignitechs.sms.BSmsNetwork"/>
+  <type name="SmsGatewayFolder" class="com.ignitechs.sms.BSmsGatewayFolder"/>
+  <type name="SmsGateway" class="com.ignitechs.sms.BSmsGateway"/>
+  <type name="ModemGateway" class="com.ignitechs.sms.BModemGateway"/>
+  <type name="SerialModemGateway" class="com.ignitechs.sms.BSerialModemGateway"/>
+  <type name="TcpModemGateway" class="com.ignitechs.sms.BTcpModemGateway"/>
+  <type name="HttpGateway" class="com.ignitechs.sms.BHttpGateway"/>
+  <type name="SmppGateway" class="com.ignitechs.sms.BSmppGateway"/>
+  <type name="HttpPreset" class="com.ignitechs.sms.BHttpPreset"/>
+  <type name="SmsContactFolder" class="com.ignitechs.sms.BSmsContactFolder"/>
+  <type name="SmsContact" class="com.ignitechs.sms.BSmsContact"/>
+  <type name="SmsGroupFolder" class="com.ignitechs.sms.BSmsGroupFolder"/>
+  <type name="SmsGroup" class="com.ignitechs.sms.BSmsGroup"/>
+  <type name="SmsRecipientList" class="com.ignitechs.sms.BSmsRecipientList"/>
+  <type name="SmsRuleFolder" class="com.ignitechs.sms.BSmsRuleFolder"/>
+  <type name="SmsPointRule" class="com.ignitechs.sms.BSmsPointRule"/>
+  <type name="SmsCondition" class="com.ignitechs.sms.BSmsCondition"/>
+  <type name="SmsSender" class="com.ignitechs.sms.BSmsSender"/>
+  <type name="SmsAlarmRecipient" class="com.ignitechs.sms.BSmsAlarmRecipient"/>
+  <type name="SmsTestMessage" class="com.ignitechs.sms.BSmsTestMessage"/>
+ </types>
+ <permissions>
+  <niagara-permission-groups type="all">
+   <req-permission>
+    <name>NETWORK_COMMUNICATION</name>
+    <purposeKey>Send SMS through HTTP, SMPP and TCP modem gateways</purposeKey>
+    <parameters>
+     <parameter name="hosts" value="*"/>
+     <parameter name="ports" value="*"/>
+    </parameters>
+   </req-permission>
+   <req-permission>
+    <name>MANAGE_EXECUTION</name>
+    <purposeKey>Run the SMS send queue in a background thread</purposeKey>
+   </req-permission>
+   <req-permission>
+    <name>LOGGING</name>
+    <purposeKey>Write SMS driver diagnostics to the station log</purposeKey>
+   </req-permission>
+  </niagara-permission-groups>
+ </permissions>
+</module>
