@@ -114,7 +114,11 @@ public class BSmsContact extends BComponent
   }
 
   @Override
-  public boolean isParentLegal(BComponent parent) { return parent instanceof BSmsContactFolder; }
+  public boolean isParentLegal(BComponent parent)
+  {
+    return parent instanceof BSmsContactFolder
+        || parent instanceof javax.baja.util.BUnrestrictedFolder;
+  }
 
   @Override
   public String toString(Context cx) { return getContactName() + " <" + getPhoneNumber() + ">"; }

@@ -2,14 +2,13 @@
 # Lexicon for the Ignitechs SMS Notification Driver (ignitechsSms-rt)
 #
 
-module.description=SMS Notification Driver (GSM modem, SMPP, HTTP) for Niagara 4
+module.description=Open-Source Internet & Network SMS Notification Driver (HTTP, SMPP, TCP) for Niagara 4
 
 # Component Types
 SmsNetwork=SMS Network
 SmsGatewayFolder=SMS Gateway Folder
 SmsGateway=SMS Gateway
 ModemGateway=Modem Gateway
-SerialModemGateway=Serial Modem Gateway
 TcpModemGateway=TCP Modem Gateway
 HttpGateway=HTTP Gateway
 SmppGateway=SMPP Gateway
@@ -26,9 +25,14 @@ SmsTestMessage=SMS Test Message
 
 # BHttpPreset enum display tags
 HttpPreset.custom=Custom HTTP Request
+HttpPreset.textBeeCloud=TextBee Cloud / Self-Hosted (Open-Source Internet SMS)
+HttpPreset.androidSmsGatewayCloud=Android SMS Gateway Cloud (api.sms-gate.app)
 HttpPreset.androidSmsGateway=Android SMS Gateway (Local HTTP)
-HttpPreset.playSms=playSMS Webservice
-HttpPreset.kannel=Kannel sendsms
+HttpPreset.traccarSms=Traccar SMS Gateway (traccar.org/sms)
+HttpPreset.ntfySh=ntfy.sh (Open-Source Internet Push/Alert)
+HttpPreset.jasminHttp=Jasmin SMS Gateway (Open-Source HTTP API)
+HttpPreset.playSms=playSMS Webservice (Open-Source)
+HttpPreset.kannel=Kannel sendsms (Open-Source)
 HttpPreset.teltonikaRouter=Teltonika Router (sms_send)
 HttpPreset.twilio=Twilio REST API
 

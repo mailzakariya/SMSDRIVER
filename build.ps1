@@ -134,13 +134,12 @@ function Build-Module {
     "$NiagaraHome\modules\driver-rt.jar",
     "$NiagaraHome\modules\alarm-rt.jar",
     "$NiagaraHome\modules\control-rt.jar",
-    "$NiagaraHome\modules\serial-rt.jar",
     "$NiagaraHome\bin\ext\nre.jar"
   )
   $cp = $jars -join ";"
   $sources = Get-ChildItem -Path "ignitechsSms-rt\src" -Filter "*.java" -Recurse | ForEach-Object { $_.FullName }
 
-  & javac -encoding UTF-8 -source 1.8 -target 1.8 -cp $cp -d $classesDir @sources
+  & javac -encoding UTF-8 -source 1.8 -target 1.8 -cp $cp -d $classesDir $sources
   if ($LASTEXITCODE -ne 0) { throw "Module compilation failed." }
 
   # Stage module resources

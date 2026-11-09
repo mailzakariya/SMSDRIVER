@@ -120,7 +120,9 @@ public abstract class BSmsGateway extends BDevice implements SmsDispatcher.Trans
   @Override
   public boolean isParentLegal(BComponent parent)
   {
-    return parent instanceof BSmsNetwork || parent instanceof BSmsGatewayFolder;
+    return parent instanceof BSmsNetwork
+        || parent instanceof BSmsGatewayFolder
+        || parent instanceof javax.baja.util.BUnrestrictedFolder;
   }
 
   /** Runs the connectivity test on the dispatcher thread so a port is never shared. */

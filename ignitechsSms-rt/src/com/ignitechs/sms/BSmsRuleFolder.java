@@ -28,7 +28,9 @@ public class BSmsRuleFolder extends BFolder
   @Override
   public boolean isParentLegal(BComponent parent)
   {
-    return parent instanceof BSmsNetwork || parent instanceof BSmsRuleFolder;
+    return parent instanceof BSmsNetwork
+        || parent instanceof BSmsRuleFolder
+        || parent instanceof javax.baja.util.BUnrestrictedFolder;
   }
 
   @Override

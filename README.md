@@ -6,12 +6,19 @@ A zero-dependency **SMS Notification Driver** (`ignitechsSms-rt`) for **Niagara 
 
 ## Features
 
-### 1. Multi-Transport SMS Gateways (Priority & Automatic Failover)
+### 1. Open-Source Internet & Network SMS Gateways (Priority & Failover)
 Place one or more gateways inside `SmsNetwork` (or `SmsGatewayFolder`). Gateways are tried in `priority` order (`1` = primary, `2` = backup, etc.):
-- **`SerialModemGateway`** — Local COM / USB-serial GSM/3G/4G/LTE modem (Teltonika TRM240/TRM250, Siemens/Cinterion, Quectel, SIMCom, Wavecom) using 3GPP TS 27.005/23.040 PDU mode (`AT+CMGF=0`), supporting single & multi-part concatenated GSM-7 (160/153 chars) and UCS-2 Unicode/Arabic (70/67 chars) messages, SIM PIN unlock, signal quality (`AT+CSQ`), network registration check (`AT+CREG?`), and inbound SMS polling.
-- **`TcpModemGateway`** — GSM/LTE modem exposed over raw TCP (Moxa NPort, Lantronix, USR-IOT serial-to-Ethernet converters, or cellular routers exposing an AT command TCP port).
-- **`SmppGateway`** — Native SMPP v3.4 Transmitter client (`bind_transmitter`, `submit_sm`, `enquire_link`, `unbind`) with optional TLS, alphanumeric/international `senderId`, and concatenated GSM-7 / UCS-2 segmentation.
-- **`HttpGateway`** — Template-driven HTTP/HTTPS client with built-in presets (`Android SMS Gateway`, `playSMS`, `Kannel`, `Teltonika Router`, `Twilio`, or `Custom`) supporting `GET`/`POST`, Basic Auth, custom headers, URL/JSON/form encoding, and response regex validation.
+- **`HttpGateway` (Open-Source Internet SMS Platforms & REST APIs)** — Ready-to-use palette items and presets:
+  - **`TextBeeCloud` ([textbee.dev](https://textbee.dev) — Open-Source MIT)** — Cloud or self-hosted internet SMS gateway (`https://api.textbee.dev/api/v1/gateway/devices/{username}/send-sms`, `username` = Device ID, `password` = API Key).
+  - **`SmsGateCloud` ([capcom6/android-sms-gateway](https://github.com/capcom6/android-sms-gateway) — Open-Source Apache-2.0)** — Internet Cloud mode (`https://api.sms-gate.app/3rdparty/v1/message` with HTTP Basic Auth) or Local HTTP mode (`http://<phone-ip>:8080/message`).
+  - **`TraccarSmsCloud` ([traccar/traccar-sms-gateway](https://github.com/traccar/traccar-sms-gateway) — Open-Source Apache-2.0)** — Internet Cloud API (`https://www.traccar.org/sms/`, `password` = Cloud API Token).
+  - **`NtfyInternetAlert` ([ntfy.sh](https://ntfy.sh) — Open-Source Apache-2.0/GPLv2)** — 100% free internet mobile push/alert service requiring no SIM card or account (`https://ntfy.sh/{username}`, `username` = topic name).
+  - **`JasminHttpGateway` ([jookies/jasmin](https://github.com/jookies/jasmin) — Open-Source Apache-2.0)** — Carrier-grade open-source HTTP SMS gateway (`http://<jasmin-host>:1401/send`).
+  - **`PlaySmsGateway` ([playsms.org](https://playsms.org) — Open-Source)** — Webservice API (`index.php?app=ws&op=pv`).
+  - **`KannelGateway` ([kannel.org](https://www.kannel.org) — Open-Source)** — `sendsms` HTTP interface.
+  - **`Twilio` / `TeltonikaRouter` / `Custom`** — Full custom URL, HTTP method, headers, JSON/URL-encoded body, and regex validation.
+- **`SmppGateway`** — Native SMPP v3.4 Transmitter client (`bind_transmitter`, `submit_sm`, `enquire_link`, `unbind`) with optional TLS, alphanumeric/international `senderId`, and concatenated GSM-7 / UCS-2 segmentation (compatible with open-source **Jasmin** and **Kannel** SMPP servers or carrier SMPP trunks).
+- **`TcpModemGateway`** — Network GSM/LTE modem over raw TCP.
 
 ### 2. Address Book (`Contacts` & `Groups`)
 - **`SmsContact`** — Phone number (automatic E.164 normalization), `onDutyDays` (`BDaysOfWeekBits`), `onDutyTime` (`BTimeRange`), `allowSmsCommands` toggle, per-contact sent counter, and `Send Test SMS` action.
@@ -59,7 +66,7 @@ Place one or more gateways inside `SmsNetwork` (or `SmsGatewayFolder`). Gateways
 | **Module File** | `dist/ignitechsSms-rt.jar` |
 | **Module Name / Symbol** | `ignitechsSms-rt` (`isms`) |
 | **Vendor / Version** | `Ignitechs` / `1.0.0` |
-| **JAR SHA-256 Digest** | `2C7975DF710B75D8EFBC02891414C2A36FC0B0AFDBE9E31F83E7A4CA2FDE3056` |
+| **JAR SHA-256 Digest** | `3645E34B653A60092D102A0C6736D1EB884DB6089087E306E3D420F9842CE5AB` |
 | **Signature Files** | `META-INF/IGNITECH.SF`, `META-INF/IGNITECH.RSA` |
 | **Signature Algorithm** | `SHA256withRSA` (2048-bit RSA, `SHA-256` entry digests) |
 | **`MANIFEST.MF` Main-Attributes Digest** | `QmS47fn9fWSd89F6hK9RKBfJkaHyIJcOLdKNuGi+dVY=` |

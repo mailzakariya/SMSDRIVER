@@ -2,19 +2,80 @@
 <bajaObjectGraph version="1.0">
 <p m="b=baja" t="b:UnrestrictedFolder">
   <p n="SmsNetwork" m="isms=ignitechsSms" t="isms:SmsNetwork"/>
-  <p n="Gateways" t="b:Folder">
-    <p n="SerialModem" t="isms:SerialModemGateway"/>
-    <p n="TcpModem" t="isms:TcpModemGateway"/>
-    <p n="HttpGateway" t="isms:HttpGateway"/>
-    <p n="AndroidSmsGateway" t="isms:HttpGateway">
-      <p n="preset" v="androidSmsGateway"/>
-      <p n="url" v="http://&lt;phone-ip&gt;:8080/message"/>
+  <p n="Gateways" t="b:UnrestrictedFolder">
+    <p n="TextBeeCloud" t="isms:HttpGateway">
+      <p n="preset" v="textBeeCloud"/>
+      <p n="method" v="POST"/>
+      <p n="url" v="https://api.textbee.dev/api/v1/gateway/devices/{username}/send-sms"/>
+      <p n="contentType" v="application/json"/>
+      <p n="headers" v="x-api-key: {password}"/>
+      <p n="body" v="{&quot;recipients&quot;:[&quot;{phone}&quot;],&quot;message&quot;:&quot;{message}&quot;}"/>
+      <p n="basicAuth" v="false"/>
     </p>
+    <p n="SmsGateCloud" t="isms:HttpGateway">
+      <p n="preset" v="androidSmsGatewayCloud"/>
+      <p n="method" v="POST"/>
+      <p n="url" v="https://api.sms-gate.app/3rdparty/v1/message"/>
+      <p n="contentType" v="application/json"/>
+      <p n="headers" v=""/>
+      <p n="body" v="{&quot;textMessage&quot;:{&quot;text&quot;:&quot;{message}&quot;},&quot;phoneNumbers&quot;:[&quot;{phone}&quot;]}"/>
+      <p n="basicAuth" v="true"/>
+    </p>
+    <p n="TraccarSmsCloud" t="isms:HttpGateway">
+      <p n="preset" v="traccarSms"/>
+      <p n="method" v="POST"/>
+      <p n="url" v="https://www.traccar.org/sms/"/>
+      <p n="contentType" v="application/json"/>
+      <p n="headers" v="Authorization: {password}"/>
+      <p n="body" v="{&quot;to&quot;:&quot;{phone}&quot;,&quot;message&quot;:&quot;{message}&quot;}"/>
+      <p n="basicAuth" v="false"/>
+    </p>
+    <p n="NtfyInternetAlert" t="isms:HttpGateway">
+      <p n="preset" v="ntfySh"/>
+      <p n="method" v="POST"/>
+      <p n="url" v="https://ntfy.sh/{username}"/>
+      <p n="contentType" v="text/plain"/>
+      <p n="headers" v="Title: Niagara SMS Alert ({phone})"/>
+      <p n="body" v="{message}"/>
+      <p n="basicAuth" v="false"/>
+    </p>
+    <p n="JasminHttpGateway" t="isms:HttpGateway">
+      <p n="preset" v="jasminHttp"/>
+      <p n="method" v="GET"/>
+      <p n="url" v="http://&lt;jasmin-host&gt;:1401/send?username={username}&amp;password={password}&amp;to={phone}&amp;content={message}"/>
+      <p n="contentType" v=""/>
+      <p n="headers" v=""/>
+      <p n="body" v=""/>
+      <p n="basicAuth" v="false"/>
+      <p n="successPattern" v="Success"/>
+    </p>
+    <p n="PlaySmsGateway" t="isms:HttpGateway">
+      <p n="preset" v="playSms"/>
+      <p n="method" v="GET"/>
+      <p n="url" v="http://&lt;server&gt;/playsms/index.php?app=ws&amp;op=pv&amp;u={username}&amp;h={password}&amp;to={phone}&amp;msg={message}"/>
+      <p n="contentType" v=""/>
+      <p n="headers" v=""/>
+      <p n="body" v=""/>
+      <p n="basicAuth" v="false"/>
+      <p n="successPattern" v="&quot;status&quot;\s*:\s*&quot;OK&quot;|&quot;error&quot;\s*:\s*&quot;0&quot;"/>
+    </p>
+    <p n="KannelGateway" t="isms:HttpGateway">
+      <p n="preset" v="kannel"/>
+      <p n="method" v="GET"/>
+      <p n="url" v="http://&lt;kannel-host&gt;:13013/cgi-bin/sendsms?username={username}&amp;password={password}&amp;to={phone}&amp;text={message}&amp;charset=UTF-8"/>
+      <p n="contentType" v=""/>
+      <p n="headers" v=""/>
+      <p n="body" v=""/>
+      <p n="basicAuth" v="false"/>
+      <p n="successPattern" v="Accepted|Queued|Sent"/>
+    </p>
+    <p n="HttpGateway" t="isms:HttpGateway"/>
     <p n="SmppGateway" t="isms:SmppGateway"/>
+    <p n="TcpModem" t="isms:TcpModemGateway"/>
   </p>
   <p n="SmsContact" t="isms:SmsContact"/>
   <p n="SmsGroup" t="isms:SmsGroup"/>
-  <p n="Rules" t="b:Folder">
+  <p n="Rules" t="b:UnrestrictedFolder">
     <p n="SmsPointRule" t="isms:SmsPointRule"/>
     <p n="HighValueRule" t="isms:SmsPointRule">
       <p n="condition" v="greaterThan"/>

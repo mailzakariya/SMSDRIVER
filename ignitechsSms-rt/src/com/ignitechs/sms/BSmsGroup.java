@@ -38,7 +38,11 @@ public class BSmsGroup extends BComponent
   public String getGroupName() { return SlotPath.unescape(getName()); }
 
   @Override
-  public boolean isParentLegal(BComponent parent) { return parent instanceof BSmsGroupFolder; }
+  public boolean isParentLegal(BComponent parent)
+  {
+    return parent instanceof BSmsGroupFolder
+        || parent instanceof javax.baja.util.BUnrestrictedFolder;
+  }
 
   @Override
   public String toString(Context cx) { return getGroupName() + ": " + getMembers().summary(); }

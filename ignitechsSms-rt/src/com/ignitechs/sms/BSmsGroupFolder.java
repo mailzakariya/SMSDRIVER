@@ -23,7 +23,11 @@ public class BSmsGroupFolder extends BFolder
   public boolean isChildLegal(BComponent child) { return child instanceof BSmsGroup; }
 
   @Override
-  public boolean isParentLegal(BComponent parent) { return parent instanceof BSmsNetwork; }
+  public boolean isParentLegal(BComponent parent)
+  {
+    return parent instanceof BSmsNetwork
+        || parent instanceof javax.baja.util.BUnrestrictedFolder;
+  }
 
   @Override
   public void added(Property p, Context cx)
