@@ -10,6 +10,7 @@
  <dirs/>
  <installation/>
  <types>
+  <type name="SmsService" class="com.ignitechs.sms.BSmsService"/>
   <type name="SmsNetwork" class="com.ignitechs.sms.BSmsNetwork"/>
   <type name="SmsGatewayFolder" class="com.ignitechs.sms.BSmsGatewayFolder"/>
   <type name="SmsGateway" class="com.ignitechs.sms.BSmsGateway"/>

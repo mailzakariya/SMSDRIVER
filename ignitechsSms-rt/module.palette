@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <bajaObjectGraph version="1.0">
 <p m="b=baja" t="b:UnrestrictedFolder">
-  <p n="SmsNetwork" m="isms=ignitechsSms" t="isms:SmsNetwork"/>
+  <p n="SmsService" m="isms=ignitechsSms" t="isms:SmsService"/>
+  <p n="SmsNetwork" t="isms:SmsNetwork"/>
   <p n="Gateways" t="b:UnrestrictedFolder">
     <p n="TextBeeCloud" t="isms:HttpGateway">
       <p n="preset" v="textBeeCloud"/>

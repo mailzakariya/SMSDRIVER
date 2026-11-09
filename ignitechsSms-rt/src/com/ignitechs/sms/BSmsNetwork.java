@@ -31,6 +31,7 @@ import javax.baja.sys.BBoolean;
 import javax.baja.sys.BComponent;
 import javax.baja.sys.BFacets;
 import javax.baja.sys.BIcon;
+import javax.baja.sys.BIService;
 import javax.baja.sys.BInteger;
 import javax.baja.sys.BRelTime;
 import javax.baja.sys.BStation;
@@ -50,10 +51,11 @@ import com.ignitechs.sms.core.SmsDispatcher;
 import com.ignitechs.sms.core.Templates;
 
 /**
- * SMS Network: the driver root, placed under Drivers.
+ * SMS Service / Network: can be placed under Services (recommended, as SmsService)
+ * or under Drivers (as SmsNetwork).
  *
  * Children:
- *  - gateways (devices): GSM modem (serial / TCP), SMPP, HTTP
+ *  - gateways (devices): HTTP, SMPP, TCP Modem
  *  - Contacts: address book
  *  - Groups: named sets of contacts
  *  - Rules: point rules (value/state/status conditions) and senders
@@ -62,7 +64,7 @@ import com.ignitechs.sms.core.Templates;
  * rate limiting and duplicate suppression.
  */
 public class BSmsNetwork extends BDeviceNetwork
-  implements SmsDispatcher.TransportProvider, SmsDispatcher.Listener
+  implements BIService, SmsDispatcher.TransportProvider, SmsDispatcher.Listener
 {
   // ------------------------------------------------------------------ address book & rules
 
@@ -173,13 +175,30 @@ public class BSmsNetwork extends BDeviceNetwork
 
   static final Logger LOG = Logger.getLogger("ignitechsSms");
 
-  // ------------------------------------------------------------------ driver framework
+  // ------------------------------------------------------------------ driver & service framework
+
+  private static final Type[] SERVICE_TYPES = new Type[] { TYPE };
+
+  @Override
+  public Type[] getServiceTypes() { return SERVICE_TYPES; }
+
+  @Override
+  public void serviceStarted() throws Exception {}
+
+  @Override
+  public void serviceStopped() throws Exception {}
 
   @Override
   public Type getDeviceType() { return BSmsGateway.TYPE; }
 
   @Override
   public Type getDeviceFolderType() { return BSmsGatewayFolder.TYPE; }
+
+  @Override
+  public boolean isParentLegal(BComponent parent)
+  {
+    return true;
+  }
 
   @Override
   public boolean isChildLegal(BComponent child)
@@ -323,9 +342,15 @@ public class BSmsNetwork extends BDeviceNetwork
     return null;
   }
 
-  /** First SMS network in the station (under Drivers), or null. */
+  /** First SMS service/network in the station (under Services or Drivers), or null. */
   public static BSmsNetwork findInStation()
   {
+    try
+    {
+      BSmsNetwork svc = (BSmsNetwork) Sys.getService(TYPE);
+      if (svc != null) return svc;
+    }
+    catch (Exception ignored) {}
     BStation station = Sys.getStation();
     if (station == null) return null;
     return search(station, 0);

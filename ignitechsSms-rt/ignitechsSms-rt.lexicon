@@ -5,6 +5,7 @@
 module.description=Open-Source Internet & Network SMS Notification Driver (HTTP, SMPP, TCP) for Niagara 4
 
 # Component Types
+SmsService=SMS Service
 SmsNetwork=SMS Network
 SmsGatewayFolder=SMS Gateway Folder
 SmsGateway=SMS Gateway
