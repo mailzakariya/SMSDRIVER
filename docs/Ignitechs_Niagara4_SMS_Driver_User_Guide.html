@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Ignitechs Niagara 4 SMS Driver (ignitechsSms-rt) — Step-by-Step User Guide</title>
+  <style>
+    @page {
+      size: A4;
+      margin: 16mm 15mm 18mm 15mm;
+    }
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, Roboto, Arial, sans-serif;
+      color: #1e293b;
+      line-height: 1.5;
+      font-size: 10.5pt;
+      margin: 0;
+      padding: 0;
+    }
+    .cover-banner {
+      background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 60%, #0284c7 100%);
+      color: #ffffff;
+      padding: 28px 32px;
+      border-radius: 10px;
+      margin-bottom: 22px;
+    }
+    .cover-banner .badge {
+      display: inline-block;
+      background: rgba(255, 255, 255, 0.18);
+      border: 1px solid rgba(255, 255, 255, 0.35);
+      color: #e0f2fe;
+      font-size: 8.5pt;
+      font-weight: 600;
+      letter-spacing: 0.8px;
+      text-transform: uppercase;
+      padding: 4px 10px;
+      border-radius: 4px;
+      margin-bottom: 10px;
+    }
+    .cover-banner h1 {
+      margin: 0 0 8px 0;
+      font-size: 21pt;
+      font-weight: 700;
+      letter-spacing: -0.3px;
+    }
+    .cover-banner p {
+      margin: 0 0 14px 0;
+      font-size: 10.5pt;
+      color: #e2e8f0;
+    }
+    .meta-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 10px;
+      background: rgba(15, 23, 42, 0.45);
+      padding: 10px 14px;
+      border-radius: 6px;
+      font-size: 8.8pt;
+    }
+    .meta-grid div strong {
+      display: block;
+      color: #93c5fd;
+      font-size: 7.8pt;
+      text-transform: uppercase;
+    }
+    h2 {
+      color: #0f172a;
+      font-size: 13.5pt;
+      border-bottom: 2px solid #0284c7;
+      padding-bottom: 5px;
+      margin-top: 22px;
+      margin-bottom: 10px;
+      page-break-after: avoid;
+    }
+    h3 {
+      color: #1e3a8a;
+      font-size: 11pt;
+      margin-top: 14px;
+      margin-bottom: 6px;
+      page-break-after: avoid;
+    }
+    p {
+      margin: 5px 0 9px 0;
+    }
+    ul, ol {
+      margin: 5px 0 10px 0;
+      padding-left: 20px;
+    }
+    li {
+      margin-bottom: 4px;
+    }
+    code {
+      font-family: Consolas, "Courier New", monospace;
+      background: #f1f5f9;
+      color: #0f172a;
+      padding: 1px 5px;
+      border-radius: 3px;
+      font-size: 9.2pt;
+      border: 1px solid #e2e8f0;
+    }
+    pre {
+      font-family: Consolas, "Courier New", monospace;
+      background: #0f172a;
+      color: #f8fafc;
+      padding: 10px 14px;
+      border-radius: 6px;
+      font-size: 8.8pt;
+      overflow-x: auto;
+      margin: 8px 0 12px 0;
+      page-break-inside: avoid;
+    }
+    pre code {
+      background: none;
+      color: inherit;
+      border: none;
+      padding: 0;
+      font-size: inherit;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 8px 0 14px 0;
+      font-size: 9.2pt;
+      page-break-inside: avoid;
+    }
+    th {
+      background: #0f172a;
+      color: #ffffff;
+      text-align: left;
+      padding: 7px 9px;
+      font-weight: 600;
+    }
+    td {
+      padding: 6px 9px;
+      border-bottom: 1px solid #cbd5e1;
+      vertical-align: top;
+    }
+    tr:nth-child(even) td {
+      background: #f8fafc;
+    }
+    .callout {
+      border-left: 4px solid #0284c7;
+      background: #f0f9ff;
+      padding: 9px 13px;
+      border-radius: 0 6px 6px 0;
+      margin: 10px 0;
+      page-break-inside: avoid;
+      font-size: 9.6pt;
+    }
+    .callout.tip {
+      border-left-color: #16a34a;
+      background: #f0fdf4;
+    }
+    .callout.warn {
+      border-left-color: #d97706;
+      background: #fffbeb;
+    }
+    .step-card {
+      border: 1px solid #cbd5e1;
+      border-radius: 8px;
+      padding: 12px 15px;
+      margin-bottom: 12px;
+      background: #ffffff;
+      page-break-inside: avoid;
+    }
+    .step-card h3 {
+      margin-top: 0;
+    }
+    .tree-box {
+      background: #f8fafc;
+      border: 1px solid #cbd5e1;
+      border-radius: 6px;
+      padding: 10px 14px;
+      font-family: Consolas, "Courier New", monospace;
+      font-size: 9pt;
+      line-height: 1.45;
+      page-break-inside: avoid;
+    }
+    .page-break {
+      page-break-before: always;
+    }
+    .footer-note {
+      margin-top: 24px;
+      padding-top: 10px;
+      border-top: 1px solid #cbd5e1;
+      font-size: 8.5pt;
+      color: #64748b;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="cover-banner">
+    <div class="badge">Niagara 4 Supervisor &amp; JACE Driver Guide</div>
+    <h1>Ignitechs SMS Notification Driver (<code>ignitechsSms-rt</code>)</h1>
+    <p>Complete Step-by-Step Configuration Guide for Open-Source Internet SMS Platforms, Point Rules, Wire-Sheet Triggers &amp; Alarm Routing</p>
+    <div class="meta-grid">
+      <div><strong>Module Name</strong>ignitechsSms-rt.jar</div>
+      <div><strong>Vendor / Version</strong>Ignitechs / 1.0.0</div>
+      <div><strong>Palette Symbol</strong>isms (ignitechsSms)</div>
+      <div><strong>Niagara Version</strong>Niagara 4.0 – 4.14+</div>
+    </div>
+  </div>
+
+  <h2>1. Architecture Overview</h2>
+  <p>The <strong>Ignitechs SMS Driver</strong> adds native, dependency-free SMS &amp; mobile alert delivery to any Niagara 4 Supervisor or JACE station without requiring a serial port modem. All messages pass through a single background dispatcher with <strong>priority ordering</strong>, <strong>automatic multi-gateway failover</strong>, <strong>retry queue</strong>, <strong>hourly rate limiting</strong>, and <strong>duplicate suppression</strong>.</p>
+
+  <div class="tree-box">
+Station (station:|slot:/)
+├── Drivers
+│   └── <strong>SmsNetwork</strong> (isms:SmsNetwork)
+│       ├── <strong>TextBeeCloud</strong> (isms:HttpGateway — Priority 1 Primary Internet SMS)
+│       ├── <strong>NtfyInternetAlert</strong> (isms:HttpGateway — Priority 2 Backup Mobile Push)
+│       ├── <strong>Contacts</strong> (isms:SmsContactFolder)
+│       │   ├── ChiefEngineer (+971501234567, On-Duty Mon–Fri 08:00–18:00)
+│       │   └── DutyTechnician (+971509876543, 24/7)
+│       ├── <strong>Groups</strong> (isms:SmsGroupFolder)
+│       │   └── MaintenanceTeam (Members: [x] ChiefEngineer, [x] DutyTechnician)
+│       └── <strong>Rules</strong> (isms:SmsRuleFolder)
+│           ├── ChillerHighTemp (isms:SmsPointRule — &gt; 12.0 °C for 5m -&gt; MaintenanceTeam)
+│           ├── ChillerFaultState (isms:SmsPointRule — equals Fault|Trip|Alarm -&gt; MaintenanceTeam)
+│           └── EmergencyTrigger (isms:SmsSender — Wire-sheet boolean trigger)
+└── Services
+    └── AlarmService
+        └── <strong>SmsAlarmRecipient</strong> (isms:SmsAlarmRecipient — Routes Niagara Alarms to SMS)
+  </div>
+
+  <h2>2. Step 1 — Install the Module &amp; Trust the Certificate</h2>
+
+  <div class="step-card">
+    <h3>Step 1.1: Copy <code>ignitechsSms-rt.jar</code> to Niagara Modules</h3>
+    <ol>
+      <li>Copy <code>D:\PYTHON\SMSDRIVER\dist\ignitechsSms-rt.jar</code> into your Niagara modules folder:<br/>
+        <code>C:\Niagara\Niagara-4.14.0.162\modules\ignitechsSms-rt.jar</code><br/>
+        <em>(Already installed on this PC, or run <code>.\build.ps1 -Install</code> from PowerShell as Administrator.)</em>
+      </li>
+      <li>Close and restart <strong>Niagara Workbench</strong> and your <strong>Niagara Station</strong> so the module is loaded.</li>
+    </ol>
+  </div>
+
+  <div class="step-card">
+    <h3>Step 1.2: Import the Ignitechs Root CA Certificate</h3>
+    <ol>
+      <li>In Niagara Workbench, click <strong>Tools &rarr; Certificate Management</strong> from the top menu.</li>
+      <li>Select the <strong>User Trust Store</strong> tab (and <strong>Platform / Station Trust Store</strong> if connecting to a remote Supervisor/JACE).</li>
+      <li>Click <strong>Import</strong> at the bottom of the dialog.</li>
+      <li>Browse to and select: <code>D:\PYTHON\SMSDRIVER\certs\IgnitechsRootCA.pem</code> (or <code>IgnitechsRootCA.cer</code>) and click <strong>OK</strong>.</li>
+    </ol>
+  </div>
+
+  <div class="step-card">
+    <h3>Step 1.3: Open the <code>ignitechsSms</code> Palette</h3>
+    <ol>
+      <li>In Niagara Workbench, open the <strong>Palette</strong> side bar (<strong>Window &rarr; Side Bars &rarr; Palette</strong>).</li>
+      <li>Click the <strong>Open Palette</strong> folder icon in the Palette toolbar.</li>
+      <li>Type <code>ignitechsSms</code> in the module filter, select <strong>ignitechsSms</strong>, and click <strong>OK</strong>.</li>
+    </ol>
+  </div>
+
+  <div class="page-break"></div>
+
+  <h2>3. Step 2 — Add <code>SmsNetwork</code> Under Drivers</h2>
+  <ol>
+    <li>In the Nav tree, expand your station: <code>Station (&lt;StationName&gt;) &rarr; Config &rarr; Drivers</code>.</li>
+    <li>From the <strong>ignitechsSms</strong> palette, drag <strong><code>SmsNetwork</code></strong> and drop it onto <strong><code>Drivers</code></strong>.</li>
+    <li>Double-click <strong><code>SmsNetwork</code></strong> (or open its <strong>Ax Property Sheet</strong>) and review its settings:</li>
+  </ol>
+
+  <table>
+    <thead>
+      <tr>
+        <th style="width: 24%;">Property</th>
+        <th style="width: 18%;">Default</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>Enabled</code></td>
+        <td><code>true</code></td>
+        <td>Master enable for the SMS driver and background dispatch queue.</td>
+      </tr>
+      <tr>
+        <td><code>Site Name</code></td>
+        <td><em>(Station Name)</em></td>
+        <td>Friendly building/site name used for the <code>{station}</code> placeholder in SMS messages (e.g., <code>Tower A BMS</code>).</td>
+      </tr>
+      <tr>
+        <td><code>Time Format</code></td>
+        <td><code>dd-MMM HH:mm</code></td>
+        <td>Timestamp format used by the <code>{time}</code> placeholder in SMS messages.</td>
+      </tr>
+      <tr>
+        <td><code>Max Retries</code></td>
+        <td><code>3</code></td>
+        <td>Number of retry cycles after all enabled gateways fail for a message.</td>
+      </tr>
+      <tr>
+        <td><code>Retry Delay</code></td>
+        <td><code>0000h 01m 00s</code></td>
+        <td>Wait time before retrying a failed message.</td>
+      </tr>
+      <tr>
+        <td><code>Max Messages Per Hour</code></td>
+        <td><code>120</code></td>
+        <td>Rate limit to prevent SMS storms during mass equipment faults (<code>0</code> = unlimited).</td>
+      </tr>
+      <tr>
+        <td><code>Duplicate Suppression</code></td>
+        <td><code>0000h 02m 00s</code></td>
+        <td>Identical text to the same phone number within this window is sent only once.</td>
+      </tr>
+      <tr>
+        <td><code>Gsm Friendly Text</code></td>
+        <td><code>true</code></td>
+        <td>Replaces smart quotes and degree symbols (<code>°</code> &rarr; <code>deg</code>) so messages fit in 160-char GSM-7 instead of 70-char Unicode.</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h2>4. Step 3 — Configure an Open-Source Internet SMS Gateway</h2>
+  <p>Expand the <strong><code>Gateways</code></strong> folder inside the <strong>ignitechsSms</strong> palette. Drag one (or more) of the pre-configured internet gateways below and drop it directly onto <strong><code>SmsNetwork</code></strong>.</p>
+
+  <div class="step-card">
+    <h3>Option A (Recommended for Real Carrier SMS): <code>TextBeeCloud</code> — Open-Source Internet SMS Gateway</h3>
+    <p><strong>TextBee</strong> (<a href="https://textbee.dev">https://textbee.dev</a> | GitHub: <code>vernu/textbee</code>, MIT License) turns any Android phone with a SIM card into an internet-accessible REST SMS gateway (cloud or self-hosted Docker) with no port forwarding required.</p>
+    <ol>
+      <li>Create a free account at <strong><a href="https://textbee.dev">https://textbee.dev</a></strong> (or run the open-source TextBee Docker container) and install the TextBee Android app on an Android phone with an active SIM.</li>
+      <li>Scan the QR code in the TextBee dashboard to link the phone, then copy your <strong>Device ID</strong> and <strong>API Key</strong>.</li>
+      <li>In Niagara Workbench, drag <strong><code>TextBeeCloud</code></strong> from <strong>Palette &rarr; Gateways</strong> onto <strong><code>SmsNetwork</code></strong>.</li>
+      <li>Open the Property Sheet of <strong><code>TextBeeCloud</code></strong> and set:
+        <ul>
+          <li><code>Preset</code>: <strong>TextBee Cloud / Self-Hosted (Open-Source Internet SMS)</strong></li>
+          <li><code>Url</code>: <code>https://api.textbee.dev/api/v1/gateway/devices/{username}/send-sms</code> <em>(pre-filled)</em></li>
+          <li><code>Headers</code>: <code>x-api-key: {password}</code> <em>(pre-filled)</em></li>
+          <li><code>Body</code>: <code>{"recipients":["{phone}"],"message":"{message}"}</code> <em>(pre-filled)</em></li>
+          <li><code>Username</code>: Paste your TextBee <strong>Device ID</strong></li>
+          <li><code>Password</code>: Paste your TextBee <strong>API Key</strong></li>
+        </ul>
+      </li>
+      <li>Click <strong>Save</strong>. Right-click <strong><code>TextBeeCloud</code> &rarr; Actions &rarr; Send Test SMS</strong>, enter a phone number (e.g., <code>+971501234567</code>), and click <strong>OK</strong>.</li>
+    </ol>
+  </div>
+
+  <div class="step-card">
+    <h3>Option B (Open-Source Cloud Relay): <code>SmsGateCloud</code> — Android SMS Gateway Cloud</h3>
+    <p>Uses the open-source <strong>SMS Gateway for Android</strong> project (GitHub: <code>capcom6/android-sms-gateway</code>, Apache-2.0 License) in <strong>Cloud Server</strong> mode (<code>https://api.sms-gate.app</code>).</p>
+    <ol>
+      <li>Install the open-source <strong>SMS Gateway for Android</strong> APK on an Android phone, select <strong>Cloud Server</strong> mode, and toggle the server <strong>Online</strong>.</li>
+      <li>Note the <strong>Username</strong> and <strong>Password</strong> displayed on the app home screen.</li>
+      <li>Drag <strong><code>SmsGateCloud</code></strong> from <strong>Palette &rarr; Gateways</strong> onto <strong><code>SmsNetwork</code></strong>.</li>
+      <li>In its Property Sheet, enter the app's <strong><code>Username</code></strong> and <strong><code>Password</code></strong> (<code>Basic Auth</code> is already set to <code>true</code>) and click <strong>Save</strong>.</li>
+    </ol>
+  </div>
+
+  <div class="page-break"></div>
+
+  <div class="step-card">
+    <h3>Option C (Zero SIM Card &amp; Zero Cost): <code>NtfyInternetAlert</code> — Open-Source <code>ntfy.sh</code> Push Service</h3>
+    <p><strong>ntfy</strong> (<a href="https://ntfy.sh">https://ntfy.sh</a> | GitHub: <code>binwiederhier/ntfy</code>, Apache-2.0/GPLv2) is a 100% free, open-source internet pub/sub mobile notification service. It requires <strong>no SIM card, no modem, and no account</strong>.</p>
+    <ol>
+      <li>Install the free open-source <strong>ntfy</strong> app on Android or iOS (or open <code>https://ntfy.sh/app</code> in a browser) and subscribe to a unique secret topic name, e.g., <code>ignitechs-supervisor-alarms-9812</code>.</li>
+      <li>Drag <strong><code>NtfyInternetAlert</code></strong> from <strong>Palette &rarr; Gateways</strong> onto <strong><code>SmsNetwork</code></strong>.</li>
+      <li>In its Property Sheet, set <strong><code>Username</code></strong> to your topic name (<code>ignitechs-supervisor-alarms-9812</code>) and click <strong>Save</strong>.</li>
+      <li>Right-click <strong><code>NtfyInternetAlert</code> &rarr; Actions &rarr; Send Test SMS</strong> — every subscribed phone immediately receives a high-priority alert with the recipient phone number in the title and the SMS text in the body.</li>
+    </ol>
+  </div>
+
+  <div class="step-card">
+    <h3>Option D (Other Open-Source Internet Gateways Included in the Palette)</h3>
+    <table>
+      <thead>
+        <tr>
+          <th style="width: 24%;">Palette Item</th>
+          <th style="width: 26%;">Open-Source Platform</th>
+          <th>Configuration in Property Sheet</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong><code>TraccarSmsCloud</code></strong></td>
+          <td>Traccar SMS Gateway (Apache-2.0)</td>
+          <td>URL: <code>https://www.traccar.org/sms/</code>. Paste your Traccar Cloud API Token into <code>Password</code>.</td>
+        </tr>
+        <tr>
+          <td><strong><code>JasminHttpGateway</code></strong></td>
+          <td>Jasmin SMS Gateway (Apache-2.0)</td>
+          <td>Replace <code>&lt;jasmin-host&gt;</code> in <code>Url</code> with your Jasmin server IP/hostname and set <code>Username</code> / <code>Password</code>.</td>
+        </tr>
+        <tr>
+          <td><strong><code>PlaySmsGateway</code></strong></td>
+          <td>playSMS Webservice (GPL)</td>
+          <td>Replace <code>&lt;server&gt;</code> in <code>Url</code> with your playSMS domain, set <code>Username</code>, and set <code>Password</code> = Webservice Token.</td>
+        </tr>
+        <tr>
+          <td><strong><code>KannelGateway</code></strong></td>
+          <td>Kannel <code>sendsms</code> (Open-Source)</td>
+          <td>Replace <code>&lt;kannel-host&gt;</code> in <code>Url</code> with your Kannel server and set <code>Username</code> / <code>Password</code>.</td>
+        </tr>
+        <tr>
+          <td><strong><code>SmppGateway</code></strong></td>
+          <td>SMPP v3.4 Client (Jasmin / Kannel / Telecom SMSC)</td>
+          <td>Set <code>Address</code> (host/IP), <code>Port</code> (<code>2775</code>), <code>Use TLS</code>, <code>System ID</code>, <code>Password</code>, and <code>Sender ID</code> (e.g., <code>BMS</code>).</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="callout tip">
+    <strong>Tip — Automatic Multi-Gateway Failover:</strong> You can place multiple gateways under <code>SmsNetwork</code>! Set <code>Priority = 1</code> on your primary SMS gateway (e.g., <code>TextBeeCloud</code>) and <code>Priority = 2</code> on a backup gateway (e.g., <code>NtfyInternetAlert</code> or <code>SmppGateway</code>). If Gateway 1 cannot reach the internet or fails, <code>SmsNetwork</code> automatically fails over to Gateway 2.
+  </div>
+
+  <h2>5. Step 4 — Add Contacts &amp; Groups (Address Book)</h2>
+
+  <div class="step-card">
+    <h3>Step 4.1: Add Contacts (<code>SmsNetwork &rarr; Contacts</code>)</h3>
+    <ol>
+      <li>In the Nav tree, expand <strong><code>SmsNetwork &rarr; Contacts</code></strong>.</li>
+      <li>Drag <strong><code>SmsContact</code></strong> from the <strong>ignitechsSms</strong> palette and drop it into <strong><code>Contacts</code></strong>. Name it after the person (e.g., <code>Ahmad_FM</code>).</li>
+      <li>Double-click the contact to open its Property Sheet:
+        <ul>
+          <li><code>Enabled</code>: <code>true</code></li>
+          <li><code>Phone Number</code>: Enter in international format (e.g., <code>+971501234567</code>). Spaces/dashes are normalized automatically.</li>
+          <li><code>Description</code>: Optional role note (e.g., <code>Facility Manager</code>).</li>
+          <li><code>On Duty Days</code>: Select which days of the week this person should receive SMS alerts (default: all 7 days).</li>
+          <li><code>On Duty Time</code>: Time window when this contact is on duty (default: All Hours 00:00–24:00).</li>
+        </ul>
+      </li>
+      <li>Right-click the contact &rarr; <strong>Actions &rarr; Send Test SMS</strong> to send a test message directly to that contact.</li>
+    </ol>
+  </div>
+
+  <div class="step-card">
+    <h3>Step 4.2: Create Contact Groups (<code>SmsNetwork &rarr; Groups</code>)</h3>
+    <ol>
+      <li>Expand <strong><code>SmsNetwork &rarr; Groups</code></strong> in the Nav tree.</li>
+      <li>Drag <strong><code>SmsGroup</code></strong> from the palette and drop it into <strong><code>Groups</code></strong> (e.g., name it <code>HVAC_Team</code> or <code>Night_Shift</code>).</li>
+      <li>Open its Property Sheet and expand <strong><code>Members</code></strong>: every contact in your address book automatically appears as a boolean checkbox!</li>
+      <li>Set thecontacts that belong to this group to <strong><code>true</code></strong> and click <strong>Save</strong>.</li>
+    </ol>
+  </div>
+
+  <div class="page-break"></div>
+
+  <h2>6. Step 5 — Create Point Monitoring Rules (<code>SmsPointRule</code>)</h2>
+  <p>Point rules watch any Niagara control point (BACnet, Modbus, KNX, OPC, Niagara Virtual, or internal writable points) and send SMS alerts when a condition is met — without needing to modify the point itself.</p>
+
+  <ol>
+    <li>Expand <strong><code>SmsNetwork &rarr; Rules</code></strong> in the Nav tree (you can also create sub-folders using <code>SmsRuleFolder</code> per building or system).</li>
+    <li>From <strong>Palette &rarr; Rules</strong>, drag one of the rule templates into <strong><code>Rules</code></strong>:
+      <ul>
+        <li><strong><code>SmsPointRule</code></strong> — Blank general-purpose rule</li>
+        <li><strong><code>HighValueRule</code></strong> — Pre-configured for numeric high limit (<code>&gt; 30</code>, deadband <code>1</code>, 5-minute delay)</li>
+        <li><strong><code>StateRule</code></strong> — Pre-configured for enum/boolean/string states matching <code>Fault|Trip|Alarm</code></li>
+        <li><strong><code>OfflineRule</code></strong> — Pre-configured for device/point communication loss (<code>Status is Down</code> for 2 minutes)</li>
+      </ul>
+    </li>
+    <li>Open the rule's Property Sheet and configure:</li>
+  </ol>
+
+  <table>
+    <thead>
+      <tr>
+        <th style="width: 24%;">Property</th>
+        <th>How to Configure</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>Source ORD</code></td>
+        <td>Click the folder/component chooser icon and select the Niagara point to monitor (e.g., <code>station:|slot:/Drivers/BacnetNetwork/Chiller1/points/WaterTemp</code>).</td>
+      </tr>
+      <tr>
+        <td><code>Condition</code></td>
+        <td>Choose from 16 built-in conditions:
+          <ul>
+            <li><strong>Numeric:</strong> <code>Greater than (&gt;)</code>, <code>Less than (&lt;)</code>, <code>Greater or equal (&gt;=)</code>, <code>Less or equal (&lt;=)</code>, <code>Outside range</code>, <code>Inside range</code></li>
+            <li><strong>Boolean / Enum / Text:</strong> <code>Value equals (=)</code>, <code>Value not equals (!=)</code>, <code>Is true / active</code>, <code>Is false / inactive</code>, <code>Any value change</code></li>
+            <li><strong>Niagara Status:</strong> <code>Status is Alarm</code>, <code>Status is Fault</code>, <code>Status is Down (offline)</code>, <code>Status is Overridden</code>, <code>Status is Not OK</code></li>
+          </ul>
+        </td>
+      </tr>
+      <tr>
+        <td><code>Compare Value</code></td>
+        <td>Used by <code>Value equals / not equals</code>. Supports multiple values separated by <code>|</code> or <code>,</code> (e.g., <code>Fault|Trip|Alarm</code>, <code>On</code>, <code>true</code>, <code>Unoccupied</code>).</td>
+      </tr>
+      <tr>
+        <td><code>Limit / Low / High / Deadband</code></td>
+        <td>Numeric thresholds and hysteresis deadband (the value must drop back by <code>Deadband</code> before returning to normal).</td>
+      </tr>
+      <tr>
+        <td><code>Active Delay</code></td>
+        <td>How long the condition must stay true continuously before sending the alert SMS (filters out brief sensor spikes).</td>
+      </tr>
+      <tr>
+        <td><code>Repeat Interval &amp; Max Repeats</code></td>
+        <td>If the point remains in alarm, re-send a reminder SMS at <code>Repeat Interval</code> up to <code>Max Repeats</code> times (<code>0</code> = send once).</td>
+      </tr>
+      <tr>
+        <td><code>Notify On Normal</code></td>
+        <td>When <code>true</code>, sends <code>Normal Text</code> when the point returns to normal.</td>
+      </tr>
+      <tr>
+        <td><code>Alert Text / Normal Text</code></td>
+        <td>Message templates supporting placeholders: <code>{station}</code>, <code>{time}</code>, <code>{point}</code>, <code>{path}</code>, <code>{value}</code>, <code>{status}</code>, <code>{state}</code>, <code>{rule}</code>, <code>{condition}</code>, <code>{limit}</code>, <code>{low}</code>, <code>{high}</code>, <code>{compare}</code>, <code>{description}</code>.</td>
+      </tr>
+      <tr>
+        <td><code>Recipients</code></td>
+        <td>Expand <code>Recipients</code> and set the checkboxes to <code>true</code> for every <strong>Group</strong> (<code>Group: ...</code>) or individual <strong>Contact</strong> that should receive this rule's messages.</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="callout">
+    <strong>Testing a Rule Instantly:</strong> Right-click any <code>SmsPointRule</code> and select <strong>Actions &rarr; Send Test SMS</strong>. It will immediately read the live point value, render the template, and queue a test SMS to all selected recipients—even if the alarm condition is not currently active.
+  </div>
+
+  <h2>7. Step 6 — Using the Wire-Sheet <code>SmsSender</code> Block</h2>
+  <p>If you build custom logic on a Wire Sheet (using `kitControl` logic blocks, schedules, or composites) and want a boolean trigger to send an SMS:</p>
+  <ol>
+    <li>Drag <strong><code>SmsSender</code></strong> from <strong>Palette &rarr; Rules</strong> onto <code>SmsNetwork &rarr; Rules</code> or onto <strong>any Wire Sheet</strong> anywhere in the station.</li>
+    <li>Link any `BStatusBoolean` output slot to the <strong><code>Trigger</code></strong> input of <code>SmsSender</code>. Whenever <code>Trigger</code> transitions from <code>false &rarr; true</code> (rising edge), the configured <code>Message</code> is sent.</li>
+    <li>Alternatively, link an action/event to the <strong><code>Send</code></strong> action, or link a dynamic string slot to the <strong><code>Send Text</code></strong> action.</li>
+    <li>Expand <strong><code>Recipients</code></strong> on <code>SmsSender</code> and tick the contacts/groups that should receive the message.</li>
+  </ol>
+
+  <div class="page-break"></div>
+
+  <h2>8. Step 7 — Route Niagara Alarms to SMS (<code>SmsAlarmRecipient</code>)</h2>
+  <p>To forward standard Niagara alarms from <code>AlarmService</code> to SMS contacts and groups:</p>
+  <ol>
+    <li>In the Nav tree, expand <strong><code>Station &rarr; Config &rarr; Services &rarr; AlarmService</code></strong> and open its <strong>Wire Sheet</strong>.</li>
+    <li>From the root of the <strong>ignitechsSms</strong> palette, drag <strong><code>SmsAlarmRecipient</code></strong> onto the <strong><code>AlarmService</code></strong> Wire Sheet.</li>
+    <li>Link the <code>alarmEscalation1</code> (or <code>alarmEscalation2</code>) slot of your <strong><code>AlarmClass</code></strong> (e.g., <code>defaultAlarmClass</code> or <code>CriticalAlarms</code>) to the <strong><code>routeAlarm</code></strong> action on <strong><code>SmsAlarmRecipient</code></strong>.</li>
+    <li>Double-click <strong><code>SmsAlarmRecipient</code></strong> to configure its Property Sheet:
+      <ul>
+        <li><code>Time Range</code> / <code>Days Of Week</code> / <code>Transitions</code>: Standard Niagara alarm routing filters (e.g., To Offnormal, To Fault, To Normal).</li>
+        <li><code>Sms Network</code>: Leave null (`BOrd.NULL`) to automatically use the station's `SmsNetwork`, or pick a specific `SmsNetwork`.</li>
+        <li><code>Recipients</code>: Expand and set checkboxes to <code>true</code> for the Contacts and Groups that should receive alarms.</li>
+        <li><code>Alarm Text</code>: Default <code>{station} {state}: {source} - {msg} [{alarmClass}] {time}{ackHint}</code></li>
+        <li><code>Ack Text</code>: Default <code>{station}: {source} acknowledged by {user} {time}</code></li>
+      </ul>
+    </li>
+  </ol>
+
+  <table>
+    <thead>
+      <tr>
+        <th style="width: 22%;">Placeholder</th>
+        <th>Replaced With (in <code>SmsAlarmRecipient</code>)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td><code>{station}</code></td><td>Site Name configured on <code>SmsNetwork</code> (or Station Name).</td></tr>
+      <tr><td><code>{state}</code></td><td>Alarm state in uppercase: <code>OFFNORMAL</code>, <code>FAULT</code>, <code>NORMAL</code>, or <code>ACKNOWLEDGED</code>.</td></tr>
+      <tr><td><code>{source}</code></td><td>Alarm source name (<code>sourceName</code> facet or slot path).</td></tr>
+      <tr><td><code>{msg}</code></td><td>Alarm message text (<code>msgText</code> facet, with Niagara lexicon tags resolved).</td></tr>
+      <tr><td><code>{value}</code></td><td>Present value at the time of alarm (<code>presentValue</code> facet).</td></tr>
+      <tr><td><code>{alarmClass}</code></td><td>Name of the Niagara Alarm Class.</td></tr>
+      <tr><td><code>{priority}</code></td><td>Niagara alarm priority (1–255; also controls the SMS queue priority).</td></tr>
+      <tr><td><code>{ackCode}</code> / <code>{ackHint}</code></td><td>Short numeric code (e.g., <code>Reply ACK 104</code>) for two-way SMS acknowledgement.</td></tr>
+    </tbody>
+  </table>
+
+  <h2>9. Step 8 — Monitoring, Diagnostics &amp; Troubleshooting</h2>
+  <p>Open the Property Sheet of <strong><code>SmsNetwork</code></strong> at any time to monitor real-time health:</p>
+  <ul>
+    <li><strong><code>Queue Size</code></strong>: Number of messages waiting to be sent or retried.</li>
+    <li><strong><code>Total Sent</code> / <code>Total Failed</code></strong>: Cumulative delivery counters since station start or last reset.</li>
+    <li><strong><code>Last Sent Time</code> / <code>Last Error</code></strong>: Timestamp of the last successful SMS and the most recent gateway error message (if any).</li>
+    <li><strong><code>Activity</code></strong>: Live multi-line log (newest at top, last 50 events) showing every queued, sent, failed, or suppressed SMS and which gateway delivered it.</li>
+  </ul>
+
+  <table>
+    <thead>
+      <tr>
+        <th style="width: 32%;">Symptom / Message</th>
+        <th>Cause &amp; Resolution</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>no reachable recipients</code> in Activity log</td>
+        <td>Ensure at least one Contact or Group is ticked (<code>true</code>) under the rule/alarm recipient's <code>Recipients</code> slot, the contact has a valid phone number, and the current time falls within the contact's <code>On Duty Days</code> and <code>On Duty Time</code>.</td>
+      </tr>
+      <tr>
+        <td><code>HTTP 401</code> or <code>HTTP 403</code> on Gateway</td>
+        <td>Verify the <code>Username</code> (Device ID / Account) and <code>Password</code> (API Key / Token) in the gateway's Property Sheet.</td>
+      </tr>
+      <tr>
+        <td><code>suppressed duplicate / queue full</code></td>
+        <td>The exact same message text was already sent to that phone number within the <code>Duplicate Suppression</code> window (default 2 minutes). Lower <code>Duplicate Suppression</code> on <code>SmsNetwork</code> if testing repeated identical messages.</td>
+      </tr>
+      <tr>
+        <td>Contacts added later don't show in <code>Recipients</code></td>
+        <td>Adding/renaming a contact updates all checklists automatically when the station is running. If edited offline, right-click <code>SmsNetwork</code> and invoke <strong>Sync Recipients</strong> (or restart the station).</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="footer-note">
+    Ignitechs Niagara 4 SMS Notification Driver (<code>ignitechsSms-rt</code> v1.0.0) &bull; Copyright &copy; Ignitechs. All Rights Reserved.
+  </div>
+
+</body>
+</html>
