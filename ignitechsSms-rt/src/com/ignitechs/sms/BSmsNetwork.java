@@ -70,12 +70,15 @@ public class BSmsNetwork extends BDeviceNetwork
 
   public static final Property contacts = newProperty(0, new BSmsContactFolder(), null);
   public BSmsContactFolder getContacts() { return (BSmsContactFolder) get(contacts); }
+  public void setContacts(BSmsContactFolder v) { set(contacts, v, null); }
 
   public static final Property groups = newProperty(0, new BSmsGroupFolder(), null);
   public BSmsGroupFolder getGroups() { return (BSmsGroupFolder) get(groups); }
+  public void setGroups(BSmsGroupFolder v) { set(groups, v, null); }
 
   public static final Property rules = newProperty(0, new BSmsRuleFolder(), null);
   public BSmsRuleFolder getRules() { return (BSmsRuleFolder) get(rules); }
+  public void setRules(BSmsRuleFolder v) { set(rules, v, null); }
 
   // ------------------------------------------------------------------ queue settings
 
