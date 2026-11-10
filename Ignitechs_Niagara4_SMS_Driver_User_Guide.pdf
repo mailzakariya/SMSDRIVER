@@ -22,7 +22,7 @@ endobj
 << /Type /Page /Parent 2 0 R /MediaBox [0 0 595.28 841.89] /Resources << /Font << /F1 3 0 R /F2 4 0 R /F3 5 0 R /F4 6 0 R >> >> /Contents 8 0 R >>
 endobj
 8 0 obj
-<< /Length 5697 >>
+<< /Length 6198 >>
 stream
 0.82 0.86 0.91 RG 0.6 w 42.00 34.00 m 553.28 34.00 l S
 BT /F1 8.00 Tf 0.40 0.45 0.53 rg 42.00 22.00 Td (Ignitechs Niagara 4 SMS Notification Driver \(ignitechsSms-rt v1.0.0\)  |  Step-by-Step User Guide) Tj ET
@@ -36,50 +36,51 @@ BT /F1 10.00 Tf 0.86 0.91 0.96 rg 60.00 738.89 Td (Open-Source Internet SMS Plat
 BT /F2 8.20 Tf 0.58 0.77 0.99 rg 68.00 710.89 Td (Module: ignitechsSms-rt.jar     Vendor: Ignitechs     Version: 1.0.0     Palette Symbol: isms     Target: Niagara 4.0 - 4.14+) Tj ET
 BT /F2 13.00 Tf 0.06 0.09 0.16 rg 42.00 653.89 Td (1. Architecture & Component Overview) Tj ET
 0.01 0.52 0.78 rg 42.00 648.89 511.28 1.80 re f
-BT /F1 9.60 Tf 0.12 0.16 0.23 rg 42.00 628.89 Td (The Ignitechs SMS Notification Driver \(ignitechsSms-rt\) adds native internet and network SMS alerting to) Tj ET
-BT /F1 9.60 Tf 0.12 0.16 0.23 rg 42.00 615.39 Td (Niagara 4 Supervisor and JACE stations without requiring any serial port modem hardware. All messages pass) Tj ET
-BT /F1 9.60 Tf 0.12 0.16 0.23 rg 42.00 601.89 Td (through a single background queue with priority ordering, automatic multi-gateway failover, retry) Tj ET
-BT /F1 9.60 Tf 0.12 0.16 0.23 rg 42.00 588.39 Td (scheduling, hourly rate limiting, and duplicate suppression.) Tj ET
-0.08 0.11 0.18 rg 42.00 434.89 511.28 146.00 re f
+BT /F1 9.60 Tf 0.12 0.16 0.23 rg 42.00 628.89 Td (The Ignitechs SMS Notification Service & Driver \(ignitechsSms-rt\) adds native internet and network SMS) Tj ET
+BT /F1 9.60 Tf 0.12 0.16 0.23 rg 42.00 615.39 Td (alerting to Niagara 4 Supervisor and JACE stations without requiring any serial port modem hardware. You) Tj ET
+BT /F1 9.60 Tf 0.12 0.16 0.23 rg 42.00 601.89 Td (can drop SmsService directly under Station -> Config -> Services \(recommended\), or drop SmsNetwork under) Tj ET
+BT /F1 9.60 Tf 0.12 0.16 0.23 rg 42.00 588.39 Td (Station -> Config -> Drivers.) Tj ET
+0.08 0.11 0.18 rg 42.00 446.89 511.28 134.00 re f
 BT /F3 8.40 Tf 0.92 0.95 0.99 rg 52.00 566.89 Td (Station \(station:|slot:/\)) Tj ET
-BT /F3 8.40 Tf 0.92 0.95 0.99 rg 52.00 554.89 Td ( +-- Drivers) Tj ET
-BT /F3 8.40 Tf 0.92 0.95 0.99 rg 52.00 542.89 Td ( |    +-- SmsNetwork \(isms:SmsNetwork\)) Tj ET
-BT /F3 8.40 Tf 0.92 0.95 0.99 rg 52.00 530.89 Td ( |         +-- TextBeeCloud      \(isms:HttpGateway - Priority 1 Primary Internet SMS\)) Tj ET
-BT /F3 8.40 Tf 0.92 0.95 0.99 rg 52.00 518.89 Td ( |         +-- NtfyInternetAlert \(isms:HttpGateway - Priority 2 Backup Mobile Push\)) Tj ET
-BT /F3 8.40 Tf 0.92 0.95 0.99 rg 52.00 506.89 Td ( |         +-- Contacts          \(isms:SmsContactFolder - Phone numbers & On-Duty hours\)) Tj ET
-BT /F3 8.40 Tf 0.92 0.95 0.99 rg 52.00 494.89 Td ( |         +-- Groups            \(isms:SmsGroupFolder - Named teams e.g. Maintenance\)) Tj ET
-BT /F3 8.40 Tf 0.92 0.95 0.99 rg 52.00 482.89 Td ( |         +-- Rules             \(isms:SmsRuleFolder - Point rules & Wire-sheet senders\)) Tj ET
-BT /F3 8.40 Tf 0.92 0.95 0.99 rg 52.00 470.89 Td ( +-- Services) Tj ET
-BT /F3 8.40 Tf 0.92 0.95 0.99 rg 52.00 458.89 Td (      +-- AlarmService) Tj ET
-BT /F3 8.40 Tf 0.92 0.95 0.99 rg 52.00 446.89 Td (           +-- SmsAlarmRecipient \(isms:SmsAlarmRecipient - Niagara AlarmClass router\)) Tj ET
-BT /F2 13.00 Tf 0.06 0.09 0.16 rg 42.00 406.89 Td (2. Step 1 - Install the Module & Trust the Certificate) Tj ET
-0.01 0.52 0.78 rg 42.00 401.89 511.28 1.80 re f
-0.98 0.99 1.00 rg 42.00 302.89 511.28 89.00 re f
-0.78 0.84 0.90 RG 0.80 w 42.00 302.89 511.28 89.00 re S
-0.01 0.52 0.78 rg 42.00 302.89 4.00 89.00 re f
-BT /F2 10.20 Tf 0.06 0.15 0.36 rg 54.00 376.89 Td (Step 1.1: Install ignitechsSms-rt.jar into Niagara 4) Tj ET
-BT /F1 9.30 Tf 0.12 0.16 0.23 rg 54.00 361.89 Td (1. Copy D:\\PYTHON\\SMSDRIVER\\dist\\ignitechsSms-rt.jar to) Tj ET
-BT /F1 9.30 Tf 0.12 0.16 0.23 rg 66.00 348.89 Td (C:\\Niagara\\Niagara-4.14.0.162\\modules\\ignitechsSms-rt.jar \(already installed on this PC, or run) Tj ET
-BT /F1 9.30 Tf 0.12 0.16 0.23 rg 66.00 335.89 Td (.\\build.ps1 -Install as Administrator\).) Tj ET
-BT /F1 9.30 Tf 0.12 0.16 0.23 rg 54.00 320.39 Td (2. Restart Niagara Workbench and your Niagara Station so the runtime module is loaded.) Tj ET
-0.98 0.99 1.00 rg 42.00 188.39 511.28 104.50 re f
-0.78 0.84 0.90 RG 0.80 w 42.00 188.39 511.28 104.50 re S
-0.01 0.52 0.78 rg 42.00 188.39 4.00 104.50 re f
-BT /F2 10.20 Tf 0.06 0.15 0.36 rg 54.00 277.89 Td (Step 1.2: Import the Ignitechs Root CA Certificate) Tj ET
-BT /F1 9.30 Tf 0.12 0.16 0.23 rg 54.00 262.89 Td (1. In Niagara Workbench, open Tools -> Certificate Management from the top menu bar.) Tj ET
-BT /F1 9.30 Tf 0.12 0.16 0.23 rg 54.00 247.39 Td (2. Click the User Trust Store tab \(and Platform / Station Trust Store if connecting to a remote) Tj ET
-BT /F1 9.30 Tf 0.12 0.16 0.23 rg 66.00 234.39 Td (Supervisor or JACE\).) Tj ET
-BT /F1 9.30 Tf 0.12 0.16 0.23 rg 54.00 218.89 Td (3. Click Import at the bottom of the dialog, select D:\\PYTHON\\SMSDRIVER\\certs\\IgnitechsRootCA.pem \(or) Tj ET
-BT /F1 9.30 Tf 0.12 0.16 0.23 rg 66.00 205.89 Td (IgnitechsRootCA.cer\), and click OK.) Tj ET
-0.98 0.99 1.00 rg 42.00 102.39 511.28 76.00 re f
-0.78 0.84 0.90 RG 0.80 w 42.00 102.39 511.28 76.00 re S
-0.01 0.52 0.78 rg 42.00 102.39 4.00 76.00 re f
-BT /F2 10.20 Tf 0.06 0.15 0.36 rg 54.00 163.39 Td (Step 1.3: Open the ignitechsSms Palette in Workbench) Tj ET
-BT /F1 9.30 Tf 0.12 0.16 0.23 rg 54.00 148.39 Td (1. In Niagara Workbench, open the Palette side bar \(Window -> Side Bars -> Palette\).) Tj ET
-BT /F1 9.30 Tf 0.12 0.16 0.23 rg 54.00 132.89 Td (2. Click the Open Palette folder icon in the Palette toolbar, type ignitechsSms, select ignitechsSms,) Tj ET
-BT /F1 9.30 Tf 0.12 0.16 0.23 rg 66.00 119.89 Td (and click OK.) Tj ET
-BT /F2 13.00 Tf 0.06 0.09 0.16 rg 42.00 74.39 Td (3. Step 2 - Add & Configure SmsNetwork Under Drivers) Tj ET
-0.01 0.52 0.78 rg 42.00 69.39 511.28 1.80 re f
+BT /F3 8.40 Tf 0.92 0.95 0.99 rg 52.00 554.89 Td ( +-- Services) Tj ET
+BT /F3 8.40 Tf 0.92 0.95 0.99 rg 52.00 542.89 Td ( |    +-- SmsService \(isms:SmsService - or SmsNetwork under Drivers\)) Tj ET
+BT /F3 8.40 Tf 0.92 0.95 0.99 rg 52.00 530.89 Td ( |    |    +-- TextBeeCloud      \(isms:HttpGateway - Priority 1 Primary Internet SMS\)) Tj ET
+BT /F3 8.40 Tf 0.92 0.95 0.99 rg 52.00 518.89 Td ( |    |    +-- NtfyInternetAlert \(isms:HttpGateway - Priority 2 Backup Mobile Push\)) Tj ET
+BT /F3 8.40 Tf 0.92 0.95 0.99 rg 52.00 506.89 Td ( |    |    +-- Contacts          \(isms:SmsContactFolder - Phone numbers & On-Duty hours\)) Tj ET
+BT /F3 8.40 Tf 0.92 0.95 0.99 rg 52.00 494.89 Td ( |    |    +-- Groups            \(isms:SmsGroupFolder - Named teams e.g. Maintenance\)) Tj ET
+BT /F3 8.40 Tf 0.92 0.95 0.99 rg 52.00 482.89 Td ( |    |    +-- Rules             \(isms:SmsRuleFolder - Point rules & Wire-sheet senders\)) Tj ET
+BT /F3 8.40 Tf 0.92 0.95 0.99 rg 52.00 470.89 Td ( |    +-- AlarmService) Tj ET
+BT /F3 8.40 Tf 0.92 0.95 0.99 rg 52.00 458.89 Td ( |         +-- SmsAlarmRecipient \(isms:SmsAlarmRecipient - Niagara AlarmClass router\)) Tj ET
+BT /F2 13.00 Tf 0.06 0.09 0.16 rg 42.00 418.89 Td (2. Step 1 - Install the Module & Trust the Certificate) Tj ET
+0.01 0.52 0.78 rg 42.00 413.89 511.28 1.80 re f
+0.98 0.99 1.00 rg 42.00 314.89 511.28 89.00 re f
+0.78 0.84 0.90 RG 0.80 w 42.00 314.89 511.28 89.00 re S
+0.01 0.52 0.78 rg 42.00 314.89 4.00 89.00 re f
+BT /F2 10.20 Tf 0.06 0.15 0.36 rg 54.00 388.89 Td (Step 1.1: Install ignitechsSms-rt.jar into Niagara 4) Tj ET
+BT /F1 9.30 Tf 0.12 0.16 0.23 rg 54.00 373.89 Td (1. Copy dist\\ignitechsSms-rt.jar from the module package folder into your Niagara installation's modules) Tj ET
+BT /F1 9.30 Tf 0.12 0.16 0.23 rg 66.00 360.89 Td (directory \(for example, C:\\Niagara\\Niagara-4.x.x.x\\modules\\ignitechsSms-rt.jar\).) Tj ET
+BT /F1 9.30 Tf 0.12 0.16 0.23 rg 54.00 345.39 Td (2. Restart Niagara Workbench and your Niagara Station \(or Platform Daemon\) so the updated runtime module) Tj ET
+BT /F1 9.30 Tf 0.12 0.16 0.23 rg 66.00 332.39 Td (and palette are loaded.) Tj ET
+0.98 0.99 1.00 rg 42.00 161.39 511.28 143.50 re f
+0.78 0.84 0.90 RG 0.80 w 42.00 161.39 511.28 143.50 re S
+0.01 0.52 0.78 rg 42.00 161.39 4.00 143.50 re f
+BT /F2 10.20 Tf 0.06 0.15 0.36 rg 54.00 289.89 Td (Step 1.2: Import the Ignitechs Root CA Certificate \(Workbench & Platform\)) Tj ET
+BT /F1 9.30 Tf 0.12 0.16 0.23 rg 54.00 274.89 Td (1. Workbench Trust Store \(My Host\): In Niagara Workbench, open My Host -> Certificate Management \(or) Tj ET
+BT /F1 9.30 Tf 0.12 0.16 0.23 rg 66.00 261.89 Td (Tools -> Certificate Management\), select the User Trust Store tab, click Import, select) Tj ET
+BT /F1 9.30 Tf 0.12 0.16 0.23 rg 66.00 248.89 Td (certs\\IgnitechsRootCA.pem \(or IgnitechsRootCA.cer\) from the module package folder, and click OK.) Tj ET
+BT /F1 9.30 Tf 0.12 0.16 0.23 rg 54.00 233.39 Td (2. Platform / Station Trust Store \(Platform\): In the Nav tree, expand Platform -> Certificate Management) Tj ET
+BT /F1 9.30 Tf 0.12 0.16 0.23 rg 66.00 220.39 Td (\(or Station -> Config -> Services -> PlatformServices -> CertManagerService\), open the User Trust Store) Tj ET
+BT /F1 9.30 Tf 0.12 0.16 0.23 rg 66.00 207.39 Td (tab, click Import, select certs\\IgnitechsRootCA.pem, and click OK.) Tj ET
+BT /F1 9.30 Tf 0.12 0.16 0.23 rg 54.00 191.89 Td (3. Restart your Niagara Station from Platform -> Application Director so the station trusts the signed) Tj ET
+BT /F1 9.30 Tf 0.12 0.16 0.23 rg 66.00 178.89 Td (module when adding SmsService.) Tj ET
+0.98 0.99 1.00 rg 42.00 62.39 511.28 89.00 re f
+0.78 0.84 0.90 RG 0.80 w 42.00 62.39 511.28 89.00 re S
+0.01 0.52 0.78 rg 42.00 62.39 4.00 89.00 re f
+BT /F2 10.20 Tf 0.06 0.15 0.36 rg 54.00 136.39 Td (Step 1.3: Open the ignitechsSms Palette in Workbench) Tj ET
+BT /F1 9.30 Tf 0.12 0.16 0.23 rg 54.00 121.39 Td (1. In Niagara Workbench, open the Palette side bar \(Window -> Side Bars -> Palette\). If ignitechsSms is) Tj ET
+BT /F1 9.30 Tf 0.12 0.16 0.23 rg 66.00 108.39 Td (already open, close and re-open it so the updated items appear.) Tj ET
+BT /F1 9.30 Tf 0.12 0.16 0.23 rg 54.00 92.89 Td (2. At the top of the ignitechsSms palette you will see SmsService \(for Services\) and SmsNetwork \(for) Tj ET
+BT /F1 9.30 Tf 0.12 0.16 0.23 rg 66.00 79.89 Td (Drivers\).) Tj ET
 
 endstream
 endobj
@@ -87,93 +88,85 @@ endobj
 << /Type /Page /Parent 2 0 R /MediaBox [0 0 595.28 841.89] /Resources << /Font << /F1 3 0 R /F2 4 0 R /F3 5 0 R /F4 6 0 R >> >> /Contents 10 0 R >>
 endobj
 10 0 obj
-<< /Length 7549 >>
+<< /Length 6660 >>
 stream
 0.82 0.86 0.91 RG 0.6 w 42.00 34.00 m 553.28 34.00 l S
 BT /F1 8.00 Tf 0.40 0.45 0.53 rg 42.00 22.00 Td (Ignitechs Niagara 4 SMS Notification Driver \(ignitechsSms-rt v1.0.0\)  |  Step-by-Step User Guide) Tj ET
 BT /F2 8.00 Tf 0.40 0.45 0.53 rg 527.84 22.00 Td (Page 2) Tj ET
-0.98 0.99 1.00 rg 42.00 721.39 511.28 78.50 re f
-0.78 0.84 0.90 RG 0.80 w 42.00 721.39 511.28 78.50 re S
-0.01 0.52 0.78 rg 42.00 721.39 4.00 78.50 re f
-BT /F2 10.20 Tf 0.06 0.15 0.36 rg 54.00 784.89 Td (Step 2.1: Add SmsNetwork to Drivers) Tj ET
-BT /F1 9.30 Tf 0.12 0.16 0.23 rg 54.00 769.89 Td (1. In the Nav tree, expand Station \(<StationName>\) -> Config -> Drivers.) Tj ET
-BT /F1 9.30 Tf 0.12 0.16 0.23 rg 54.00 754.39 Td (2. Drag SmsNetwork from the root of the ignitechsSms palette and drop it onto Drivers.) Tj ET
-BT /F1 9.30 Tf 0.12 0.16 0.23 rg 54.00 738.89 Td (3. Double-click SmsNetwork to open its Property Sheet and review its queue & formatting settings:) Tj ET
-0.06 0.11 0.24 rg 42.00 691.39 511.28 20.00 re f
-BT /F2 8.80 Tf 1.00 1.00 1.00 rg 48.00 697.89 Td (Property) Tj ET
-BT /F2 8.80 Tf 1.00 1.00 1.00 rg 180.93 697.89 Td (Default) Tj ET
-BT /F2 8.80 Tf 1.00 1.00 1.00 rg 272.96 697.89 Td (Purpose) Tj ET
-0.82 0.86 0.91 RG 0.40 w 42.00 659.79 511.28 31.60 re S
-BT /F4 8.30 Tf 0.10 0.14 0.22 rg 48.00 679.39 Td (Enabled) Tj ET
-BT /F1 8.70 Tf 0.10 0.14 0.22 rg 180.93 679.39 Td (true) Tj ET
-BT /F1 8.70 Tf 0.10 0.14 0.22 rg 272.96 679.39 Td (Master enable for the SMS network and background dispatch) Tj ET
-BT /F1 8.70 Tf 0.10 0.14 0.22 rg 272.96 667.59 Td (queue.) Tj ET
-0.96 0.97 0.99 rg 42.00 628.19 511.28 31.60 re f
-0.82 0.86 0.91 RG 0.40 w 42.00 628.19 511.28 31.60 re S
-BT /F4 8.30 Tf 0.10 0.14 0.22 rg 48.00 647.79 Td (Site Name) Tj ET
-BT /F1 8.70 Tf 0.10 0.14 0.22 rg 180.93 647.79 Td (\(Station Name\)) Tj ET
-BT /F1 8.70 Tf 0.10 0.14 0.22 rg 272.96 647.79 Td (Building/site label used for the {station} placeholder in) Tj ET
-BT /F1 8.70 Tf 0.10 0.14 0.22 rg 272.96 635.99 Td (messages \(e.g. Tower A BMS\).) Tj ET
-0.82 0.86 0.91 RG 0.40 w 42.00 596.59 511.28 31.60 re S
-BT /F4 8.30 Tf 0.10 0.14 0.22 rg 48.00 616.19 Td (Time Format) Tj ET
-BT /F1 8.70 Tf 0.10 0.14 0.22 rg 180.93 616.19 Td (dd-MMM HH:mm) Tj ET
-BT /F1 8.70 Tf 0.10 0.14 0.22 rg 272.96 616.19 Td (Timestamp format used by the {time} placeholder in SMS) Tj ET
-BT /F1 8.70 Tf 0.10 0.14 0.22 rg 272.96 604.39 Td (templates.) Tj ET
-0.96 0.97 0.99 rg 42.00 564.99 511.28 31.60 re f
-0.82 0.86 0.91 RG 0.40 w 42.00 564.99 511.28 31.60 re S
-BT /F4 8.30 Tf 0.10 0.14 0.22 rg 48.00 584.59 Td (Max Retries) Tj ET
-BT /F1 8.70 Tf 0.10 0.14 0.22 rg 180.93 584.59 Td (3) Tj ET
-BT /F1 8.70 Tf 0.10 0.14 0.22 rg 272.96 584.59 Td (Number of retry cycles after all enabled gateways fail for a) Tj ET
-BT /F1 8.70 Tf 0.10 0.14 0.22 rg 272.96 572.79 Td (message.) Tj ET
-0.82 0.86 0.91 RG 0.40 w 42.00 545.19 511.28 19.80 re S
-BT /F4 8.30 Tf 0.10 0.14 0.22 rg 48.00 552.99 Td (Retry Delay) Tj ET
-BT /F1 8.70 Tf 0.10 0.14 0.22 rg 180.93 552.99 Td (0000h 01m 00s) Tj ET
-BT /F1 8.70 Tf 0.10 0.14 0.22 rg 272.96 552.99 Td (Wait time before retrying a failed message.) Tj ET
-0.96 0.97 0.99 rg 42.00 513.59 511.28 31.60 re f
-0.82 0.86 0.91 RG 0.40 w 42.00 513.59 511.28 31.60 re S
-BT /F4 8.30 Tf 0.10 0.14 0.22 rg 48.00 533.19 Td (Max Messages Per Hour) Tj ET
-BT /F1 8.70 Tf 0.10 0.14 0.22 rg 180.93 533.19 Td (120) Tj ET
-BT /F1 8.70 Tf 0.10 0.14 0.22 rg 272.96 533.19 Td (Safety rate limit against message storms \(0 = unlimited; excess) Tj ET
-BT /F1 8.70 Tf 0.10 0.14 0.22 rg 272.96 521.39 Td (messages wait\).) Tj ET
-0.82 0.86 0.91 RG 0.40 w 42.00 481.99 511.28 31.60 re S
-BT /F4 8.30 Tf 0.10 0.14 0.22 rg 48.00 501.59 Td (Duplicate Suppression) Tj ET
-BT /F1 8.70 Tf 0.10 0.14 0.22 rg 180.93 501.59 Td (0000h 02m 00s) Tj ET
-BT /F1 8.70 Tf 0.10 0.14 0.22 rg 272.96 501.59 Td (Identical text to the same phone number inside this window is) Tj ET
-BT /F1 8.70 Tf 0.10 0.14 0.22 rg 272.96 489.79 Td (sent only once.) Tj ET
-0.96 0.97 0.99 rg 42.00 450.39 511.28 31.60 re f
-0.82 0.86 0.91 RG 0.40 w 42.00 450.39 511.28 31.60 re S
-BT /F4 8.30 Tf 0.10 0.14 0.22 rg 48.00 469.99 Td (Gsm Friendly Text) Tj ET
-BT /F1 8.70 Tf 0.10 0.14 0.22 rg 180.93 469.99 Td (true) Tj ET
-BT /F1 8.70 Tf 0.10 0.14 0.22 rg 272.96 469.99 Td (Replaces smart quotes and degree symbols \(deg\) so messages fit) Tj ET
-BT /F1 8.70 Tf 0.10 0.14 0.22 rg 272.96 458.19 Td (in 160-char GSM-7.) Tj ET
-BT /F2 13.00 Tf 0.06 0.09 0.16 rg 42.00 422.39 Td (4. Step 3 - Set Up an Open-Source Internet SMS Gateway) Tj ET
-0.01 0.52 0.78 rg 42.00 417.39 511.28 1.80 re f
-BT /F1 9.60 Tf 0.12 0.16 0.23 rg 42.00 397.39 Td (Expand the Gateways folder in the ignitechsSms palette. Drag one \(or more\) of the ready-made internet) Tj ET
-BT /F1 9.60 Tf 0.12 0.16 0.23 rg 42.00 383.89 Td (gateways below and drop it onto SmsNetwork.) Tj ET
-0.98 0.99 1.00 rg 42.00 214.89 511.28 161.50 re f
-0.78 0.84 0.90 RG 0.80 w 42.00 214.89 511.28 161.50 re S
-0.01 0.52 0.78 rg 42.00 214.89 4.00 161.50 re f
-BT /F2 10.20 Tf 0.06 0.15 0.36 rg 54.00 361.39 Td (Option A \(Recommended for Real Carrier SMS\): TextBeeCloud \(textbee.dev - Open-Source MIT\)) Tj ET
-BT /F1 9.30 Tf 0.12 0.16 0.23 rg 54.00 346.39 Td (1. Create a free account at https://textbee.dev \(or run the open-source TextBee Docker container\) and) Tj ET
-BT /F1 9.30 Tf 0.12 0.16 0.23 rg 66.00 333.39 Td (install the open-source TextBee Android app on any Android phone with an active SIM card.) Tj ET
-BT /F1 9.30 Tf 0.12 0.16 0.23 rg 54.00 317.89 Td (2. Scan the QR code in the TextBee web dashboard to link the phone, then copy your Device ID and API) Tj ET
-BT /F1 9.30 Tf 0.12 0.16 0.23 rg 66.00 304.89 Td (Key.) Tj ET
-BT /F1 9.30 Tf 0.12 0.16 0.23 rg 54.00 289.39 Td (3. In Niagara Workbench, drag TextBeeCloud from Palette -> Gateways onto SmsNetwork.) Tj ET
-BT /F1 9.30 Tf 0.12 0.16 0.23 rg 54.00 273.89 Td (4. Open the Property Sheet of TextBeeCloud: paste your Device ID into Username, and paste your API Key) Tj ET
-BT /F1 9.30 Tf 0.12 0.16 0.23 rg 66.00 260.89 Td (into Password \(Url, Headers, and JSON Body are already pre-configured\).) Tj ET
-BT /F1 9.30 Tf 0.12 0.16 0.23 rg 54.00 245.39 Td (5. Click Save. Right-click TextBeeCloud -> Actions -> Send Test SMS, enter your phone number \(+971...\),) Tj ET
-BT /F1 9.30 Tf 0.12 0.16 0.23 rg 66.00 232.39 Td (and click OK.) Tj ET
-0.98 0.99 1.00 rg 42.00 69.39 511.28 135.50 re f
-0.78 0.84 0.90 RG 0.80 w 42.00 69.39 511.28 135.50 re S
-0.01 0.52 0.78 rg 42.00 69.39 4.00 135.50 re f
-BT /F2 10.20 Tf 0.06 0.15 0.36 rg 54.00 189.89 Td (Option B \(Open-Source Cloud Relay\): SmsGateCloud \(capcom6/android-sms-gateway - Apache-2.0\)) Tj ET
-BT /F1 9.30 Tf 0.12 0.16 0.23 rg 54.00 174.89 Td (1. Install the open-source SMS Gateway for Android app \(github.com/capcom6/android-sms-gateway\), select) Tj ET
-BT /F1 9.30 Tf 0.12 0.16 0.23 rg 66.00 161.89 Td (Cloud Server mode \(https://api.sms-gate.app\), and toggle the server Online.) Tj ET
-BT /F1 9.30 Tf 0.12 0.16 0.23 rg 54.00 146.39 Td (2. Note the Username and Password displayed on the app home screen.) Tj ET
-BT /F1 9.30 Tf 0.12 0.16 0.23 rg 54.00 130.89 Td (3. Drag SmsGateCloud from Palette -> Gateways onto SmsNetwork.) Tj ET
-BT /F1 9.30 Tf 0.12 0.16 0.23 rg 54.00 115.39 Td (4. Open its Property Sheet, enter the app Username and Password \(Basic Auth is pre-enabled\), and click) Tj ET
-BT /F1 9.30 Tf 0.12 0.16 0.23 rg 66.00 102.39 Td (Save.) Tj ET
-BT /F1 9.30 Tf 0.12 0.16 0.23 rg 54.00 86.89 Td (5. Right-click SmsGateCloud -> Actions -> Send Test SMS to verify delivery over the internet.) Tj ET
+BT /F2 13.00 Tf 0.06 0.09 0.16 rg 42.00 781.89 Td (3. Step 2 - Add SmsService Under Services \(or SmsNetwork Under Drivers\)) Tj ET
+0.01 0.52 0.78 rg 42.00 776.89 511.28 1.80 re f
+0.98 0.99 1.00 rg 42.00 675.39 511.28 91.50 re f
+0.78 0.84 0.90 RG 0.80 w 42.00 675.39 511.28 91.50 re S
+0.01 0.52 0.78 rg 42.00 675.39 4.00 91.50 re f
+BT /F2 10.20 Tf 0.06 0.15 0.36 rg 54.00 751.89 Td (Step 2.1: Add SmsService to Station -> Config -> Services) Tj ET
+BT /F1 9.30 Tf 0.12 0.16 0.23 rg 54.00 736.89 Td (1. In the Nav tree, expand Station \(<StationName>\) -> Config -> Services.) Tj ET
+BT /F1 9.30 Tf 0.12 0.16 0.23 rg 54.00 721.39 Td (2. Drag SmsService from the top of the ignitechsSms palette and drop it onto Services \(alternatively,) Tj ET
+BT /F1 9.30 Tf 0.12 0.16 0.23 rg 66.00 708.39 Td (you can drag SmsNetwork onto Config -> Drivers\).) Tj ET
+BT /F1 9.30 Tf 0.12 0.16 0.23 rg 54.00 692.89 Td (3. Double-click SmsService to open its Property Sheet and review its queue & formatting settings:) Tj ET
+0.06 0.11 0.24 rg 42.00 645.39 511.28 20.00 re f
+BT /F2 8.80 Tf 1.00 1.00 1.00 rg 48.00 651.89 Td (Property) Tj ET
+BT /F2 8.80 Tf 1.00 1.00 1.00 rg 180.93 651.89 Td (Default) Tj ET
+BT /F2 8.80 Tf 1.00 1.00 1.00 rg 272.96 651.89 Td (Purpose) Tj ET
+0.82 0.86 0.91 RG 0.40 w 42.00 613.79 511.28 31.60 re S
+BT /F4 8.30 Tf 0.10 0.14 0.22 rg 48.00 633.39 Td (Enabled) Tj ET
+BT /F1 8.70 Tf 0.10 0.14 0.22 rg 180.93 633.39 Td (true) Tj ET
+BT /F1 8.70 Tf 0.10 0.14 0.22 rg 272.96 633.39 Td (Master enable for the SMS service and background dispatch) Tj ET
+BT /F1 8.70 Tf 0.10 0.14 0.22 rg 272.96 621.59 Td (queue.) Tj ET
+0.96 0.97 0.99 rg 42.00 582.19 511.28 31.60 re f
+0.82 0.86 0.91 RG 0.40 w 42.00 582.19 511.28 31.60 re S
+BT /F4 8.30 Tf 0.10 0.14 0.22 rg 48.00 601.79 Td (Site Name) Tj ET
+BT /F1 8.70 Tf 0.10 0.14 0.22 rg 180.93 601.79 Td (\(Station Name\)) Tj ET
+BT /F1 8.70 Tf 0.10 0.14 0.22 rg 272.96 601.79 Td (Building/site label used for the {station} placeholder in) Tj ET
+BT /F1 8.70 Tf 0.10 0.14 0.22 rg 272.96 589.99 Td (messages \(e.g. Tower A BMS\).) Tj ET
+0.82 0.86 0.91 RG 0.40 w 42.00 550.59 511.28 31.60 re S
+BT /F4 8.30 Tf 0.10 0.14 0.22 rg 48.00 570.19 Td (Time Format) Tj ET
+BT /F1 8.70 Tf 0.10 0.14 0.22 rg 180.93 570.19 Td (dd-MMM HH:mm) Tj ET
+BT /F1 8.70 Tf 0.10 0.14 0.22 rg 272.96 570.19 Td (Timestamp format used by the {time} placeholder in SMS) Tj ET
+BT /F1 8.70 Tf 0.10 0.14 0.22 rg 272.96 558.39 Td (templates.) Tj ET
+0.96 0.97 0.99 rg 42.00 518.99 511.28 31.60 re f
+0.82 0.86 0.91 RG 0.40 w 42.00 518.99 511.28 31.60 re S
+BT /F4 8.30 Tf 0.10 0.14 0.22 rg 48.00 538.59 Td (Max Retries) Tj ET
+BT /F1 8.70 Tf 0.10 0.14 0.22 rg 180.93 538.59 Td (3) Tj ET
+BT /F1 8.70 Tf 0.10 0.14 0.22 rg 272.96 538.59 Td (Number of retry cycles after all enabled gateways fail for a) Tj ET
+BT /F1 8.70 Tf 0.10 0.14 0.22 rg 272.96 526.79 Td (message.) Tj ET
+0.82 0.86 0.91 RG 0.40 w 42.00 499.19 511.28 19.80 re S
+BT /F4 8.30 Tf 0.10 0.14 0.22 rg 48.00 506.99 Td (Retry Delay) Tj ET
+BT /F1 8.70 Tf 0.10 0.14 0.22 rg 180.93 506.99 Td (0000h 01m 00s) Tj ET
+BT /F1 8.70 Tf 0.10 0.14 0.22 rg 272.96 506.99 Td (Wait time before retrying a failed message.) Tj ET
+0.96 0.97 0.99 rg 42.00 467.59 511.28 31.60 re f
+0.82 0.86 0.91 RG 0.40 w 42.00 467.59 511.28 31.60 re S
+BT /F4 8.30 Tf 0.10 0.14 0.22 rg 48.00 487.19 Td (Max Messages Per Hour) Tj ET
+BT /F1 8.70 Tf 0.10 0.14 0.22 rg 180.93 487.19 Td (120) Tj ET
+BT /F1 8.70 Tf 0.10 0.14 0.22 rg 272.96 487.19 Td (Safety rate limit against message storms \(0 = unlimited; excess) Tj ET
+BT /F1 8.70 Tf 0.10 0.14 0.22 rg 272.96 475.39 Td (messages wait\).) Tj ET
+0.82 0.86 0.91 RG 0.40 w 42.00 435.99 511.28 31.60 re S
+BT /F4 8.30 Tf 0.10 0.14 0.22 rg 48.00 455.59 Td (Duplicate Suppression) Tj ET
+BT /F1 8.70 Tf 0.10 0.14 0.22 rg 180.93 455.59 Td (0000h 02m 00s) Tj ET
+BT /F1 8.70 Tf 0.10 0.14 0.22 rg 272.96 455.59 Td (Identical text to the same phone number inside this window is) Tj ET
+BT /F1 8.70 Tf 0.10 0.14 0.22 rg 272.96 443.79 Td (sent only once.) Tj ET
+0.96 0.97 0.99 rg 42.00 404.39 511.28 31.60 re f
+0.82 0.86 0.91 RG 0.40 w 42.00 404.39 511.28 31.60 re S
+BT /F4 8.30 Tf 0.10 0.14 0.22 rg 48.00 423.99 Td (Gsm Friendly Text) Tj ET
+BT /F1 8.70 Tf 0.10 0.14 0.22 rg 180.93 423.99 Td (true) Tj ET
+BT /F1 8.70 Tf 0.10 0.14 0.22 rg 272.96 423.99 Td (Replaces smart quotes and degree symbols \(deg\) so messages fit) Tj ET
+BT /F1 8.70 Tf 0.10 0.14 0.22 rg 272.96 412.19 Td (in 160-char GSM-7.) Tj ET
+BT /F2 13.00 Tf 0.06 0.09 0.16 rg 42.00 376.39 Td (4. Step 3 - Set Up an Open-Source Internet SMS Gateway) Tj ET
+0.01 0.52 0.78 rg 42.00 371.39 511.28 1.80 re f
+BT /F1 9.60 Tf 0.12 0.16 0.23 rg 42.00 351.39 Td (Expand the Gateways folder in the ignitechsSms palette. Drag one \(or more\) of the ready-made internet) Tj ET
+BT /F1 9.60 Tf 0.12 0.16 0.23 rg 42.00 337.89 Td (gateways below and drop it directly onto SmsService.) Tj ET
+0.98 0.99 1.00 rg 42.00 168.89 511.28 161.50 re f
+0.78 0.84 0.90 RG 0.80 w 42.00 168.89 511.28 161.50 re S
+0.01 0.52 0.78 rg 42.00 168.89 4.00 161.50 re f
+BT /F2 10.20 Tf 0.06 0.15 0.36 rg 54.00 315.39 Td (Option A \(Recommended for Real Carrier SMS\): TextBeeCloud \(textbee.dev - Open-Source MIT\)) Tj ET
+BT /F1 9.30 Tf 0.12 0.16 0.23 rg 54.00 300.39 Td (1. Create a free account at https://textbee.dev \(or run the open-source TextBee Docker container\) and) Tj ET
+BT /F1 9.30 Tf 0.12 0.16 0.23 rg 66.00 287.39 Td (install the open-source TextBee Android app on any Android phone with an active SIM card.) Tj ET
+BT /F1 9.30 Tf 0.12 0.16 0.23 rg 54.00 271.89 Td (2. Scan the QR code in the TextBee web dashboard to link the phone, then copy your Device ID and API) Tj ET
+BT /F1 9.30 Tf 0.12 0.16 0.23 rg 66.00 258.89 Td (Key.) Tj ET
+BT /F1 9.30 Tf 0.12 0.16 0.23 rg 54.00 243.39 Td (3. In Niagara Workbench, drag TextBeeCloud from Palette -> Gateways onto SmsService.) Tj ET
+BT /F1 9.30 Tf 0.12 0.16 0.23 rg 54.00 227.89 Td (4. Open the Property Sheet of TextBeeCloud: paste your Device ID into Username, and paste your API Key) Tj ET
+BT /F1 9.30 Tf 0.12 0.16 0.23 rg 66.00 214.89 Td (into Password \(Url, Headers, and JSON Body are already pre-configured\).) Tj ET
+BT /F1 9.30 Tf 0.12 0.16 0.23 rg 54.00 199.39 Td (5. Click Save. Right-click TextBeeCloud -> Actions -> Send Test SMS, enter your phone number \(+971...\),) Tj ET
+BT /F1 9.30 Tf 0.12 0.16 0.23 rg 66.00 186.39 Td (and click OK.) Tj ET
 
 endstream
 endobj
@@ -181,88 +174,89 @@ endobj
 << /Type /Page /Parent 2 0 R /MediaBox [0 0 595.28 841.89] /Resources << /Font << /F1 3 0 R /F2 4 0 R /F3 5 0 R /F4 6 0 R >> >> /Contents 12 0 R >>
 endobj
 12 0 obj
-<< /Length 7480 >>
+<< /Length 7703 >>
 stream
 0.82 0.86 0.91 RG 0.6 w 42.00 34.00 m 553.28 34.00 l S
 BT /F1 8.00 Tf 0.40 0.45 0.53 rg 42.00 22.00 Td (Ignitechs Niagara 4 SMS Notification Driver \(ignitechsSms-rt v1.0.0\)  |  Step-by-Step User Guide) Tj ET
 BT /F2 8.00 Tf 0.40 0.45 0.53 rg 527.84 22.00 Td (Page 3) Tj ET
-0.98 0.99 1.00 rg 42.00 666.89 511.28 133.00 re f
-0.78 0.84 0.90 RG 0.80 w 42.00 666.89 511.28 133.00 re S
-0.01 0.52 0.78 rg 42.00 666.89 4.00 133.00 re f
-BT /F2 10.20 Tf 0.06 0.15 0.36 rg 54.00 784.89 Td (Option C \(Zero SIM Card & Zero Cost\): NtfyInternetAlert \(ntfy.sh - Open-Source Apache-2.0/GPLv2\)) Tj ET
-BT /F1 9.30 Tf 0.12 0.16 0.23 rg 54.00 769.89 Td (1. Install the free open-source ntfy app on Android/iOS \(or open https://ntfy.sh/app in a browser\) and) Tj ET
-BT /F1 9.30 Tf 0.12 0.16 0.23 rg 66.00 756.89 Td (subscribe to a unique topic name \(e.g. ignitechs-supervisor-alerts-2026\).) Tj ET
-BT /F1 9.30 Tf 0.12 0.16 0.23 rg 54.00 741.39 Td (2. Drag NtfyInternetAlert from Palette -> Gateways onto SmsNetwork.) Tj ET
-BT /F1 9.30 Tf 0.12 0.16 0.23 rg 54.00 725.89 Td (3. In its Property Sheet, set Username to your topic name \(ignitechs-supervisor-alerts-2026\) and click) Tj ET
-BT /F1 9.30 Tf 0.12 0.16 0.23 rg 66.00 712.89 Td (Save.) Tj ET
-BT /F1 9.30 Tf 0.12 0.16 0.23 rg 54.00 697.39 Td (4. Right-click NtfyInternetAlert -> Actions -> Send Test SMS - subscribed phones immediately receive a) Tj ET
-BT /F1 9.30 Tf 0.12 0.16 0.23 rg 66.00 684.39 Td (high-priority mobile push alert over the internet without needing any SIM card or carrier account.) Tj ET
-BT /F2 10.50 Tf 0.12 0.23 0.54 rg 42.00 644.89 Td (Other Open-Source Internet & Network Gateways in Palette -> Gateways) Tj ET
-0.06 0.11 0.24 rg 42.00 619.89 511.28 20.00 re f
-BT /F2 8.80 Tf 1.00 1.00 1.00 rg 48.00 626.39 Td (Palette Component) Tj ET
-BT /F2 8.80 Tf 1.00 1.00 1.00 rg 175.82 626.39 Td (Platform) Tj ET
-BT /F2 8.80 Tf 1.00 1.00 1.00 rg 303.64 626.39 Td (Property Sheet Configuration) Tj ET
-0.82 0.86 0.91 RG 0.40 w 42.00 588.29 511.28 31.60 re S
-BT /F4 8.30 Tf 0.10 0.14 0.22 rg 48.00 607.89 Td (TraccarSmsCloud) Tj ET
-BT /F1 8.70 Tf 0.10 0.14 0.22 rg 175.82 607.89 Td (Traccar SMS Gateway) Tj ET
-BT /F1 8.70 Tf 0.10 0.14 0.22 rg 175.82 596.09 Td (\(Open-Source Apache-2.0\)) Tj ET
-BT /F1 8.70 Tf 0.10 0.14 0.22 rg 303.64 607.89 Td (URL is pre-set to https://www.traccar.org/sms/. Paste) Tj ET
-BT /F1 8.70 Tf 0.10 0.14 0.22 rg 303.64 596.09 Td (your Traccar Cloud API Token into Password.) Tj ET
-0.96 0.97 0.99 rg 42.00 556.69 511.28 31.60 re f
-0.82 0.86 0.91 RG 0.40 w 42.00 556.69 511.28 31.60 re S
-BT /F4 8.30 Tf 0.10 0.14 0.22 rg 48.00 576.29 Td (JasminHttpGateway) Tj ET
-BT /F1 8.70 Tf 0.10 0.14 0.22 rg 175.82 576.29 Td (Jasmin SMS Gateway) Tj ET
-BT /F1 8.70 Tf 0.10 0.14 0.22 rg 175.82 564.49 Td (\(Open-Source HTTP API\)) Tj ET
-BT /F1 8.70 Tf 0.10 0.14 0.22 rg 303.64 576.29 Td (Replace <jasmin-host> in Url with your Jasmin server) Tj ET
-BT /F1 8.70 Tf 0.10 0.14 0.22 rg 303.64 564.49 Td (IP/host and set Username and Password.) Tj ET
-0.82 0.86 0.91 RG 0.40 w 42.00 525.09 511.28 31.60 re S
-BT /F4 8.30 Tf 0.10 0.14 0.22 rg 48.00 544.69 Td (PlaySmsGateway) Tj ET
-BT /F1 8.70 Tf 0.10 0.14 0.22 rg 175.82 544.69 Td (playSMS Webservice) Tj ET
-BT /F1 8.70 Tf 0.10 0.14 0.22 rg 175.82 532.89 Td (\(Open-Source GPL\)) Tj ET
-BT /F1 8.70 Tf 0.10 0.14 0.22 rg 303.64 544.69 Td (Replace <server> in Url with your playSMS server, set) Tj ET
-BT /F1 8.70 Tf 0.10 0.14 0.22 rg 303.64 532.89 Td (Username, and set Password = Webservice Token.) Tj ET
-0.96 0.97 0.99 rg 42.00 493.49 511.28 31.60 re f
-0.82 0.86 0.91 RG 0.40 w 42.00 493.49 511.28 31.60 re S
-BT /F4 8.30 Tf 0.10 0.14 0.22 rg 48.00 513.09 Td (KannelGateway) Tj ET
-BT /F1 8.70 Tf 0.10 0.14 0.22 rg 175.82 513.09 Td (Kannel sendsms) Tj ET
-BT /F1 8.70 Tf 0.10 0.14 0.22 rg 175.82 501.29 Td (\(Open-Source HTTP\)) Tj ET
-BT /F1 8.70 Tf 0.10 0.14 0.22 rg 303.64 513.09 Td (Replace <kannel-host> in Url with your Kannel host) Tj ET
-BT /F1 8.70 Tf 0.10 0.14 0.22 rg 303.64 501.29 Td (\(:13013\) and set Username and Password.) Tj ET
-0.82 0.86 0.91 RG 0.40 w 42.00 461.89 511.28 31.60 re S
-BT /F4 8.30 Tf 0.10 0.14 0.22 rg 48.00 481.49 Td (SmppGateway) Tj ET
-BT /F1 8.70 Tf 0.10 0.14 0.22 rg 175.82 481.49 Td (SMPP v3.4 Client \(Jasmin /) Tj ET
-BT /F1 8.70 Tf 0.10 0.14 0.22 rg 175.82 469.69 Td (Kannel / Telecom\)) Tj ET
-BT /F1 8.70 Tf 0.10 0.14 0.22 rg 303.64 481.49 Td (Set Address \(host\), Port \(2775\), Use TLS, System ID,) Tj ET
-BT /F1 8.70 Tf 0.10 0.14 0.22 rg 303.64 469.69 Td (Password, and Sender ID \(e.g. BMS\).) Tj ET
-0.94 0.99 0.95 rg 42.00 385.49 511.28 66.40 re f
-0.09 0.64 0.29 rg 42.00 385.49 4.00 66.40 re f
-BT /F2 9.50 Tf 0.06 0.42 0.18 rg 54.00 437.89 Td (TIP - Automatic Multi-Gateway Failover) Tj ET
-BT /F1 9.20 Tf 0.12 0.16 0.23 rg 54.00 424.89 Td (You can drop multiple gateways under SmsNetwork. Set Priority = 1 on your primary gateway \(e.g.) Tj ET
-BT /F1 9.20 Tf 0.12 0.16 0.23 rg 54.00 412.09 Td (TextBeeCloud\) and Priority = 2 on a backup gateway \(e.g. NtfyInternetAlert or SmppGateway\). If Gateway 1) Tj ET
-BT /F1 9.20 Tf 0.12 0.16 0.23 rg 54.00 399.29 Td (fails, SmsNetwork automatically delivers the message via Gateway 2.) Tj ET
-BT /F2 13.00 Tf 0.06 0.09 0.16 rg 42.00 358.49 Td (5. Step 4 - Add Contacts & Groups \(Address Book\)) Tj ET
-0.01 0.52 0.78 rg 42.00 353.49 511.28 1.80 re f
-0.98 0.99 1.00 rg 42.00 207.99 511.28 135.50 re f
-0.78 0.84 0.90 RG 0.80 w 42.00 207.99 511.28 135.50 re S
-0.01 0.52 0.78 rg 42.00 207.99 4.00 135.50 re f
-BT /F2 10.20 Tf 0.06 0.15 0.36 rg 54.00 328.49 Td (Step 4.1: Add Contacts under SmsNetwork -> Contacts) Tj ET
-BT /F1 9.30 Tf 0.12 0.16 0.23 rg 54.00 313.49 Td (1. In the Nav tree, expand SmsNetwork -> Contacts.) Tj ET
-BT /F1 9.30 Tf 0.12 0.16 0.23 rg 54.00 297.99 Td (2. Drag SmsContact from the ignitechsSms palette into Contacts and name it \(e.g. ChiefEngineer or) Tj ET
-BT /F1 9.30 Tf 0.12 0.16 0.23 rg 66.00 284.99 Td (DutyTech\).) Tj ET
-BT /F1 9.30 Tf 0.12 0.16 0.23 rg 54.00 269.49 Td (3. Open its Property Sheet and set Phone Number in international format \(e.g. +971501234567\).) Tj ET
-BT /F1 9.30 Tf 0.12 0.16 0.23 rg 54.00 253.99 Td (4. Optional: Configure On Duty Days \(days of week\) and On Duty Time \(working hours\) when this contact) Tj ET
-BT /F1 9.30 Tf 0.12 0.16 0.23 rg 66.00 240.99 Td (should receive messages.) Tj ET
-BT /F1 9.30 Tf 0.12 0.16 0.23 rg 54.00 225.49 Td (5. Right-click the contact -> Actions -> Send Test SMS to verify delivery to that person.) Tj ET
-0.98 0.99 1.00 rg 42.00 103.99 511.28 94.00 re f
-0.78 0.84 0.90 RG 0.80 w 42.00 103.99 511.28 94.00 re S
-0.01 0.52 0.78 rg 42.00 103.99 4.00 94.00 re f
-BT /F2 10.20 Tf 0.06 0.15 0.36 rg 54.00 182.99 Td (Step 4.2: Create Contact Groups under SmsNetwork -> Groups) Tj ET
-BT /F1 9.30 Tf 0.12 0.16 0.23 rg 54.00 167.99 Td (1. Expand SmsNetwork -> Groups in the Nav tree.) Tj ET
-BT /F1 9.30 Tf 0.12 0.16 0.23 rg 54.00 152.49 Td (2. Drag SmsGroup from the palette into Groups and name it \(e.g. MaintenanceTeam or NightShift\).) Tj ET
-BT /F1 9.30 Tf 0.12 0.16 0.23 rg 54.00 136.99 Td (3. Open its Property Sheet and expand Members: every contact in Contacts appears as a boolean checkbox.) Tj ET
-BT /F1 9.30 Tf 0.12 0.16 0.23 rg 54.00 121.49 Td (4. Set the checkboxes to true for all contacts belonging to this group and click Save.) Tj ET
-BT /F2 13.00 Tf 0.06 0.09 0.16 rg 42.00 75.99 Td (6. Step 5 - Configure Point Monitoring Rules \(SmsPointRule\)) Tj ET
-0.01 0.52 0.78 rg 42.00 70.99 511.28 1.80 re f
+0.98 0.99 1.00 rg 42.00 664.39 511.28 135.50 re f
+0.78 0.84 0.90 RG 0.80 w 42.00 664.39 511.28 135.50 re S
+0.01 0.52 0.78 rg 42.00 664.39 4.00 135.50 re f
+BT /F2 10.20 Tf 0.06 0.15 0.36 rg 54.00 784.89 Td (Option B \(Open-Source Cloud Relay\): SmsGateCloud \(capcom6/android-sms-gateway - Apache-2.0\)) Tj ET
+BT /F1 9.30 Tf 0.12 0.16 0.23 rg 54.00 769.89 Td (1. Install the open-source SMS Gateway for Android app \(github.com/capcom6/android-sms-gateway\), select) Tj ET
+BT /F1 9.30 Tf 0.12 0.16 0.23 rg 66.00 756.89 Td (Cloud Server mode \(https://api.sms-gate.app\), and toggle the server Online.) Tj ET
+BT /F1 9.30 Tf 0.12 0.16 0.23 rg 54.00 741.39 Td (2. Note the Username and Password displayed on the app home screen.) Tj ET
+BT /F1 9.30 Tf 0.12 0.16 0.23 rg 54.00 725.89 Td (3. Drag SmsGateCloud from Palette -> Gateways onto SmsService.) Tj ET
+BT /F1 9.30 Tf 0.12 0.16 0.23 rg 54.00 710.39 Td (4. Open its Property Sheet, enter the app Username and Password \(Basic Auth is pre-enabled\), and click) Tj ET
+BT /F1 9.30 Tf 0.12 0.16 0.23 rg 66.00 697.39 Td (Save.) Tj ET
+BT /F1 9.30 Tf 0.12 0.16 0.23 rg 54.00 681.89 Td (5. Right-click SmsGateCloud -> Actions -> Send Test SMS to verify delivery over the internet.) Tj ET
+0.98 0.99 1.00 rg 42.00 521.39 511.28 133.00 re f
+0.78 0.84 0.90 RG 0.80 w 42.00 521.39 511.28 133.00 re S
+0.01 0.52 0.78 rg 42.00 521.39 4.00 133.00 re f
+BT /F2 10.20 Tf 0.06 0.15 0.36 rg 54.00 639.39 Td (Option C \(Zero SIM Card & Zero Cost\): NtfyInternetAlert \(ntfy.sh - Open-Source Apache-2.0/GPLv2\)) Tj ET
+BT /F1 9.30 Tf 0.12 0.16 0.23 rg 54.00 624.39 Td (1. Install the free open-source ntfy app on Android/iOS \(or open https://ntfy.sh/app in a browser\) and) Tj ET
+BT /F1 9.30 Tf 0.12 0.16 0.23 rg 66.00 611.39 Td (subscribe to a unique topic name \(e.g. ignitechs-supervisor-alerts-2026\).) Tj ET
+BT /F1 9.30 Tf 0.12 0.16 0.23 rg 54.00 595.89 Td (2. Drag NtfyInternetAlert from Palette -> Gateways onto SmsService.) Tj ET
+BT /F1 9.30 Tf 0.12 0.16 0.23 rg 54.00 580.39 Td (3. In its Property Sheet, set Username to your topic name \(ignitechs-supervisor-alerts-2026\) and click) Tj ET
+BT /F1 9.30 Tf 0.12 0.16 0.23 rg 66.00 567.39 Td (Save.) Tj ET
+BT /F1 9.30 Tf 0.12 0.16 0.23 rg 54.00 551.89 Td (4. Right-click NtfyInternetAlert -> Actions -> Send Test SMS - subscribed phones immediately receive a) Tj ET
+BT /F1 9.30 Tf 0.12 0.16 0.23 rg 66.00 538.89 Td (high-priority mobile push alert over the internet without needing any SIM card or carrier account.) Tj ET
+BT /F2 10.50 Tf 0.12 0.23 0.54 rg 42.00 499.39 Td (Other Open-Source Internet & Network Gateways in Palette -> Gateways) Tj ET
+0.06 0.11 0.24 rg 42.00 474.39 511.28 20.00 re f
+BT /F2 8.80 Tf 1.00 1.00 1.00 rg 48.00 480.89 Td (Palette Component) Tj ET
+BT /F2 8.80 Tf 1.00 1.00 1.00 rg 175.82 480.89 Td (Platform) Tj ET
+BT /F2 8.80 Tf 1.00 1.00 1.00 rg 303.64 480.89 Td (Property Sheet Configuration) Tj ET
+0.82 0.86 0.91 RG 0.40 w 42.00 442.79 511.28 31.60 re S
+BT /F4 8.30 Tf 0.10 0.14 0.22 rg 48.00 462.39 Td (TraccarSmsCloud) Tj ET
+BT /F1 8.70 Tf 0.10 0.14 0.22 rg 175.82 462.39 Td (Traccar SMS Gateway) Tj ET
+BT /F1 8.70 Tf 0.10 0.14 0.22 rg 175.82 450.59 Td (\(Open-Source Apache-2.0\)) Tj ET
+BT /F1 8.70 Tf 0.10 0.14 0.22 rg 303.64 462.39 Td (URL is pre-set to https://www.traccar.org/sms/. Paste) Tj ET
+BT /F1 8.70 Tf 0.10 0.14 0.22 rg 303.64 450.59 Td (your Traccar Cloud API Token into Password.) Tj ET
+0.96 0.97 0.99 rg 42.00 411.19 511.28 31.60 re f
+0.82 0.86 0.91 RG 0.40 w 42.00 411.19 511.28 31.60 re S
+BT /F4 8.30 Tf 0.10 0.14 0.22 rg 48.00 430.79 Td (JasminHttpGateway) Tj ET
+BT /F1 8.70 Tf 0.10 0.14 0.22 rg 175.82 430.79 Td (Jasmin SMS Gateway) Tj ET
+BT /F1 8.70 Tf 0.10 0.14 0.22 rg 175.82 418.99 Td (\(Open-Source HTTP API\)) Tj ET
+BT /F1 8.70 Tf 0.10 0.14 0.22 rg 303.64 430.79 Td (Replace <jasmin-host> in Url with your Jasmin server) Tj ET
+BT /F1 8.70 Tf 0.10 0.14 0.22 rg 303.64 418.99 Td (IP/host and set Username and Password.) Tj ET
+0.82 0.86 0.91 RG 0.40 w 42.00 379.59 511.28 31.60 re S
+BT /F4 8.30 Tf 0.10 0.14 0.22 rg 48.00 399.19 Td (PlaySmsGateway) Tj ET
+BT /F1 8.70 Tf 0.10 0.14 0.22 rg 175.82 399.19 Td (playSMS Webservice) Tj ET
+BT /F1 8.70 Tf 0.10 0.14 0.22 rg 175.82 387.39 Td (\(Open-Source GPL\)) Tj ET
+BT /F1 8.70 Tf 0.10 0.14 0.22 rg 303.64 399.19 Td (Replace <server> in Url with your playSMS server, set) Tj ET
+BT /F1 8.70 Tf 0.10 0.14 0.22 rg 303.64 387.39 Td (Username, and set Password = Webservice Token.) Tj ET
+0.96 0.97 0.99 rg 42.00 347.99 511.28 31.60 re f
+0.82 0.86 0.91 RG 0.40 w 42.00 347.99 511.28 31.60 re S
+BT /F4 8.30 Tf 0.10 0.14 0.22 rg 48.00 367.59 Td (KannelGateway) Tj ET
+BT /F1 8.70 Tf 0.10 0.14 0.22 rg 175.82 367.59 Td (Kannel sendsms) Tj ET
+BT /F1 8.70 Tf 0.10 0.14 0.22 rg 175.82 355.79 Td (\(Open-Source HTTP\)) Tj ET
+BT /F1 8.70 Tf 0.10 0.14 0.22 rg 303.64 367.59 Td (Replace <kannel-host> in Url with your Kannel host) Tj ET
+BT /F1 8.70 Tf 0.10 0.14 0.22 rg 303.64 355.79 Td (\(:13013\) and set Username and Password.) Tj ET
+0.82 0.86 0.91 RG 0.40 w 42.00 316.39 511.28 31.60 re S
+BT /F4 8.30 Tf 0.10 0.14 0.22 rg 48.00 335.99 Td (SmppGateway) Tj ET
+BT /F1 8.70 Tf 0.10 0.14 0.22 rg 175.82 335.99 Td (SMPP v3.4 Client \(Jasmin /) Tj ET
+BT /F1 8.70 Tf 0.10 0.14 0.22 rg 175.82 324.19 Td (Kannel / Telecom\)) Tj ET
+BT /F1 8.70 Tf 0.10 0.14 0.22 rg 303.64 335.99 Td (Set Address \(host\), Port \(2775\), Use TLS, System ID,) Tj ET
+BT /F1 8.70 Tf 0.10 0.14 0.22 rg 303.64 324.19 Td (Password, and Sender ID \(e.g. BMS\).) Tj ET
+0.94 0.99 0.95 rg 42.00 239.99 511.28 66.40 re f
+0.09 0.64 0.29 rg 42.00 239.99 4.00 66.40 re f
+BT /F2 9.50 Tf 0.06 0.42 0.18 rg 54.00 292.39 Td (TIP - Automatic Multi-Gateway Failover) Tj ET
+BT /F1 9.20 Tf 0.12 0.16 0.23 rg 54.00 279.39 Td (You can drop multiple gateways under SmsService. Set Priority = 1 on your primary gateway \(e.g.) Tj ET
+BT /F1 9.20 Tf 0.12 0.16 0.23 rg 54.00 266.59 Td (TextBeeCloud\) and Priority = 2 on a backup gateway \(e.g. NtfyInternetAlert or SmppGateway\). If Gateway 1) Tj ET
+BT /F1 9.20 Tf 0.12 0.16 0.23 rg 54.00 253.79 Td (fails, SmsService automatically delivers the message via Gateway 2.) Tj ET
+BT /F2 13.00 Tf 0.06 0.09 0.16 rg 42.00 212.99 Td (5. Step 4 - Add Contacts & Groups \(Address Book\)) Tj ET
+0.01 0.52 0.78 rg 42.00 207.99 511.28 1.80 re f
+0.98 0.99 1.00 rg 42.00 62.49 511.28 135.50 re f
+0.78 0.84 0.90 RG 0.80 w 42.00 62.49 511.28 135.50 re S
+0.01 0.52 0.78 rg 42.00 62.49 4.00 135.50 re f
+BT /F2 10.20 Tf 0.06 0.15 0.36 rg 54.00 182.99 Td (Step 4.1: Add Contacts under SmsService -> Contacts) Tj ET
+BT /F1 9.30 Tf 0.12 0.16 0.23 rg 54.00 167.99 Td (1. In the Nav tree, expand SmsService -> Contacts.) Tj ET
+BT /F1 9.30 Tf 0.12 0.16 0.23 rg 54.00 152.49 Td (2. Drag SmsContact from the ignitechsSms palette into Contacts and name it \(e.g. ChiefEngineer or) Tj ET
+BT /F1 9.30 Tf 0.12 0.16 0.23 rg 66.00 139.49 Td (DutyTech\).) Tj ET
+BT /F1 9.30 Tf 0.12 0.16 0.23 rg 54.00 123.99 Td (3. Open its Property Sheet and set Phone Number in international format \(e.g. +971501234567\).) Tj ET
+BT /F1 9.30 Tf 0.12 0.16 0.23 rg 54.00 108.49 Td (4. Optional: Configure On Duty Days \(days of week\) and On Duty Time \(working hours\) when this contact) Tj ET
+BT /F1 9.30 Tf 0.12 0.16 0.23 rg 66.00 95.49 Td (should receive messages.) Tj ET
+BT /F1 9.30 Tf 0.12 0.16 0.23 rg 54.00 79.99 Td (5. Right-click the contact -> Actions -> Send Test SMS to verify delivery to that person.) Tj ET
 
 endstream
 endobj
@@ -270,82 +264,80 @@ endobj
 << /Type /Page /Parent 2 0 R /MediaBox [0 0 595.28 841.89] /Resources << /Font << /F1 3 0 R /F2 4 0 R /F3 5 0 R /F4 6 0 R >> >> /Contents 14 0 R >>
 endobj
 14 0 obj
-<< /Length 7028 >>
+<< /Length 6777 >>
 stream
 0.82 0.86 0.91 RG 0.6 w 42.00 34.00 m 553.28 34.00 l S
 BT /F1 8.00 Tf 0.40 0.45 0.53 rg 42.00 22.00 Td (Ignitechs Niagara 4 SMS Notification Driver \(ignitechsSms-rt v1.0.0\)  |  Step-by-Step User Guide) Tj ET
 BT /F2 8.00 Tf 0.40 0.45 0.53 rg 527.84 22.00 Td (Page 4) Tj ET
-0.98 0.99 1.00 rg 42.00 622.89 511.28 177.00 re f
-0.78 0.84 0.90 RG 0.80 w 42.00 622.89 511.28 177.00 re S
-0.01 0.52 0.78 rg 42.00 622.89 4.00 177.00 re f
-BT /F2 10.20 Tf 0.06 0.15 0.36 rg 54.00 784.89 Td (Step 5.1: Add a Point Rule under SmsNetwork -> Rules) Tj ET
-BT /F1 9.30 Tf 0.12 0.16 0.23 rg 54.00 769.89 Td (1. Expand SmsNetwork -> Rules in the Nav tree.) Tj ET
-BT /F1 9.30 Tf 0.12 0.16 0.23 rg 54.00 754.39 Td (2. From Palette -> Rules, drag SmsPointRule \(or pre-configured HighValueRule, StateRule, or OfflineRule\)) Tj ET
-BT /F1 9.30 Tf 0.12 0.16 0.23 rg 66.00 741.39 Td (into Rules.) Tj ET
-BT /F1 9.30 Tf 0.12 0.16 0.23 rg 54.00 725.89 Td (3. Open the rule Property Sheet, click the folder chooser on Source ORD, and select any Niagara point in) Tj ET
-BT /F1 9.30 Tf 0.12 0.16 0.23 rg 66.00 712.89 Td (the station.) Tj ET
-BT /F1 9.30 Tf 0.12 0.16 0.23 rg 54.00 697.39 Td (4. Select Condition, threshold \(Limit or Compare Value\), Active Delay, Repeat Interval, and Deadband.) Tj ET
-BT /F1 9.30 Tf 0.12 0.16 0.23 rg 54.00 681.89 Td (5. Expand Recipients and set checkboxes to true for the Groups and/or Contacts that should receive this) Tj ET
-BT /F1 9.30 Tf 0.12 0.16 0.23 rg 66.00 668.89 Td (rule's alerts.) Tj ET
-BT /F1 9.30 Tf 0.12 0.16 0.23 rg 54.00 653.39 Td (6. Click Save. Right-click the rule -> Actions -> Send Test SMS to test it immediately with the live) Tj ET
-BT /F1 9.30 Tf 0.12 0.16 0.23 rg 66.00 640.39 Td (point value.) Tj ET
-0.06 0.11 0.24 rg 42.00 592.89 511.28 20.00 re f
-BT /F2 8.80 Tf 1.00 1.00 1.00 rg 48.00 599.39 Td (Rule Property) Tj ET
-BT /F2 8.80 Tf 1.00 1.00 1.00 rg 175.82 599.39 Td (Description & Options) Tj ET
-0.82 0.86 0.91 RG 0.40 w 42.00 561.29 511.28 31.60 re S
-BT /F4 8.30 Tf 0.10 0.14 0.22 rg 48.00 580.89 Td (Source ORD) Tj ET
-BT /F1 8.70 Tf 0.10 0.14 0.22 rg 175.82 580.89 Td (ORD of any Niagara BControlPoint or status/value slot \(e.g.) Tj ET
-BT /F1 8.70 Tf 0.10 0.14 0.22 rg 175.82 569.09 Td (station:|slot:/Drivers/BacnetNetwork/AHU1/points/SAT\).) Tj ET
-0.96 0.97 0.99 rg 42.00 506.09 511.28 55.20 re f
-0.82 0.86 0.91 RG 0.40 w 42.00 506.09 511.28 55.20 re S
-BT /F4 8.30 Tf 0.10 0.14 0.22 rg 48.00 549.29 Td (Condition) Tj ET
-BT /F1 8.70 Tf 0.10 0.14 0.22 rg 175.82 549.29 Td (Greater than \(>\), Less than \(<\), Greater or equal \(>=\), Less or equal \(<=\), Outside) Tj ET
-BT /F1 8.70 Tf 0.10 0.14 0.22 rg 175.82 537.49 Td (range, Inside range, Value equals \(=\), Value not equals \(!=\), Is true / active, Is) Tj ET
-BT /F1 8.70 Tf 0.10 0.14 0.22 rg 175.82 525.69 Td (false / inactive, Any value change, Status is Alarm / Fault / Down / Overridden / Not) Tj ET
-BT /F1 8.70 Tf 0.10 0.14 0.22 rg 175.82 513.89 Td (OK.) Tj ET
-0.82 0.86 0.91 RG 0.40 w 42.00 474.49 511.28 31.60 re S
-BT /F4 8.30 Tf 0.10 0.14 0.22 rg 48.00 494.09 Td (Compare Value) Tj ET
-BT /F1 8.70 Tf 0.10 0.14 0.22 rg 175.82 494.09 Td (For Value equals / not equals: supports pipe or comma lists such as Fault|Trip|Alarm,) Tj ET
-BT /F1 8.70 Tf 0.10 0.14 0.22 rg 175.82 482.29 Td (On, true, Unoccupied.) Tj ET
-0.96 0.97 0.99 rg 42.00 442.89 511.28 31.60 re f
-0.82 0.86 0.91 RG 0.40 w 42.00 442.89 511.28 31.60 re S
-BT /F4 8.30 Tf 0.10 0.14 0.22 rg 48.00 462.49 Td (Active Delay) Tj ET
-BT /F1 8.70 Tf 0.10 0.14 0.22 rg 175.82 462.49 Td (Condition must remain true for this duration before sending an alert \(filters short) Tj ET
-BT /F1 8.70 Tf 0.10 0.14 0.22 rg 175.82 450.69 Td (sensor spikes\).) Tj ET
-0.82 0.86 0.91 RG 0.40 w 42.00 411.29 511.28 31.60 re S
-BT /F4 8.30 Tf 0.10 0.14 0.22 rg 48.00 430.89 Td (Repeat Interval) Tj ET
-BT /F1 8.70 Tf 0.10 0.14 0.22 rg 175.82 430.89 Td (Re-send reminder SMS at this interval while the condition stays active \(up to Max) Tj ET
-BT /F1 8.70 Tf 0.10 0.14 0.22 rg 175.82 419.09 Td (Repeats; 0 = send once\).) Tj ET
-0.96 0.97 0.99 rg 42.00 379.69 511.28 31.60 re f
-0.82 0.86 0.91 RG 0.40 w 42.00 379.69 511.28 31.60 re S
-BT /F4 8.30 Tf 0.10 0.14 0.22 rg 48.00 399.29 Td (Alert / Normal Text) Tj ET
-BT /F1 8.70 Tf 0.10 0.14 0.22 rg 175.82 399.29 Td (Supports {station}, {time}, {point}, {path}, {value}, {status}, {state}, {rule},) Tj ET
-BT /F1 8.70 Tf 0.10 0.14 0.22 rg 175.82 387.49 Td ({condition}, {limit}, {low}, {high}, {compare}, {description}.) Tj ET
-0.82 0.86 0.91 RG 0.40 w 42.00 359.89 511.28 19.80 re S
-BT /F4 8.30 Tf 0.10 0.14 0.22 rg 48.00 367.69 Td (Recipients) Tj ET
-BT /F1 8.70 Tf 0.10 0.14 0.22 rg 175.82 367.69 Td (Live auto-synced checklist of all Groups \(Group: <name>\) and Contacts in SmsNetwork.) Tj ET
-BT /F2 13.00 Tf 0.06 0.09 0.16 rg 42.00 331.89 Td (7. Step 6 - Use Wire-Sheet SmsSender & AlarmService SmsAlarmRecipient) Tj ET
-0.01 0.52 0.78 rg 42.00 326.89 511.28 1.80 re f
-0.98 0.99 1.00 rg 42.00 225.39 511.28 91.50 re f
-0.78 0.84 0.90 RG 0.80 w 42.00 225.39 511.28 91.50 re S
-0.01 0.52 0.78 rg 42.00 225.39 4.00 91.50 re f
-BT /F2 10.20 Tf 0.06 0.15 0.36 rg 54.00 301.89 Td (Step 6.1: Trigger SMS from Wire-Sheet Logic \(SmsSender\)) Tj ET
-BT /F1 9.30 Tf 0.12 0.16 0.23 rg 54.00 286.89 Td (1. Drag SmsSender from Palette -> Rules onto any Wire Sheet in your station.) Tj ET
-BT /F1 9.30 Tf 0.12 0.16 0.23 rg 54.00 271.39 Td (2. Link any boolean output slot to the Trigger input of SmsSender \(sends Message on false -> true rising) Tj ET
-BT /F1 9.30 Tf 0.12 0.16 0.23 rg 66.00 258.39 Td (edge\), or link an action to Send / Send Text.) Tj ET
-BT /F1 9.30 Tf 0.12 0.16 0.23 rg 54.00 242.89 Td (3. Open SmsSender Property Sheet, customize Message \({station}, {time}, {sender}\), and tick Recipients.) Tj ET
-0.98 0.99 1.00 rg 42.00 66.89 511.28 148.50 re f
-0.78 0.84 0.90 RG 0.80 w 42.00 66.89 511.28 148.50 re S
-0.01 0.52 0.78 rg 42.00 66.89 4.00 148.50 re f
-BT /F2 10.20 Tf 0.06 0.15 0.36 rg 54.00 200.39 Td (Step 6.2: Route Niagara Alarms to SMS \(SmsAlarmRecipient\)) Tj ET
-BT /F1 9.30 Tf 0.12 0.16 0.23 rg 54.00 185.39 Td (1. Open Station -> Config -> Services -> AlarmService \(Wire Sheet view\).) Tj ET
-BT /F1 9.30 Tf 0.12 0.16 0.23 rg 54.00 169.89 Td (2. Drag SmsAlarmRecipient from the ignitechsSms palette onto the AlarmService Wire Sheet.) Tj ET
-BT /F1 9.30 Tf 0.12 0.16 0.23 rg 54.00 154.39 Td (3. Link alarmEscalation1 from your AlarmClass \(e.g. defaultAlarmClass\) to routeAlarm on) Tj ET
-BT /F1 9.30 Tf 0.12 0.16 0.23 rg 66.00 141.39 Td (SmsAlarmRecipient.) Tj ET
-BT /F1 9.30 Tf 0.12 0.16 0.23 rg 54.00 125.89 Td (4. Open SmsAlarmRecipient Property Sheet, expand Recipients, and set checkboxes to true for the target) Tj ET
-BT /F1 9.30 Tf 0.12 0.16 0.23 rg 66.00 112.89 Td (Groups/Contacts.) Tj ET
-BT /F1 9.30 Tf 0.12 0.16 0.23 rg 54.00 97.39 Td (5. Customize Alarm Text \({station}, {state}, {source}, {msg}, {alarmClass}, {priority}, {value}, {time},) Tj ET
-BT /F1 9.30 Tf 0.12 0.16 0.23 rg 66.00 84.39 Td ({ackHint}\) and Ack Text.) Tj ET
+0.98 0.99 1.00 rg 42.00 705.89 511.28 94.00 re f
+0.78 0.84 0.90 RG 0.80 w 42.00 705.89 511.28 94.00 re S
+0.01 0.52 0.78 rg 42.00 705.89 4.00 94.00 re f
+BT /F2 10.20 Tf 0.06 0.15 0.36 rg 54.00 784.89 Td (Step 4.2: Create Contact Groups under SmsService -> Groups) Tj ET
+BT /F1 9.30 Tf 0.12 0.16 0.23 rg 54.00 769.89 Td (1. Expand SmsService -> Groups in the Nav tree.) Tj ET
+BT /F1 9.30 Tf 0.12 0.16 0.23 rg 54.00 754.39 Td (2. Drag SmsGroup from the palette into Groups and name it \(e.g. MaintenanceTeam or NightShift\).) Tj ET
+BT /F1 9.30 Tf 0.12 0.16 0.23 rg 54.00 738.89 Td (3. Open its Property Sheet and expand Members: every contact in Contacts appears as a boolean checkbox.) Tj ET
+BT /F1 9.30 Tf 0.12 0.16 0.23 rg 54.00 723.39 Td (4. Set the checkboxes to true for all contacts belonging to this group and click Save.) Tj ET
+BT /F2 13.00 Tf 0.06 0.09 0.16 rg 42.00 677.89 Td (6. Step 5 - Configure Point Monitoring Rules \(SmsPointRule\)) Tj ET
+0.01 0.52 0.78 rg 42.00 672.89 511.28 1.80 re f
+0.98 0.99 1.00 rg 42.00 485.89 511.28 177.00 re f
+0.78 0.84 0.90 RG 0.80 w 42.00 485.89 511.28 177.00 re S
+0.01 0.52 0.78 rg 42.00 485.89 4.00 177.00 re f
+BT /F2 10.20 Tf 0.06 0.15 0.36 rg 54.00 647.89 Td (Step 5.1: Add a Point Rule under SmsService -> Rules) Tj ET
+BT /F1 9.30 Tf 0.12 0.16 0.23 rg 54.00 632.89 Td (1. Expand SmsService -> Rules in the Nav tree.) Tj ET
+BT /F1 9.30 Tf 0.12 0.16 0.23 rg 54.00 617.39 Td (2. From Palette -> Rules, drag SmsPointRule \(or pre-configured HighValueRule, StateRule, or OfflineRule\)) Tj ET
+BT /F1 9.30 Tf 0.12 0.16 0.23 rg 66.00 604.39 Td (into Rules.) Tj ET
+BT /F1 9.30 Tf 0.12 0.16 0.23 rg 54.00 588.89 Td (3. Open the rule Property Sheet, click the folder chooser on Source ORD, and select any Niagara point in) Tj ET
+BT /F1 9.30 Tf 0.12 0.16 0.23 rg 66.00 575.89 Td (the station.) Tj ET
+BT /F1 9.30 Tf 0.12 0.16 0.23 rg 54.00 560.39 Td (4. Select Condition, threshold \(Limit or Compare Value\), Active Delay, Repeat Interval, and Deadband.) Tj ET
+BT /F1 9.30 Tf 0.12 0.16 0.23 rg 54.00 544.89 Td (5. Expand Recipients and set checkboxes to true for the Groups and/or Contacts that should receive this) Tj ET
+BT /F1 9.30 Tf 0.12 0.16 0.23 rg 66.00 531.89 Td (rule's alerts.) Tj ET
+BT /F1 9.30 Tf 0.12 0.16 0.23 rg 54.00 516.39 Td (6. Click Save. Right-click the rule -> Actions -> Send Test SMS to test it immediately with the live) Tj ET
+BT /F1 9.30 Tf 0.12 0.16 0.23 rg 66.00 503.39 Td (point value.) Tj ET
+0.06 0.11 0.24 rg 42.00 455.89 511.28 20.00 re f
+BT /F2 8.80 Tf 1.00 1.00 1.00 rg 48.00 462.39 Td (Rule Property) Tj ET
+BT /F2 8.80 Tf 1.00 1.00 1.00 rg 175.82 462.39 Td (Description & Options) Tj ET
+0.82 0.86 0.91 RG 0.40 w 42.00 424.29 511.28 31.60 re S
+BT /F4 8.30 Tf 0.10 0.14 0.22 rg 48.00 443.89 Td (Source ORD) Tj ET
+BT /F1 8.70 Tf 0.10 0.14 0.22 rg 175.82 443.89 Td (ORD of any Niagara BControlPoint or status/value slot \(e.g.) Tj ET
+BT /F1 8.70 Tf 0.10 0.14 0.22 rg 175.82 432.09 Td (station:|slot:/Drivers/BacnetNetwork/AHU1/points/SAT\).) Tj ET
+0.96 0.97 0.99 rg 42.00 369.09 511.28 55.20 re f
+0.82 0.86 0.91 RG 0.40 w 42.00 369.09 511.28 55.20 re S
+BT /F4 8.30 Tf 0.10 0.14 0.22 rg 48.00 412.29 Td (Condition) Tj ET
+BT /F1 8.70 Tf 0.10 0.14 0.22 rg 175.82 412.29 Td (Greater than \(>\), Less than \(<\), Greater or equal \(>=\), Less or equal \(<=\), Outside) Tj ET
+BT /F1 8.70 Tf 0.10 0.14 0.22 rg 175.82 400.49 Td (range, Inside range, Value equals \(=\), Value not equals \(!=\), Is true / active, Is) Tj ET
+BT /F1 8.70 Tf 0.10 0.14 0.22 rg 175.82 388.69 Td (false / inactive, Any value change, Status is Alarm / Fault / Down / Overridden / Not) Tj ET
+BT /F1 8.70 Tf 0.10 0.14 0.22 rg 175.82 376.89 Td (OK.) Tj ET
+0.82 0.86 0.91 RG 0.40 w 42.00 337.49 511.28 31.60 re S
+BT /F4 8.30 Tf 0.10 0.14 0.22 rg 48.00 357.09 Td (Compare Value) Tj ET
+BT /F1 8.70 Tf 0.10 0.14 0.22 rg 175.82 357.09 Td (For Value equals / not equals: supports pipe or comma lists such as Fault|Trip|Alarm,) Tj ET
+BT /F1 8.70 Tf 0.10 0.14 0.22 rg 175.82 345.29 Td (On, true, Unoccupied.) Tj ET
+0.96 0.97 0.99 rg 42.00 305.89 511.28 31.60 re f
+0.82 0.86 0.91 RG 0.40 w 42.00 305.89 511.28 31.60 re S
+BT /F4 8.30 Tf 0.10 0.14 0.22 rg 48.00 325.49 Td (Active Delay) Tj ET
+BT /F1 8.70 Tf 0.10 0.14 0.22 rg 175.82 325.49 Td (Condition must remain true for this duration before sending an alert \(filters short) Tj ET
+BT /F1 8.70 Tf 0.10 0.14 0.22 rg 175.82 313.69 Td (sensor spikes\).) Tj ET
+0.82 0.86 0.91 RG 0.40 w 42.00 274.29 511.28 31.60 re S
+BT /F4 8.30 Tf 0.10 0.14 0.22 rg 48.00 293.89 Td (Repeat Interval) Tj ET
+BT /F1 8.70 Tf 0.10 0.14 0.22 rg 175.82 293.89 Td (Re-send reminder SMS at this interval while the condition stays active \(up to Max) Tj ET
+BT /F1 8.70 Tf 0.10 0.14 0.22 rg 175.82 282.09 Td (Repeats; 0 = send once\).) Tj ET
+0.96 0.97 0.99 rg 42.00 242.69 511.28 31.60 re f
+0.82 0.86 0.91 RG 0.40 w 42.00 242.69 511.28 31.60 re S
+BT /F4 8.30 Tf 0.10 0.14 0.22 rg 48.00 262.29 Td (Alert / Normal Text) Tj ET
+BT /F1 8.70 Tf 0.10 0.14 0.22 rg 175.82 262.29 Td (Supports {station}, {time}, {point}, {path}, {value}, {status}, {state}, {rule},) Tj ET
+BT /F1 8.70 Tf 0.10 0.14 0.22 rg 175.82 250.49 Td ({condition}, {limit}, {low}, {high}, {compare}, {description}.) Tj ET
+0.82 0.86 0.91 RG 0.40 w 42.00 222.89 511.28 19.80 re S
+BT /F4 8.30 Tf 0.10 0.14 0.22 rg 48.00 230.69 Td (Recipients) Tj ET
+BT /F1 8.70 Tf 0.10 0.14 0.22 rg 175.82 230.69 Td (Live auto-synced checklist of all Groups \(Group: <name>\) and Contacts in SmsService.) Tj ET
+BT /F2 13.00 Tf 0.06 0.09 0.16 rg 42.00 194.89 Td (7. Step 6 - Use Wire-Sheet SmsSender & AlarmService SmsAlarmRecipient) Tj ET
+0.01 0.52 0.78 rg 42.00 189.89 511.28 1.80 re f
+0.98 0.99 1.00 rg 42.00 88.39 511.28 91.50 re f
+0.78 0.84 0.90 RG 0.80 w 42.00 88.39 511.28 91.50 re S
+0.01 0.52 0.78 rg 42.00 88.39 4.00 91.50 re f
+BT /F2 10.20 Tf 0.06 0.15 0.36 rg 54.00 164.89 Td (Step 6.1: Trigger SMS from Wire-Sheet Logic \(SmsSender\)) Tj ET
+BT /F1 9.30 Tf 0.12 0.16 0.23 rg 54.00 149.89 Td (1. Drag SmsSender from Palette -> Rules onto any Wire Sheet in your station.) Tj ET
+BT /F1 9.30 Tf 0.12 0.16 0.23 rg 54.00 134.39 Td (2. Link any boolean output slot to the Trigger input of SmsSender \(sends Message on false -> true rising) Tj ET
+BT /F1 9.30 Tf 0.12 0.16 0.23 rg 66.00 121.39 Td (edge\), or link an action to Send / Send Text.) Tj ET
+BT /F1 9.30 Tf 0.12 0.16 0.23 rg 54.00 105.89 Td (3. Open SmsSender Property Sheet, customize Message \({station}, {time}, {sender}\), and tick Recipients.) Tj ET
 
 endstream
 endobj
@@ -353,37 +345,54 @@ endobj
 << /Type /Page /Parent 2 0 R /MediaBox [0 0 595.28 841.89] /Resources << /Font << /F1 3 0 R /F2 4 0 R /F3 5 0 R /F4 6 0 R >> >> /Contents 16 0 R >>
 endobj
 16 0 obj
-<< /Length 2581 >>
+<< /Length 4366 >>
 stream
 0.82 0.86 0.91 RG 0.6 w 42.00 34.00 m 553.28 34.00 l S
 BT /F1 8.00 Tf 0.40 0.45 0.53 rg 42.00 22.00 Td (Ignitechs Niagara 4 SMS Notification Driver \(ignitechsSms-rt v1.0.0\)  |  Step-by-Step User Guide) Tj ET
 BT /F2 8.00 Tf 0.40 0.45 0.53 rg 527.84 22.00 Td (Page 5) Tj ET
-BT /F2 13.00 Tf 0.06 0.09 0.16 rg 42.00 781.89 Td (8. Step 7 - Verification, Diagnostics & Troubleshooting) Tj ET
-0.01 0.52 0.78 rg 42.00 776.89 511.28 1.80 re f
-BT /F1 9.60 Tf 0.12 0.16 0.23 rg 42.00 756.89 Td (Open the Property Sheet of SmsNetwork at any time to inspect Queue Size, Total Sent, Total Failed, Last) Tj ET
-BT /F1 9.60 Tf 0.12 0.16 0.23 rg 42.00 743.39 Td (Sent Time, Last Error, and the live 50-line Activity log.) Tj ET
-0.06 0.11 0.24 rg 42.00 715.89 511.28 20.00 re f
-BT /F2 8.80 Tf 1.00 1.00 1.00 rg 48.00 722.39 Td (Diagnostic Message) Tj ET
-BT /F2 8.80 Tf 1.00 1.00 1.00 rg 211.61 722.39 Td (Resolution) Tj ET
-0.82 0.86 0.91 RG 0.40 w 42.00 684.29 511.28 31.60 re S
-BT /F4 8.30 Tf 0.10 0.14 0.22 rg 48.00 703.89 Td (no reachable recipients) Tj ET
-BT /F1 8.70 Tf 0.10 0.14 0.22 rg 211.61 703.89 Td (Tick at least one Contact or Group under Recipients, verify Phone Number is) Tj ET
-BT /F1 8.70 Tf 0.10 0.14 0.22 rg 211.61 692.09 Td (valid \(+countrycode...\), and check On Duty Days / Time.) Tj ET
-0.96 0.97 0.99 rg 42.00 652.69 511.28 31.60 re f
-0.82 0.86 0.91 RG 0.40 w 42.00 652.69 511.28 31.60 re S
-BT /F4 8.30 Tf 0.10 0.14 0.22 rg 48.00 672.29 Td (HTTP 401 / HTTP 403) Tj ET
-BT /F1 8.70 Tf 0.10 0.14 0.22 rg 211.61 672.29 Td (Check Username \(Device ID / Account\) and Password \(API Key / Token\) on the) Tj ET
-BT /F1 8.70 Tf 0.10 0.14 0.22 rg 211.61 660.49 Td (HttpGateway Property Sheet.) Tj ET
-0.82 0.86 0.91 RG 0.40 w 42.00 609.29 511.28 43.40 re S
-BT /F4 8.30 Tf 0.10 0.14 0.22 rg 48.00 640.69 Td (suppressed duplicate) Tj ET
-BT /F1 8.70 Tf 0.10 0.14 0.22 rg 211.61 640.69 Td (Identical message text was sent to the same number within Duplicate) Tj ET
-BT /F1 8.70 Tf 0.10 0.14 0.22 rg 211.61 628.89 Td (Suppression \(default 2 min\). Lower Duplicate Suppression on SmsNetwork when) Tj ET
-BT /F1 8.70 Tf 0.10 0.14 0.22 rg 211.61 617.09 Td (testing.) Tj ET
-0.96 0.97 0.99 rg 42.00 577.69 511.28 31.60 re f
-0.82 0.86 0.91 RG 0.40 w 42.00 577.69 511.28 31.60 re S
-BT /F4 8.30 Tf 0.10 0.14 0.22 rg 48.00 597.29 Td (Sync Recipients action) Tj ET
-BT /F1 8.70 Tf 0.10 0.14 0.22 rg 211.61 597.29 Td (If contacts or groups were edited while the station was offline, right-click) Tj ET
-BT /F1 8.70 Tf 0.10 0.14 0.22 rg 211.61 585.49 Td (SmsNetwork -> Actions -> Sync Recipients.) Tj ET
+0.98 0.99 1.00 rg 42.00 651.39 511.28 148.50 re f
+0.78 0.84 0.90 RG 0.80 w 42.00 651.39 511.28 148.50 re S
+0.01 0.52 0.78 rg 42.00 651.39 4.00 148.50 re f
+BT /F2 10.20 Tf 0.06 0.15 0.36 rg 54.00 784.89 Td (Step 6.2: Route Niagara Alarms to SMS \(SmsAlarmRecipient\)) Tj ET
+BT /F1 9.30 Tf 0.12 0.16 0.23 rg 54.00 769.89 Td (1. Open Station -> Config -> Services -> AlarmService \(Wire Sheet view\).) Tj ET
+BT /F1 9.30 Tf 0.12 0.16 0.23 rg 54.00 754.39 Td (2. Drag SmsAlarmRecipient from the ignitechsSms palette onto the AlarmService Wire Sheet.) Tj ET
+BT /F1 9.30 Tf 0.12 0.16 0.23 rg 54.00 738.89 Td (3. Link alarmEscalation1 from your AlarmClass \(e.g. defaultAlarmClass\) to routeAlarm on) Tj ET
+BT /F1 9.30 Tf 0.12 0.16 0.23 rg 66.00 725.89 Td (SmsAlarmRecipient.) Tj ET
+BT /F1 9.30 Tf 0.12 0.16 0.23 rg 54.00 710.39 Td (4. Open SmsAlarmRecipient Property Sheet, expand Recipients, and set checkboxes to true for the target) Tj ET
+BT /F1 9.30 Tf 0.12 0.16 0.23 rg 66.00 697.39 Td (Groups/Contacts.) Tj ET
+BT /F1 9.30 Tf 0.12 0.16 0.23 rg 54.00 681.89 Td (5. Customize Alarm Text \({station}, {state}, {source}, {msg}, {alarmClass}, {priority}, {value}, {time},) Tj ET
+BT /F1 9.30 Tf 0.12 0.16 0.23 rg 66.00 668.89 Td ({ackHint}\) and Ack Text.) Tj ET
+BT /F2 13.00 Tf 0.06 0.09 0.16 rg 42.00 623.39 Td (8. Step 7 - Verification, Diagnostics & Troubleshooting) Tj ET
+0.01 0.52 0.78 rg 42.00 618.39 511.28 1.80 re f
+BT /F1 9.60 Tf 0.12 0.16 0.23 rg 42.00 598.39 Td (Open the Property Sheet of SmsService at any time to inspect Queue Size, Total Sent, Total Failed, Last) Tj ET
+BT /F1 9.60 Tf 0.12 0.16 0.23 rg 42.00 584.89 Td (Sent Time, Last Error, and the live 50-line Activity log.) Tj ET
+0.06 0.11 0.24 rg 42.00 557.39 511.28 20.00 re f
+BT /F2 8.80 Tf 1.00 1.00 1.00 rg 48.00 563.89 Td (Diagnostic Message) Tj ET
+BT /F2 8.80 Tf 1.00 1.00 1.00 rg 211.61 563.89 Td (Resolution) Tj ET
+0.82 0.86 0.91 RG 0.40 w 42.00 513.99 511.28 43.40 re S
+BT /F4 8.30 Tf 0.10 0.14 0.22 rg 48.00 545.39 Td (Missing module ignitechsSms) Tj ET
+BT /F1 8.70 Tf 0.10 0.14 0.22 rg 211.61 545.39 Td (Import certs\\IgnitechsRootCA.pem into Platform -> Certificate Management ->) Tj ET
+BT /F1 8.70 Tf 0.10 0.14 0.22 rg 211.61 533.59 Td (User Trust Store \(not only My Host\), verify ignitechsSms-rt.jar is in) Tj ET
+BT /F1 8.70 Tf 0.10 0.14 0.22 rg 211.61 521.79 Td (C:\\Niagara\\Niagara-4.x.x.x\\modules\\, and restart the Station.) Tj ET
+0.96 0.97 0.99 rg 42.00 482.39 511.28 31.60 re f
+0.82 0.86 0.91 RG 0.40 w 42.00 482.39 511.28 31.60 re S
+BT /F4 8.30 Tf 0.10 0.14 0.22 rg 48.00 501.99 Td (no reachable recipients) Tj ET
+BT /F1 8.70 Tf 0.10 0.14 0.22 rg 211.61 501.99 Td (Tick at least one Contact or Group under Recipients, verify Phone Number is) Tj ET
+BT /F1 8.70 Tf 0.10 0.14 0.22 rg 211.61 490.19 Td (valid \(+countrycode...\), and check On Duty Days / Time.) Tj ET
+0.82 0.86 0.91 RG 0.40 w 42.00 450.79 511.28 31.60 re S
+BT /F4 8.30 Tf 0.10 0.14 0.22 rg 48.00 470.39 Td (HTTP 401 / HTTP 403) Tj ET
+BT /F1 8.70 Tf 0.10 0.14 0.22 rg 211.61 470.39 Td (Check Username \(Device ID / Account\) and Password \(API Key / Token\) on the) Tj ET
+BT /F1 8.70 Tf 0.10 0.14 0.22 rg 211.61 458.59 Td (HttpGateway Property Sheet.) Tj ET
+0.96 0.97 0.99 rg 42.00 407.39 511.28 43.40 re f
+0.82 0.86 0.91 RG 0.40 w 42.00 407.39 511.28 43.40 re S
+BT /F4 8.30 Tf 0.10 0.14 0.22 rg 48.00 438.79 Td (suppressed duplicate) Tj ET
+BT /F1 8.70 Tf 0.10 0.14 0.22 rg 211.61 438.79 Td (Identical message text was sent to the same number within Duplicate) Tj ET
+BT /F1 8.70 Tf 0.10 0.14 0.22 rg 211.61 426.99 Td (Suppression \(default 2 min\). Lower Duplicate Suppression on SmsService when) Tj ET
+BT /F1 8.70 Tf 0.10 0.14 0.22 rg 211.61 415.19 Td (testing.) Tj ET
+0.82 0.86 0.91 RG 0.40 w 42.00 375.79 511.28 31.60 re S
+BT /F4 8.30 Tf 0.10 0.14 0.22 rg 48.00 395.39 Td (Sync Recipients action) Tj ET
+BT /F1 8.70 Tf 0.10 0.14 0.22 rg 211.61 395.39 Td (If contacts or groups were edited while the station was offline, right-click) Tj ET
+BT /F1 8.70 Tf 0.10 0.14 0.22 rg 211.61 383.59 Td (SmsService -> Actions -> Sync Recipients.) Tj ET
 
 endstream
 endobj
@@ -398,16 +407,16 @@ xref
 0000000444 00000 n 
 0000000544 00000 n 
 0000000706 00000 n 
-0000006455 00000 n 
-0000006618 00000 n 
-0000014220 00000 n 
-0000014384 00000 n 
-0000021917 00000 n 
-0000022081 00000 n 
-0000029162 00000 n 
-0000029326 00000 n 
+0000006956 00000 n 
+0000007119 00000 n 
+0000013832 00000 n 
+0000013996 00000 n 
+0000021752 00000 n 
+0000021916 00000 n 
+0000028746 00000 n 
+0000028910 00000 n 
 trailer
 << /Size 17 /Root 1 0 R >>
 startxref
-31960
+33329
 %%EOF

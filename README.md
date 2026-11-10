@@ -44,17 +44,17 @@ Place one or more gateways inside `SmsNetwork` (or `SmsGatewayFolder`). Gateways
 
 ## Installation in Niagara 4 Supervisor / Workbench
 
-1. **Import the Ignitechs Root CA Certificate**:
-   - Open Niagara Workbench -> **Tools** -> **Certificate Management** -> **User Trust Store** (and Platform/Station Trust Store if signed module verification is enforced).
-   - Click **Import** and select [`certs/IgnitechsRootCA.pem`](certs/IgnitechsRootCA.pem) (or [`certs/IgnitechsRootCA.cer`](certs/IgnitechsRootCA.cer)).
+1. **Import the Ignitechs Root CA Certificate (Workbench & Platform)**:
+   - **Workbench Trust Store (`My Host`)**: Open Niagara Workbench -> **My Host -> Certificate Management -> User Trust Store** (or **Tools -> Certificate Management -> User Trust Store**), click **Import**, and select [`certs/IgnitechsRootCA.pem`](certs/IgnitechsRootCA.pem) (or [`certs/IgnitechsRootCA.cer`](certs/IgnitechsRootCA.cer)).
+   - **Platform / Station Trust Store (`Platform`)**: In the Nav tree, expand **Platform -> Certificate Management -> User Trust Store** (or **Station -> Config -> Services -> PlatformServices -> CertManagerService -> User Trust Store**), click **Import**, and select [`certs/IgnitechsRootCA.pem`](certs/IgnitechsRootCA.pem).
 2. **Install the Module JAR**:
-   - Copy [`dist/ignitechsSms-rt.jar`](dist/ignitechsSms-rt.jar) to your Niagara `modules` directory (e.g., `C:\Niagara\Niagara-4.14.0.162\modules\ignitechsSms-rt.jar`), or run:
+   - Copy [`dist/ignitechsSms-rt.jar`](dist/ignitechsSms-rt.jar) to your Niagara `modules` directory (e.g., `C:\Niagara\Niagara-4.x.x.x\modules\ignitechsSms-rt.jar`), or run:
      ```powershell
      .\build.ps1 -Install
      ```
    - Restart the Niagara Station / Workbench.
 3. **Add to Station**:
-   - Open the **`ignitechsSms`** palette in Workbench and drag **`SmsNetwork`** under `station:|slot:/Drivers`, or drag **`SmsAlarmRecipient`** under `station:|slot:/Services/AlarmService`.
+   - Open the **`ignitechsSms`** palette in Workbench and drag **`SmsService`** under `station:|slot:/Services` (or **`SmsNetwork`** under `station:|slot:/Drivers`), or drag **`SmsAlarmRecipient`** under `station:|slot:/Services/AlarmService`.
 
 ---
 
@@ -105,6 +105,6 @@ Place one or more gateways inside `SmsNetwork` (or `SmsGatewayFolder`). Gateways
 # Full build, test, package, sign, and verify with Niagara nverify.exe
 .\build.ps1
 
-# Build, sign, and copy dist\ignitechsSms-rt.jar into C:\Niagara\Niagara-4.14.0.162\modules
+# Build, sign, and copy dist\ignitechsSms-rt.jar into C:\Niagara\Niagara-4.x.x.x\modules
 .\build.ps1 -Install
 ```

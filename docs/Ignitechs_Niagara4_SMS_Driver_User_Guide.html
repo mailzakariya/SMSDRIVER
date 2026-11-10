@@ -233,21 +233,19 @@ Station (station:|slot:/)
   <div class="step-card">
     <h3>Step 1.1: Copy <code>ignitechsSms-rt.jar</code> to Niagara Modules</h3>
     <ol>
-      <li>Copy <code>D:\PYTHON\SMSDRIVER\dist\ignitechsSms-rt.jar</code> into your Niagara modules folder:<br/>
-        <code>C:\Niagara\Niagara-4.14.0.162\modules\ignitechsSms-rt.jar</code><br/>
-        <em>(Already installed on this PC, or run <code>.\build.ps1 -Install</code> from PowerShell as Administrator.)</em>
+      <li>Copy <code>dist\ignitechsSms-rt.jar</code> from the module package folder into your Niagara installation's modules directory:<br/>
+        <code>C:\Niagara\Niagara-4.x.x.x\modules\ignitechsSms-rt.jar</code>
       </li>
-      <li>Close and restart <strong>Niagara Workbench</strong> and your <strong>Niagara Station</strong> so the module is loaded.</li>
+      <li>Close and restart <strong>Niagara Workbench</strong> and your <strong>Niagara Station</strong> (or Platform Daemon) so the module is loaded.</li>
     </ol>
   </div>
 
   <div class="step-card">
-    <h3>Step 1.2: Import the Ignitechs Root CA Certificate</h3>
+    <h3>Step 1.2: Import the Ignitechs Root CA Certificate (Workbench &amp; Platform)</h3>
     <ol>
-      <li>In Niagara Workbench, click <strong>Tools &rarr; Certificate Management</strong> from the top menu.</li>
-      <li>Select the <strong>User Trust Store</strong> tab (and <strong>Platform / Station Trust Store</strong> if connecting to a remote Supervisor/JACE).</li>
-      <li>Click <strong>Import</strong> at the bottom of the dialog.</li>
-      <li>Browse to and select: <code>D:\PYTHON\SMSDRIVER\certs\IgnitechsRootCA.pem</code> (or <code>IgnitechsRootCA.cer</code>) and click <strong>OK</strong>.</li>
+      <li><strong>Workbench Trust Store (My Host):</strong> In Niagara Workbench, open <strong>My Host &rarr; Certificate Management</strong> (or <strong>Tools &rarr; Certificate Management</strong>), select the <strong>User Trust Store</strong> tab, click <strong>Import</strong>, select <code>certs\IgnitechsRootCA.pem</code> (or <code>IgnitechsRootCA.cer</code>) from the module package folder, and click <strong>OK</strong>.</li>
+      <li><strong>Platform / Station Trust Store (Platform):</strong> In the Nav tree, expand <strong>Platform &rarr; Certificate Management</strong> (or <strong>Station &rarr; Config &rarr; Services &rarr; PlatformServices &rarr; CertManagerService</strong>), open the <strong>User Trust Store</strong> tab, click <strong>Import</strong>, select <code>certs\IgnitechsRootCA.pem</code>, and click <strong>OK</strong>.</li>
+      <li>Restart your Niagara Station from <strong>Platform &rarr; Application Director</strong> so the station trusts the signed module when adding <code>SmsService</code>.</li>
     </ol>
   </div>
 
