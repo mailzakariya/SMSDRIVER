@@ -1,0 +1,364 @@
+%PDF-1.4
+%‚„œ”
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [ 7 0 R 9 0 R 11 0 R 13 0 R ] /Count 4 >>
+endobj
+3 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica /Encoding /WinAnsiEncoding >>
+endobj
+4 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold /Encoding /WinAnsiEncoding >>
+endobj
+5 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Courier /Encoding /WinAnsiEncoding >>
+endobj
+6 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Courier-Bold /Encoding /WinAnsiEncoding >>
+endobj
+7 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595.28 841.89] /Resources << /Font << /F1 3 0 R /F2 4 0 R /F3 5 0 R /F4 6 0 R >> >> /Contents 8 0 R >>
+endobj
+8 0 obj
+<< /Length 5707 >>
+stream
+0.82 0.86 0.91 RG 0.6 w 42.00 34.00 m 553.28 34.00 l S
+BT /F1 8.00 Tf 0.40 0.45 0.53 rg 42.00 22.00 Td (TecumSMS Niagara 4 Notification Service & Driver \(TecumSMS-rt v1.0.0\)  |  Step-by-Step User Guide) Tj ET
+BT /F2 8.00 Tf 0.40 0.45 0.53 rg 527.84 22.00 Td (Page 1) Tj ET
+0.06 0.11 0.24 rg 42.00 687.89 511.28 112.00 re f
+0.01 0.52 0.78 rg 42.00 687.89 6.00 112.00 re f
+BT /F2 8.50 Tf 0.56 0.80 0.99 rg 60.00 779.89 Td (NIAGARA 4 SUPERVISOR & JACE  |  OFFICIAL STEP-BY-STEP USER GUIDE) Tj ET
+BT /F2 18.00 Tf 1.00 1.00 1.00 rg 60.00 756.89 Td (TecumSMS Notification Service & Driver \(TecumSMS-rt\)) Tj ET
+BT /F1 9.60 Tf 0.86 0.91 0.96 rg 60.00 738.89 Td (SMS Subscription Website API Keys, Niagara Email-to-SMS, Open-Source Gateways, Point Rules & Alarms) Tj ET
+0.11 0.20 0.38 rg 60.00 699.89 479.28 28.00 re f
+BT /F2 8.20 Tf 0.58 0.77 0.99 rg 68.00 710.89 Td (Module: TecumSMS-rt.jar     Vendor: Tecum     Version: 1.0.0     Palette Symbol: tsms     Target: Niagara 4.0 - 4.14+) Tj ET
+BT /F2 13.00 Tf 0.06 0.09 0.16 rg 42.00 653.89 Td (1. Architecture & Component Overview) Tj ET
+0.01 0.52 0.78 rg 42.00 648.89 511.28 1.80 re f
+BT /F1 9.60 Tf 0.12 0.16 0.23 rg 42.00 628.89 Td (The TecumSMS Notification Service & Driver \(TecumSMS-rt\) adds native internet SMS subscription APIs,) Tj ET
+BT /F1 9.60 Tf 0.12 0.16 0.23 rg 42.00 615.39 Td (Niagara Email-to-SMS, and network SMS alerting to Niagara 4 Supervisor and JACE stations without requiring) Tj ET
+BT /F1 9.60 Tf 0.12 0.16 0.23 rg 42.00 601.89 Td (any serial port modem hardware. Drop SmsService directly under Station -> Config -> Services) Tj ET
+BT /F1 9.60 Tf 0.12 0.16 0.23 rg 42.00 588.39 Td (\(recommended\), or drop SmsNetwork under Station -> Config -> Drivers.) Tj ET
+0.08 0.11 0.18 rg 42.00 422.89 511.28 158.00 re f
+BT /F3 8.40 Tf 0.92 0.95 0.99 rg 52.00 566.89 Td (Station \(station:|slot:/\)) Tj ET
+BT /F3 8.40 Tf 0.92 0.95 0.99 rg 52.00 554.89 Td ( +-- Services) Tj ET
+BT /F3 8.40 Tf 0.92 0.95 0.99 rg 52.00 542.89 Td ( |    +-- SmsService \(tsms:SmsService - or SmsNetwork under Drivers\)) Tj ET
+BT /F3 8.40 Tf 0.92 0.95 0.99 rg 52.00 530.89 Td ( |    |    +-- [Built-in Subscription Website API Key & Niagara Email-to-SMS options]) Tj ET
+BT /F3 8.40 Tf 0.92 0.95 0.99 rg 52.00 518.89 Td ( |    |    +-- TextBeeCloud      \(tsms:HttpGateway - Open-Source Internet SMS\)) Tj ET
+BT /F3 8.40 Tf 0.92 0.95 0.99 rg 52.00 506.89 Td ( |    |    +-- EmailSmsGateway   \(tsms:EmailSmsGateway - Niagara EmailService / SMTP SMS\)) Tj ET
+BT /F3 8.40 Tf 0.92 0.95 0.99 rg 52.00 494.89 Td ( |    |    +-- Contacts          \(tsms:SmsContactFolder - Phone numbers & On-Duty hours\)) Tj ET
+BT /F3 8.40 Tf 0.92 0.95 0.99 rg 52.00 482.89 Td ( |    |    +-- Groups            \(tsms:SmsGroupFolder - Named teams e.g. Maintenance\)) Tj ET
+BT /F3 8.40 Tf 0.92 0.95 0.99 rg 52.00 470.89 Td ( |    |    +-- Rules             \(tsms:SmsRuleFolder - Point rules & Wire-sheet senders\)) Tj ET
+BT /F3 8.40 Tf 0.92 0.95 0.99 rg 52.00 458.89 Td ( |    +-- EmailService           \(Niagara EmailService used when Email-to-SMS is enabled\)) Tj ET
+BT /F3 8.40 Tf 0.92 0.95 0.99 rg 52.00 446.89 Td ( |    +-- AlarmService) Tj ET
+BT /F3 8.40 Tf 0.92 0.95 0.99 rg 52.00 434.89 Td ( |         +-- SmsAlarmRecipient \(tsms:SmsAlarmRecipient - Niagara AlarmClass router\)) Tj ET
+BT /F2 13.00 Tf 0.06 0.09 0.16 rg 42.00 394.89 Td (2. Step 1 - Install TecumSMS-rt.jar & Trust the Certificate) Tj ET
+0.01 0.52 0.78 rg 42.00 389.89 511.28 1.80 re f
+0.98 0.99 1.00 rg 42.00 290.89 511.28 89.00 re f
+0.78 0.84 0.90 RG 0.80 w 42.00 290.89 511.28 89.00 re S
+0.01 0.52 0.78 rg 42.00 290.89 4.00 89.00 re f
+BT /F2 10.20 Tf 0.06 0.15 0.36 rg 54.00 364.89 Td (Step 1.1: Install TecumSMS-rt.jar into Niagara 4) Tj ET
+BT /F1 9.30 Tf 0.12 0.16 0.23 rg 54.00 349.89 Td (1. Copy dist\\TecumSMS-rt.jar from the module package folder into your Niagara installation's modules) Tj ET
+BT /F1 9.30 Tf 0.12 0.16 0.23 rg 66.00 336.89 Td (directory \(for example, C:\\Niagara\\Niagara-4.x.x.x\\modules\\TecumSMS-rt.jar\).) Tj ET
+BT /F1 9.30 Tf 0.12 0.16 0.23 rg 54.00 321.39 Td (2. Restart Niagara Workbench and your Niagara Station \(or Platform Daemon\) so the module and palette are) Tj ET
+BT /F1 9.30 Tf 0.12 0.16 0.23 rg 66.00 308.39 Td (loaded.) Tj ET
+0.98 0.99 1.00 rg 42.00 137.39 511.28 143.50 re f
+0.78 0.84 0.90 RG 0.80 w 42.00 137.39 511.28 143.50 re S
+0.01 0.52 0.78 rg 42.00 137.39 4.00 143.50 re f
+BT /F2 10.20 Tf 0.06 0.15 0.36 rg 54.00 265.89 Td (Step 1.2: Import TecumRootCA.pem into Both Workbench & Platform Trust Stores) Tj ET
+BT /F1 9.30 Tf 0.12 0.16 0.23 rg 54.00 250.89 Td (1. Workbench Trust Store \(My Host\): In Niagara Workbench, open My Host -> Certificate Management \(or) Tj ET
+BT /F1 9.30 Tf 0.12 0.16 0.23 rg 66.00 237.89 Td (Tools -> Certificate Management\), select the User Trust Store tab, click Import, select) Tj ET
+BT /F1 9.30 Tf 0.12 0.16 0.23 rg 66.00 224.89 Td (certs\\TecumRootCA.pem \(or TecumRootCA.cer\) from the module package folder, and click OK.) Tj ET
+BT /F1 9.30 Tf 0.12 0.16 0.23 rg 54.00 209.39 Td (2. Platform / Station Trust Store \(Platform\): In the Nav tree, expand Platform -> Certificate Management) Tj ET
+BT /F1 9.30 Tf 0.12 0.16 0.23 rg 66.00 196.39 Td (\(or Station -> Config -> Services -> PlatformServices -> CertManagerService\), open the User Trust Store) Tj ET
+BT /F1 9.30 Tf 0.12 0.16 0.23 rg 66.00 183.39 Td (tab, click Import, select certs\\TecumRootCA.pem, and click OK.) Tj ET
+BT /F1 9.30 Tf 0.12 0.16 0.23 rg 54.00 167.89 Td (3. Restart your Niagara Station from Platform -> Application Director so the station trusts) Tj ET
+BT /F1 9.30 Tf 0.12 0.16 0.23 rg 66.00 154.89 Td (TecumSMS-rt.jar when adding SmsService.) Tj ET
+
+endstream
+endobj
+9 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595.28 841.89] /Resources << /Font << /F1 3 0 R /F2 4 0 R /F3 5 0 R /F4 6 0 R >> >> /Contents 10 0 R >>
+endobj
+10 0 obj
+<< /Length 7038 >>
+stream
+0.82 0.86 0.91 RG 0.6 w 42.00 34.00 m 553.28 34.00 l S
+BT /F1 8.00 Tf 0.40 0.45 0.53 rg 42.00 22.00 Td (TecumSMS Niagara 4 Notification Service & Driver \(TecumSMS-rt v1.0.0\)  |  Step-by-Step User Guide) Tj ET
+BT /F2 8.00 Tf 0.40 0.45 0.53 rg 527.84 22.00 Td (Page 2) Tj ET
+0.98 0.99 1.00 rg 42.00 723.89 511.28 76.00 re f
+0.78 0.84 0.90 RG 0.80 w 42.00 723.89 511.28 76.00 re S
+0.01 0.52 0.78 rg 42.00 723.89 4.00 76.00 re f
+BT /F2 10.20 Tf 0.06 0.15 0.36 rg 54.00 784.89 Td (Step 1.3: Open the TecumSMS Palette in Workbench) Tj ET
+BT /F1 9.30 Tf 0.12 0.16 0.23 rg 54.00 769.89 Td (1. In Niagara Workbench, open the Palette side bar \(Window -> Side Bars -> Palette\).) Tj ET
+BT /F1 9.30 Tf 0.12 0.16 0.23 rg 54.00 754.39 Td (2. Click the Open Palette folder icon, search for TecumSMS, select TecumSMS, and click OK. At the top of) Tj ET
+BT /F1 9.30 Tf 0.12 0.16 0.23 rg 66.00 741.39 Td (the palette you will see SmsService \(for Services\) and SmsNetwork \(for Drivers\).) Tj ET
+BT /F2 13.00 Tf 0.06 0.09 0.16 rg 42.00 695.89 Td (3. Step 2 - Configure SmsService \(Subscription API Key & Niagara Email-to-SMS\)) Tj ET
+0.01 0.52 0.78 rg 42.00 690.89 511.28 1.80 re f
+0.98 0.99 1.00 rg 42.00 576.39 511.28 104.50 re f
+0.78 0.84 0.90 RG 0.80 w 42.00 576.39 511.28 104.50 re S
+0.01 0.52 0.78 rg 42.00 576.39 4.00 104.50 re f
+BT /F2 10.20 Tf 0.06 0.15 0.36 rg 54.00 665.89 Td (Step 2.1: Add SmsService to Station -> Config -> Services) Tj ET
+BT /F1 9.30 Tf 0.12 0.16 0.23 rg 54.00 650.89 Td (1. In the Nav tree, expand Station \(<StationName>\) -> Config -> Services.) Tj ET
+BT /F1 9.30 Tf 0.12 0.16 0.23 rg 54.00 635.39 Td (2. Drag SmsService from the top of the TecumSMS palette and drop it onto Services \(or drag SmsNetwork) Tj ET
+BT /F1 9.30 Tf 0.12 0.16 0.23 rg 66.00 622.39 Td (onto Config -> Drivers\).) Tj ET
+BT /F1 9.30 Tf 0.12 0.16 0.23 rg 54.00 606.89 Td (3. Double-click SmsService to open its Property Sheet. You can enter your SMS Subscription Website API) Tj ET
+BT /F1 9.30 Tf 0.12 0.16 0.23 rg 66.00 593.89 Td (Key or enable Niagara Email-to-SMS directly on the SmsService Property Sheet:) Tj ET
+0.06 0.11 0.24 rg 42.00 546.39 511.28 20.00 re f
+BT /F2 8.80 Tf 1.00 1.00 1.00 rg 48.00 552.89 Td (SmsService Property) Tj ET
+BT /F2 8.80 Tf 1.00 1.00 1.00 rg 191.16 552.89 Td (Default) Tj ET
+BT /F2 8.80 Tf 1.00 1.00 1.00 rg 293.41 552.89 Td (Purpose) Tj ET
+0.82 0.86 0.91 RG 0.40 w 42.00 491.19 511.28 55.20 re S
+BT /F4 8.30 Tf 0.10 0.14 0.22 rg 48.00 534.39 Td (Subscription Preset) Tj ET
+BT /F1 8.70 Tf 0.10 0.14 0.22 rg 191.16 534.39 Td (TextBee Cloud) Tj ET
+BT /F1 8.70 Tf 0.10 0.14 0.22 rg 293.41 534.39 Td (Select your SMS subscription website \(TextBee Cloud,) Tj ET
+BT /F1 8.70 Tf 0.10 0.14 0.22 rg 293.41 522.59 Td (SMS-Gate Cloud, Traccar SMS, ntfy.sh, Twilio, ClickSend,) Tj ET
+BT /F1 8.70 Tf 0.10 0.14 0.22 rg 293.41 510.79 Td (Vonage/Nexmo, Textbelt, MessageBird, Jasmin, playSMS,) Tj ET
+BT /F1 8.70 Tf 0.10 0.14 0.22 rg 293.41 498.99 Td (Kannel, Custom\).) Tj ET
+0.96 0.97 0.99 rg 42.00 447.79 511.28 43.40 re f
+0.82 0.86 0.91 RG 0.40 w 42.00 447.79 511.28 43.40 re S
+BT /F4 8.30 Tf 0.10 0.14 0.22 rg 48.00 479.19 Td (Subscription Api Key) Tj ET
+BT /F1 8.70 Tf 0.10 0.14 0.22 rg 191.16 479.19 Td (\(empty\)) Tj ET
+BT /F1 8.70 Tf 0.10 0.14 0.22 rg 293.41 479.19 Td (API Key or Auth Token for your SMS subscription website.) Tj ET
+BT /F1 8.70 Tf 0.10 0.14 0.22 rg 293.41 467.39 Td (Automatically shared with child gateways or used directly) Tj ET
+BT /F1 8.70 Tf 0.10 0.14 0.22 rg 293.41 455.59 Td (by SmsService.) Tj ET
+0.82 0.86 0.91 RG 0.40 w 42.00 416.19 511.28 31.60 re S
+BT /F4 8.30 Tf 0.10 0.14 0.22 rg 48.00 435.79 Td (Subscription Account Id) Tj ET
+BT /F1 8.70 Tf 0.10 0.14 0.22 rg 191.16 435.79 Td (\(empty\)) Tj ET
+BT /F1 8.70 Tf 0.10 0.14 0.22 rg 293.41 435.79 Td (Account SID, Device ID, Topic, or Username for your SMS) Tj ET
+BT /F1 8.70 Tf 0.10 0.14 0.22 rg 293.41 423.99 Td (subscription website.) Tj ET
+0.96 0.97 0.99 rg 42.00 384.59 511.28 31.60 re f
+0.82 0.86 0.91 RG 0.40 w 42.00 384.59 511.28 31.60 re S
+BT /F4 8.30 Tf 0.10 0.14 0.22 rg 48.00 404.19 Td (Subscription Sender Id) Tj ET
+BT /F1 8.70 Tf 0.10 0.14 0.22 rg 191.16 404.19 Td (\(empty\)) Tj ET
+BT /F1 8.70 Tf 0.10 0.14 0.22 rg 293.41 404.19 Td (Sender ID or From phone number \(used by Twilio, ClickSend,) Tj ET
+BT /F1 8.70 Tf 0.10 0.14 0.22 rg 293.41 392.39 Td (Vonage, MessageBird\).) Tj ET
+0.82 0.86 0.91 RG 0.40 w 42.00 352.99 511.28 31.60 re S
+BT /F4 8.30 Tf 0.10 0.14 0.22 rg 48.00 372.59 Td (Subscription Api Url) Tj ET
+BT /F1 8.70 Tf 0.10 0.14 0.22 rg 191.16 372.59 Td (\(empty\)) Tj ET
+BT /F1 8.70 Tf 0.10 0.14 0.22 rg 293.41 372.59 Td (Optional custom endpoint URL \(leave blank to use the) Tj ET
+BT /F1 8.70 Tf 0.10 0.14 0.22 rg 293.41 360.79 Td (selected preset's default URL\).) Tj ET
+0.96 0.97 0.99 rg 42.00 321.39 511.28 31.60 re f
+0.82 0.86 0.91 RG 0.40 w 42.00 321.39 511.28 31.60 re S
+BT /F4 8.30 Tf 0.10 0.14 0.22 rg 48.00 340.99 Td (Enable Niagara Email Sms) Tj ET
+BT /F1 8.70 Tf 0.10 0.14 0.22 rg 191.16 340.99 Td (false) Tj ET
+BT /F1 8.70 Tf 0.10 0.14 0.22 rg 293.41 340.99 Td (Set to true to send SMS through Niagara's built-in) Tj ET
+BT /F1 8.70 Tf 0.10 0.14 0.22 rg 293.41 329.19 Td (EmailService \(Email-to-SMS\).) Tj ET
+0.82 0.86 0.91 RG 0.40 w 42.00 289.79 511.28 31.60 re S
+BT /F4 8.30 Tf 0.10 0.14 0.22 rg 48.00 309.39 Td (Email Service Ord) Tj ET
+BT /F1 8.70 Tf 0.10 0.14 0.22 rg 191.16 309.39 Td (station:|slot:/Services/EmailService) Tj ET
+BT /F1 8.70 Tf 0.10 0.14 0.22 rg 293.41 309.39 Td (ORD of Niagara's EmailService or a specific) Tj ET
+BT /F1 8.70 Tf 0.10 0.14 0.22 rg 293.41 297.59 Td (OutgoingAccount inside EmailService.) Tj ET
+0.96 0.97 0.99 rg 42.00 258.19 511.28 31.60 re f
+0.82 0.86 0.91 RG 0.40 w 42.00 258.19 511.28 31.60 re S
+BT /F4 8.30 Tf 0.10 0.14 0.22 rg 48.00 277.79 Td (Email Sms Domain) Tj ET
+BT /F1 8.70 Tf 0.10 0.14 0.22 rg 191.16 277.79 Td (sms.clicksend.com) Tj ET
+BT /F1 8.70 Tf 0.10 0.14 0.22 rg 293.41 277.79 Td (Email-to-SMS gateway or carrier domain \(e.g.) Tj ET
+BT /F1 8.70 Tf 0.10 0.14 0.22 rg 293.41 265.99 Td (sms.clicksend.com, textmagic.com, vtext.com, txt.att.net\).) Tj ET
+0.82 0.86 0.91 RG 0.40 w 42.00 226.59 511.28 31.60 re S
+BT /F4 8.30 Tf 0.10 0.14 0.22 rg 48.00 246.19 Td (Email Sms To Format) Tj ET
+BT /F1 8.70 Tf 0.10 0.14 0.22 rg 191.16 246.19 Td ({phoneDigits}@{domain}) Tj ET
+BT /F1 8.70 Tf 0.10 0.14 0.22 rg 293.41 246.19 Td (Recipient email template \({phoneDigits}@{domain},) Tj ET
+BT /F1 8.70 Tf 0.10 0.14 0.22 rg 293.41 234.39 Td ({phone}@{domain}, or fixed address\).) Tj ET
+BT /F2 13.00 Tf 0.06 0.09 0.16 rg 42.00 198.59 Td (4. Step 3 - Configure Internet SMS Gateways or EmailSmsGateway) Tj ET
+0.01 0.52 0.78 rg 42.00 193.59 511.28 1.80 re f
+BT /F1 9.60 Tf 0.12 0.16 0.23 rg 42.00 173.59 Td (In addition to the built-in SmsService settings, you can expand Palette -> Gateways and drop one or more) Tj ET
+BT /F1 9.60 Tf 0.12 0.16 0.23 rg 42.00 160.09 Td (dedicated gateway components onto SmsService for multi-gateway priority failover.) Tj ET
+
+endstream
+endobj
+11 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595.28 841.89] /Resources << /Font << /F1 3 0 R /F2 4 0 R /F3 5 0 R /F4 6 0 R >> >> /Contents 12 0 R >>
+endobj
+12 0 obj
+<< /Length 8694 >>
+stream
+0.82 0.86 0.91 RG 0.6 w 42.00 34.00 m 553.28 34.00 l S
+BT /F1 8.00 Tf 0.40 0.45 0.53 rg 42.00 22.00 Td (TecumSMS Niagara 4 Notification Service & Driver \(TecumSMS-rt v1.0.0\)  |  Step-by-Step User Guide) Tj ET
+BT /F2 8.00 Tf 0.40 0.45 0.53 rg 527.84 22.00 Td (Page 3) Tj ET
+0.98 0.99 1.00 rg 42.00 669.39 511.28 130.50 re f
+0.78 0.84 0.90 RG 0.80 w 42.00 669.39 511.28 130.50 re S
+0.01 0.52 0.78 rg 42.00 669.39 4.00 130.50 re f
+BT /F2 10.20 Tf 0.06 0.15 0.36 rg 54.00 784.89 Td (Option A: Open-Source & Commercial HTTP Subscription Gateways \(with API Key\)) Tj ET
+BT /F1 9.30 Tf 0.12 0.16 0.23 rg 54.00 769.89 Td (1. Expand Gateways in the TecumSMS palette and drag your preferred gateway onto SmsService:) Tj ET
+BT /F1 9.30 Tf 0.12 0.16 0.23 rg 66.00 756.89 Td (TextBeeCloud, SmsGateCloud, TraccarSmsCloud, NtfyInternetAlert, TwilioSmsGateway, ClickSendSmsGateway,) Tj ET
+BT /F1 9.30 Tf 0.12 0.16 0.23 rg 66.00 743.89 Td (VonageSmsGateway, TextbeltSmsGateway, or MessageBirdSmsGateway.) Tj ET
+BT /F1 9.30 Tf 0.12 0.16 0.23 rg 54.00 728.39 Td (2. Open the gateway's Property Sheet: paste your subscription website API Key into Api Key, and enter) Tj ET
+BT /F1 9.30 Tf 0.12 0.16 0.23 rg 66.00 715.39 Td (your Device ID / Account SID / Username into Username \(and Sender Id if required\).) Tj ET
+BT /F1 9.30 Tf 0.12 0.16 0.23 rg 54.00 699.89 Td (3. Click Save. Right-click the gateway -> Actions -> Send Test SMS, enter a phone number) Tj ET
+BT /F1 9.30 Tf 0.12 0.16 0.23 rg 66.00 686.89 Td (\(+countrycode...\), and click OK.) Tj ET
+0.98 0.99 1.00 rg 42.00 471.89 511.28 187.50 re f
+0.78 0.84 0.90 RG 0.80 w 42.00 471.89 511.28 187.50 re S
+0.01 0.52 0.78 rg 42.00 471.89 4.00 187.50 re f
+BT /F2 10.20 Tf 0.06 0.15 0.36 rg 54.00 644.39 Td (Option B: Send SMS via Niagara Email \(EmailSmsGateway or Built-in Option\)) Tj ET
+BT /F1 9.30 Tf 0.12 0.16 0.23 rg 54.00 629.39 Td (1. Ensure Niagara's EmailService is configured under Station -> Config -> Services -> EmailService with) Tj ET
+BT /F1 9.30 Tf 0.12 0.16 0.23 rg 66.00 616.39 Td (a valid OutgoingAccount.) Tj ET
+BT /F1 9.30 Tf 0.12 0.16 0.23 rg 54.00 600.89 Td (2. Either set Enable Niagara Email Sms = true directly on SmsService, OR drag EmailSmsGateway from) Tj ET
+BT /F1 9.30 Tf 0.12 0.16 0.23 rg 66.00 587.89 Td (Palette -> Gateways onto SmsService.) Tj ET
+BT /F1 9.30 Tf 0.12 0.16 0.23 rg 54.00 572.39 Td (3. Set Sms Gateway Domain to your Email-to-SMS provider or carrier domain \(e.g. sms.clicksend.com,) Tj ET
+BT /F1 9.30 Tf 0.12 0.16 0.23 rg 66.00 559.39 Td (textmagic.com, vtext.com, txt.att.net, tmomail.net\) and To Address Format \(default) Tj ET
+BT /F1 9.30 Tf 0.12 0.16 0.23 rg 66.00 546.39 Td ({phoneDigits}@{domain}\).) Tj ET
+BT /F1 9.30 Tf 0.12 0.16 0.23 rg 54.00 530.89 Td (4. If your Email-to-SMS provider requires an API key in the email subject or body, enter it in Api Key) Tj ET
+BT /F1 9.30 Tf 0.12 0.16 0.23 rg 66.00 517.89 Td (and reference {apiKey} in Subject Template or Body Template.) Tj ET
+BT /F1 9.30 Tf 0.12 0.16 0.23 rg 54.00 502.39 Td (5. Note: EmailSmsGateway also supports direct SMTP/SMTPS without Niagara EmailService by setting Use) Tj ET
+BT /F1 9.30 Tf 0.12 0.16 0.23 rg 66.00 489.39 Td (Niagara EmailService = false and entering SMTP Host, Port, Username, and Password.) Tj ET
+BT /F2 10.50 Tf 0.12 0.23 0.54 rg 42.00 449.89 Td (All Pre-Configured Gateways in Palette -> Gateways) Tj ET
+0.06 0.11 0.24 rg 42.00 424.89 511.28 20.00 re f
+BT /F2 8.80 Tf 1.00 1.00 1.00 rg 48.00 431.39 Td (Palette Component) Tj ET
+BT /F2 8.80 Tf 1.00 1.00 1.00 rg 180.93 431.39 Td (Platform / Website) Tj ET
+BT /F2 8.80 Tf 1.00 1.00 1.00 rg 303.64 431.39 Td (API Key & Property Sheet Configuration) Tj ET
+0.82 0.86 0.91 RG 0.40 w 42.00 381.49 511.28 43.40 re S
+BT /F4 8.30 Tf 0.10 0.14 0.22 rg 48.00 412.89 Td (EmailSmsGateway) Tj ET
+BT /F1 8.70 Tf 0.10 0.14 0.22 rg 180.93 412.89 Td (Niagara EmailService /) Tj ET
+BT /F1 8.70 Tf 0.10 0.14 0.22 rg 180.93 401.09 Td (Direct SMTP) Tj ET
+BT /F1 8.70 Tf 0.10 0.14 0.22 rg 303.64 412.89 Td (Routes SMS via Niagara EmailService) Tj ET
+BT /F1 8.70 Tf 0.10 0.14 0.22 rg 303.64 401.09 Td (\(station:|slot:/Services/EmailService\) or direct SMTP to) Tj ET
+BT /F1 8.70 Tf 0.10 0.14 0.22 rg 303.64 389.29 Td ({phoneDigits}@{domain}.) Tj ET
+0.96 0.97 0.99 rg 42.00 349.89 511.28 31.60 re f
+0.82 0.86 0.91 RG 0.40 w 42.00 349.89 511.28 31.60 re S
+BT /F4 8.30 Tf 0.10 0.14 0.22 rg 48.00 369.49 Td (TextBeeCloud) Tj ET
+BT /F1 8.70 Tf 0.10 0.14 0.22 rg 180.93 369.49 Td (textbee.dev \(Open-Source) Tj ET
+BT /F1 8.70 Tf 0.10 0.14 0.22 rg 180.93 357.69 Td (MIT\)) Tj ET
+BT /F1 8.70 Tf 0.10 0.14 0.22 rg 303.64 369.49 Td (Set Username = Device ID, Api Key = TextBee API Key.) Tj ET
+0.82 0.86 0.91 RG 0.40 w 42.00 318.29 511.28 31.60 re S
+BT /F4 8.30 Tf 0.10 0.14 0.22 rg 48.00 337.89 Td (SmsGateCloud) Tj ET
+BT /F1 8.70 Tf 0.10 0.14 0.22 rg 180.93 337.89 Td (api.sms-gate.app) Tj ET
+BT /F1 8.70 Tf 0.10 0.14 0.22 rg 180.93 326.09 Td (\(Open-Source\)) Tj ET
+BT /F1 8.70 Tf 0.10 0.14 0.22 rg 303.64 337.89 Td (Set Username and Api Key \(or Password\) from the Android) Tj ET
+BT /F1 8.70 Tf 0.10 0.14 0.22 rg 303.64 326.09 Td (SMS Gateway app.) Tj ET
+0.96 0.97 0.99 rg 42.00 286.69 511.28 31.60 re f
+0.82 0.86 0.91 RG 0.40 w 42.00 286.69 511.28 31.60 re S
+BT /F4 8.30 Tf 0.10 0.14 0.22 rg 48.00 306.29 Td (TraccarSmsCloud) Tj ET
+BT /F1 8.70 Tf 0.10 0.14 0.22 rg 180.93 306.29 Td (traccar.org/sms) Tj ET
+BT /F1 8.70 Tf 0.10 0.14 0.22 rg 180.93 294.49 Td (\(Open-Source\)) Tj ET
+BT /F1 8.70 Tf 0.10 0.14 0.22 rg 303.64 306.29 Td (Set Api Key = Traccar Cloud API Token.) Tj ET
+0.82 0.86 0.91 RG 0.40 w 42.00 255.09 511.28 31.60 re S
+BT /F4 8.30 Tf 0.10 0.14 0.22 rg 48.00 274.69 Td (NtfyInternetAlert) Tj ET
+BT /F1 8.70 Tf 0.10 0.14 0.22 rg 180.93 274.69 Td (ntfy.sh \(Zero-SIM Push) Tj ET
+BT /F1 8.70 Tf 0.10 0.14 0.22 rg 180.93 262.89 Td (Alert\)) Tj ET
+BT /F1 8.70 Tf 0.10 0.14 0.22 rg 303.64 274.69 Td (Set Username = ntfy topic name \(and optional Api Key =) Tj ET
+BT /F1 8.70 Tf 0.10 0.14 0.22 rg 303.64 262.89 Td (access token\).) Tj ET
+0.96 0.97 0.99 rg 42.00 223.49 511.28 31.60 re f
+0.82 0.86 0.91 RG 0.40 w 42.00 223.49 511.28 31.60 re S
+BT /F4 8.30 Tf 0.10 0.14 0.22 rg 48.00 243.09 Td (TwilioSmsGateway) Tj ET
+BT /F1 8.70 Tf 0.10 0.14 0.22 rg 180.93 243.09 Td (Twilio SMS Subscription) Tj ET
+BT /F1 8.70 Tf 0.10 0.14 0.22 rg 303.64 243.09 Td (Set Username = Account SID, Api Key = Auth Token, Sender) Tj ET
+BT /F1 8.70 Tf 0.10 0.14 0.22 rg 303.64 231.29 Td (Id = Twilio From number.) Tj ET
+0.82 0.86 0.91 RG 0.40 w 42.00 191.89 511.28 31.60 re S
+BT /F4 8.30 Tf 0.10 0.14 0.22 rg 48.00 211.49 Td (ClickSendSmsGateway) Tj ET
+BT /F1 8.70 Tf 0.10 0.14 0.22 rg 180.93 211.49 Td (ClickSend SMS) Tj ET
+BT /F1 8.70 Tf 0.10 0.14 0.22 rg 180.93 199.69 Td (Subscription) Tj ET
+BT /F1 8.70 Tf 0.10 0.14 0.22 rg 303.64 211.49 Td (Set Username = ClickSend Username, Api Key = ClickSend) Tj ET
+BT /F1 8.70 Tf 0.10 0.14 0.22 rg 303.64 199.69 Td (API Key, Sender Id = From.) Tj ET
+0.96 0.97 0.99 rg 42.00 160.29 511.28 31.60 re f
+0.82 0.86 0.91 RG 0.40 w 42.00 160.29 511.28 31.60 re S
+BT /F4 8.30 Tf 0.10 0.14 0.22 rg 48.00 179.89 Td (VonageSmsGateway) Tj ET
+BT /F1 8.70 Tf 0.10 0.14 0.22 rg 180.93 179.89 Td (Vonage / Nexmo) Tj ET
+BT /F1 8.70 Tf 0.10 0.14 0.22 rg 180.93 168.09 Td (Subscription) Tj ET
+BT /F1 8.70 Tf 0.10 0.14 0.22 rg 303.64 179.89 Td (Set Username = API Key, Api Key = API Secret, Sender Id) Tj ET
+BT /F1 8.70 Tf 0.10 0.14 0.22 rg 303.64 168.09 Td (= From.) Tj ET
+0.82 0.86 0.91 RG 0.40 w 42.00 140.49 511.28 19.80 re S
+BT /F4 8.30 Tf 0.10 0.14 0.22 rg 48.00 148.29 Td (TextbeltSmsGateway) Tj ET
+BT /F1 8.70 Tf 0.10 0.14 0.22 rg 180.93 148.29 Td (Textbelt SMS API) Tj ET
+BT /F1 8.70 Tf 0.10 0.14 0.22 rg 303.64 148.29 Td (Set Api Key = Textbelt API Key.) Tj ET
+0.96 0.97 0.99 rg 42.00 108.89 511.28 31.60 re f
+0.82 0.86 0.91 RG 0.40 w 42.00 108.89 511.28 31.60 re S
+BT /F4 8.30 Tf 0.10 0.14 0.22 rg 48.00 128.49 Td (MessageBirdSmsGateway) Tj ET
+BT /F1 8.70 Tf 0.10 0.14 0.22 rg 180.93 128.49 Td (MessageBird SMS) Tj ET
+BT /F1 8.70 Tf 0.10 0.14 0.22 rg 180.93 116.69 Td (Subscription) Tj ET
+BT /F1 8.70 Tf 0.10 0.14 0.22 rg 303.64 128.49 Td (Set Api Key = Live Access Key, Sender Id = Originator.) Tj ET
+0.82 0.86 0.91 RG 0.40 w 42.00 77.29 511.28 31.60 re S
+BT /F4 8.30 Tf 0.10 0.14 0.22 rg 48.00 96.89 Td (SmppGateway) Tj ET
+BT /F1 8.70 Tf 0.10 0.14 0.22 rg 180.93 96.89 Td (SMPP v3.4 \(Jasmin /) Tj ET
+BT /F1 8.70 Tf 0.10 0.14 0.22 rg 180.93 85.09 Td (Kannel / Telecom\)) Tj ET
+BT /F1 8.70 Tf 0.10 0.14 0.22 rg 303.64 96.89 Td (Set Address \(host\), Port \(2775\), Use TLS, System ID,) Tj ET
+BT /F1 8.70 Tf 0.10 0.14 0.22 rg 303.64 85.09 Td (Password, and Sender ID.) Tj ET
+
+endstream
+endobj
+13 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595.28 841.89] /Resources << /Font << /F1 3 0 R /F2 4 0 R /F3 5 0 R /F4 6 0 R >> >> /Contents 14 0 R >>
+endobj
+14 0 obj
+<< /Length 5266 >>
+stream
+0.82 0.86 0.91 RG 0.6 w 42.00 34.00 m 553.28 34.00 l S
+BT /F1 8.00 Tf 0.40 0.45 0.53 rg 42.00 22.00 Td (TecumSMS Niagara 4 Notification Service & Driver \(TecumSMS-rt v1.0.0\)  |  Step-by-Step User Guide) Tj ET
+BT /F2 8.00 Tf 0.40 0.45 0.53 rg 527.84 22.00 Td (Page 4) Tj ET
+BT /F2 13.00 Tf 0.06 0.09 0.16 rg 42.00 781.89 Td (5. Step 4 - Add Contacts & Groups \(Address Book\)) Tj ET
+0.01 0.52 0.78 rg 42.00 776.89 511.28 1.80 re f
+0.98 0.99 1.00 rg 42.00 677.89 511.28 89.00 re f
+0.78 0.84 0.90 RG 0.80 w 42.00 677.89 511.28 89.00 re S
+0.01 0.52 0.78 rg 42.00 677.89 4.00 89.00 re f
+BT /F2 10.20 Tf 0.06 0.15 0.36 rg 54.00 751.89 Td (Step 4.1: Add Contacts & Groups under SmsService) Tj ET
+BT /F1 9.30 Tf 0.12 0.16 0.23 rg 54.00 736.89 Td (1. Expand SmsService -> Contacts, drag SmsContact from the TecumSMS palette into Contacts, set Phone) Tj ET
+BT /F1 9.30 Tf 0.12 0.16 0.23 rg 66.00 723.89 Td (Number in international format \(e.g. +971501234567\), and configure On Duty Days / Time.) Tj ET
+BT /F1 9.30 Tf 0.12 0.16 0.23 rg 54.00 708.39 Td (2. Expand SmsService -> Groups, drag SmsGroup into Groups, open its Property Sheet, expand Members, and) Tj ET
+BT /F1 9.30 Tf 0.12 0.16 0.23 rg 66.00 695.39 Td (tick the checkboxes for each contact in that group.) Tj ET
+BT /F2 13.00 Tf 0.06 0.09 0.16 rg 42.00 649.89 Td (6. Step 5 - Configure Point Rules, Wire-Sheet SmsSender & AlarmService) Tj ET
+0.01 0.52 0.78 rg 42.00 644.89 511.28 1.80 re f
+0.98 0.99 1.00 rg 42.00 491.39 511.28 143.50 re f
+0.78 0.84 0.90 RG 0.80 w 42.00 491.39 511.28 143.50 re S
+0.01 0.52 0.78 rg 42.00 491.39 4.00 143.50 re f
+BT /F2 10.20 Tf 0.06 0.15 0.36 rg 54.00 619.89 Td (Step 5.1: Point Rules \(SmsPointRule\), Wire-Sheet \(SmsSender\) & Alarms \(SmsAlarmRecipient\)) Tj ET
+BT /F1 9.30 Tf 0.12 0.16 0.23 rg 54.00 604.89 Td (1. Point Monitoring Rules: Expand SmsService -> Rules and drag SmsPointRule \(or HighValueRule,) Tj ET
+BT /F1 9.30 Tf 0.12 0.16 0.23 rg 66.00 591.89 Td (StateRule, OfflineRule\) into Rules. Select Source ORD, Condition, Limit / Compare Value, Active Delay,) Tj ET
+BT /F1 9.30 Tf 0.12 0.16 0.23 rg 66.00 578.89 Td (and tick Recipients.) Tj ET
+BT /F1 9.30 Tf 0.12 0.16 0.23 rg 54.00 563.39 Td (2. Wire-Sheet Triggers: Drag SmsSender from Palette -> Rules onto any Wire Sheet and link a boolean) Tj ET
+BT /F1 9.30 Tf 0.12 0.16 0.23 rg 66.00 550.39 Td (output to Trigger.) Tj ET
+BT /F1 9.30 Tf 0.12 0.16 0.23 rg 54.00 534.89 Td (3. Niagara Alarm Routing: Open Station -> Config -> Services -> AlarmService \(Wire Sheet\), drag) Tj ET
+BT /F1 9.30 Tf 0.12 0.16 0.23 rg 66.00 521.89 Td (SmsAlarmRecipient from the TecumSMS palette, link alarmEscalation1 from your AlarmClass to routeAlarm,) Tj ET
+BT /F1 9.30 Tf 0.12 0.16 0.23 rg 66.00 508.89 Td (and tick Recipients.) Tj ET
+BT /F2 13.00 Tf 0.06 0.09 0.16 rg 42.00 463.39 Td (7. Step 6 - Verification, Diagnostics & Troubleshooting) Tj ET
+0.01 0.52 0.78 rg 42.00 458.39 511.28 1.80 re f
+BT /F1 9.60 Tf 0.12 0.16 0.23 rg 42.00 438.39 Td (Open the Property Sheet of SmsService at any time to inspect Queue Size, Total Sent, Total Failed, Last) Tj ET
+BT /F1 9.60 Tf 0.12 0.16 0.23 rg 42.00 424.89 Td (Sent Time, Last Error, and the live 50-line Activity log.) Tj ET
+0.06 0.11 0.24 rg 42.00 397.39 511.28 20.00 re f
+BT /F2 8.80 Tf 1.00 1.00 1.00 rg 48.00 403.89 Td (Diagnostic Message) Tj ET
+BT /F2 8.80 Tf 1.00 1.00 1.00 rg 211.61 403.89 Td (Resolution) Tj ET
+0.82 0.86 0.91 RG 0.40 w 42.00 353.99 511.28 43.40 re S
+BT /F4 8.30 Tf 0.10 0.14 0.22 rg 48.00 385.39 Td (Missing module TecumSMS) Tj ET
+BT /F1 8.70 Tf 0.10 0.14 0.22 rg 211.61 385.39 Td (Import certs\\TecumRootCA.pem into Platform -> Certificate Management -> User) Tj ET
+BT /F1 8.70 Tf 0.10 0.14 0.22 rg 211.61 373.59 Td (Trust Store \(not only My Host\), verify TecumSMS-rt.jar is in) Tj ET
+BT /F1 8.70 Tf 0.10 0.14 0.22 rg 211.61 361.79 Td (C:\\Niagara\\Niagara-4.x.x.x\\modules\\, and restart the Station.) Tj ET
+0.96 0.97 0.99 rg 42.00 322.39 511.28 31.60 re f
+0.82 0.86 0.91 RG 0.40 w 42.00 322.39 511.28 31.60 re S
+BT /F4 8.30 Tf 0.10 0.14 0.22 rg 48.00 341.99 Td (no reachable recipients) Tj ET
+BT /F1 8.70 Tf 0.10 0.14 0.22 rg 211.61 341.99 Td (Tick at least one Contact or Group under Recipients, verify Phone Number is) Tj ET
+BT /F1 8.70 Tf 0.10 0.14 0.22 rg 211.61 330.19 Td (valid \(+countrycode...\), and check On Duty Days / Time.) Tj ET
+0.82 0.86 0.91 RG 0.40 w 42.00 290.79 511.28 31.60 re S
+BT /F4 8.30 Tf 0.10 0.14 0.22 rg 48.00 310.39 Td (HTTP 401 / HTTP 403) Tj ET
+BT /F1 8.70 Tf 0.10 0.14 0.22 rg 211.61 310.39 Td (Check Api Key and Username \(Device ID / Account SID\) on SmsService or the) Tj ET
+BT /F1 8.70 Tf 0.10 0.14 0.22 rg 211.61 298.59 Td (HttpGateway Property Sheet.) Tj ET
+0.96 0.97 0.99 rg 42.00 247.39 511.28 43.40 re f
+0.82 0.86 0.91 RG 0.40 w 42.00 247.39 511.28 43.40 re S
+BT /F4 8.30 Tf 0.10 0.14 0.22 rg 48.00 278.79 Td (Niagara EmailService not found) Tj ET
+BT /F1 8.70 Tf 0.10 0.14 0.22 rg 211.61 278.79 Td (Ensure EmailService is added under Station -> Config -> Services ->) Tj ET
+BT /F1 8.70 Tf 0.10 0.14 0.22 rg 211.61 266.99 Td (EmailService with a valid OutgoingAccount, or set Use Niagara EmailService =) Tj ET
+BT /F1 8.70 Tf 0.10 0.14 0.22 rg 211.61 255.19 Td (false on EmailSmsGateway to use direct SMTP.) Tj ET
+
+endstream
+endobj
+xref
+0 15
+0000000000 65535 f 
+0000000015 00000 n 
+0000000064 00000 n 
+0000000143 00000 n 
+0000000240 00000 n 
+0000000342 00000 n 
+0000000437 00000 n 
+0000000537 00000 n 
+0000000699 00000 n 
+0000006458 00000 n 
+0000006621 00000 n 
+0000013712 00000 n 
+0000013876 00000 n 
+0000022623 00000 n 
+0000022787 00000 n 
+trailer
+<< /Size 15 /Root 1 0 R >>
+startxref
+28106
+%%EOF

@@ -1,60 +1,49 @@
-# Ignitechs SMS Notification Driver for Niagara 4 (`ignitechsSms-rt`)
+# TecumSMS Notification Service & Driver for Niagara 4 (`TecumSMS-rt`)
 
-A zero-dependency **SMS Notification Driver** (`ignitechsSms-rt`) for **Niagara 4 Supervisor & JACE** stations. Supports **GSM/LTE AT Modems (Serial/USB & TCP)**, **SMPP v3.4**, and **HTTP(S) SMS Gateways**, with automatic gateway failover, retry queue, rate limiting, duplicate suppression, address book with on-duty schedules, point condition rules, wire-sheet triggers, alarm routing, and two-way SMS alarm acknowledgement (`ACK <code>` / `STATUS`).
+Native, dependency-free **SMS Notification Service & Driver** (`TecumSMS-rt`) for **Niagara 4 Supervisor & JACE** stations (Niagara 4.0 through 4.14+).
 
----
+## Key Features
 
-## Features
-
-### 1. Open-Source Internet & Network SMS Gateways (Priority & Failover)
-Place one or more gateways inside `SmsNetwork` (or `SmsGatewayFolder`). Gateways are tried in `priority` order (`1` = primary, `2` = backup, etc.):
-- **`HttpGateway` (Open-Source Internet SMS Platforms & REST APIs)** — Ready-to-use palette items and presets:
-  - **`TextBeeCloud` ([textbee.dev](https://textbee.dev) — Open-Source MIT)** — Cloud or self-hosted internet SMS gateway (`https://api.textbee.dev/api/v1/gateway/devices/{username}/send-sms`, `username` = Device ID, `password` = API Key).
-  - **`SmsGateCloud` ([capcom6/android-sms-gateway](https://github.com/capcom6/android-sms-gateway) — Open-Source Apache-2.0)** — Internet Cloud mode (`https://api.sms-gate.app/3rdparty/v1/message` with HTTP Basic Auth) or Local HTTP mode (`http://<phone-ip>:8080/message`).
-  - **`TraccarSmsCloud` ([traccar/traccar-sms-gateway](https://github.com/traccar/traccar-sms-gateway) — Open-Source Apache-2.0)** — Internet Cloud API (`https://www.traccar.org/sms/`, `password` = Cloud API Token).
-  - **`NtfyInternetAlert` ([ntfy.sh](https://ntfy.sh) — Open-Source Apache-2.0/GPLv2)** — 100% free internet mobile push/alert service requiring no SIM card or account (`https://ntfy.sh/{username}`, `username` = topic name).
-  - **`JasminHttpGateway` ([jookies/jasmin](https://github.com/jookies/jasmin) — Open-Source Apache-2.0)** — Carrier-grade open-source HTTP SMS gateway (`http://<jasmin-host>:1401/send`).
-  - **`PlaySmsGateway` ([playsms.org](https://playsms.org) — Open-Source)** — Webservice API (`index.php?app=ws&op=pv`).
-  - **`KannelGateway` ([kannel.org](https://www.kannel.org) — Open-Source)** — `sendsms` HTTP interface.
-  - **`Twilio` / `TeltonikaRouter` / `Custom`** — Full custom URL, HTTP method, headers, JSON/URL-encoded body, and regex validation.
-- **`SmppGateway`** — Native SMPP v3.4 Transmitter client (`bind_transmitter`, `submit_sm`, `enquire_link`, `unbind`) with optional TLS, alphanumeric/international `senderId`, and concatenated GSM-7 / UCS-2 segmentation (compatible with open-source **Jasmin** and **Kannel** SMPP servers or carrier SMPP trunks).
-- **`TcpModemGateway`** — Network GSM/LTE modem over raw TCP.
-
-### 2. Address Book (`Contacts` & `Groups`)
-- **`SmsContact`** — Phone number (automatic E.164 normalization), `onDutyDays` (`BDaysOfWeekBits`), `onDutyTime` (`BTimeRange`), `allowSmsCommands` toggle, per-contact sent counter, and `Send Test SMS` action.
-- **`SmsGroup`** — Named group of contacts (e.g., `Maintenance`, `Night Shift`) with a live auto-synced checklist of contacts.
-- **`SmsRecipientList`** — Dynamic boolean checklist embedded on every rule, sender, and alarm recipient that automatically stays synchronized when contacts or groups are added, renamed, or deleted.
-
-### 3. Point Monitoring Rules (`SmsPointRule`) & Wire-Sheet `SmsSender`
-- **`SmsPointRule`** — Subscribes to any Niagara `BControlPoint` or status/value slot (`sourceOrd`) without modifying the monitored point:
-  - **Conditions (`BSmsCondition`)**: `Greater than (>)`, `Less than (<)`, `Greater or equal (>=)`, `Less or equal (<=)`, `Outside range`, `Inside range`, `Value equals (=)` (supports comma/`|` lists such as `Fault|Trip|Alarm`), `Value not equals (!=)`, `Is true / active`, `Is false / inactive`, `Any value change`, `Status is Alarm`, `Status is Fault`, `Status is Down (offline)`, `Status is Overridden`, `Status is Not OK`.
-  - **Filtering & Hysteresis**: Configurable `deadband`, `activeDelay` (filters short spikes), `repeatInterval` & `maxRepeats`, and `notifyOnNormal`.
-  - **Placeholders**: `{station}`, `{time}`, `{point}`, `{path}`, `{value}`, `{status}`, `{state}`, `{rule}`, `{condition}`, `{limit}`, `{low}`, `{high}`, `{compare}`, `{description}`.
-- **`SmsSender`** — Wire-sheet component that sends a templated or linked string SMS on a rising-edge boolean `trigger` or via its `send` / `sendText` actions.
-
-### 4. Niagara Alarm Recipient & Two-Way SMS Commands
-- **`SmsAlarmRecipient`** — Standard `BAlarmRecipient` that drops into `AlarmService` and links from any `AlarmClass`. Formats `{station}`, `{time}`, `{source}`, `{msg}`, `{state}`, `{alarmClass}`, `{priority}`, `{value}`, `{ackCode}`, `{ackHint}`, `{user}`.
-- **Two-Way SMS Acknowledgement (via Serial/TCP Modem Gateways)**:
-  - Each unacknowledged alarm gets a short numeric code (e.g., `Reply ACK 104`).
-  - Authorized contacts (`allowSmsCommands = true`) can reply:
-    - `ACK <code>` (or `A <code>`) — Acknowledges the alarm in Niagara's `BAlarmService` and replies with confirmation.
-    - `STATUS` (or `S`) — Replies with a summary of currently active SMS rules.
+- **Drop Under `Services` or `Drivers` (`tsms`)**:
+  - **`SmsService` (`tsms:SmsService`)**: Drop directly under `Station -> Config -> Services` (recommended).
+  - **`SmsNetwork` (`tsms:SmsNetwork`)**: Drop under `Station -> Config -> Drivers`.
+- **Built-in SMS Subscription Website API Key Configuration**:
+  - Enter your **Subscription API Key**, **Account / Device ID**, **Sender ID**, and **Subscription Preset** directly on the `SmsService` / `SmsNetwork` Property Sheet, or on individual `HttpGateway` components (`Api Key`, `Username`, `Sender Id`).
+  - Ready-made presets in `Palette -> Gateways` for both open-source internet SMS platforms and commercial SMS subscription websites:
+    - **`TextBeeCloud`** (`textbee.dev` — Open-Source MIT)
+    - **`SmsGateCloud`** (`api.sms-gate.app` — Open-Source Apache-2.0)
+    - **`TraccarSmsCloud`** (`traccar.org/sms` — Open-Source Apache-2.0)
+    - **`NtfyInternetAlert`** (`ntfy.sh` — Zero-SIM Mobile Push Alert)
+    - **`TwilioSmsGateway`** (Twilio SMS API Subscription)
+    - **`ClickSendSmsGateway`** (ClickSend Cloud SMS Subscription)
+    - **`VonageSmsGateway`** (Vonage / Nexmo SMS Subscription)
+    - **`TextbeltSmsGateway`** (Textbelt SMS API Subscription)
+    - **`MessageBirdSmsGateway`** (MessageBird SMS Subscription)
+    - **`JasminHttpGateway`**, **`PlaySmsGateway`**, **`KannelGateway`**
+- **Send SMS via Niagara Email (`Email-to-SMS`)**:
+  - **Built-in on `SmsService` / `SmsNetwork`**: Set `Enable Niagara Email Sms = true`, select `Email Service Ord` (`station:|slot:/Services/EmailService`), and set your `Email Sms Domain` (`sms.clicksend.com`, `textmagic.com`, `vtext.com`, `txt.att.net`, `tmomail.net`, etc.) and `Email Sms To Format` (`{phoneDigits}@{domain}`).
+  - **Dedicated `EmailSmsGateway` Component (`Palette -> Gateways -> EmailSmsGateway`)**: Supports routing SMS through Niagara's `EmailService` / `OutgoingAccount` (`Use Niagara EmailService = true`) **or** via a built-in pure-Java SMTP/SMTPS/STARTTLS client (`Use Niagara EmailService = false`).
+- **Contacts, Groups, Point Rules, Wire-Sheet Triggers & Alarm Routing**:
+  - **`SmsContact` & `SmsGroup`**: Address book with E.164 phone numbers, On-Duty days/hours, and checkbox group membership.
+  - **`SmsPointRule`**: Monitors any Niagara point ORD (`>`, `<`, `>=`, `<=`, `=`, `!=`, range, alarm/fault/down status) with active delay, repeat interval, deadband, and normal-return SMS.
+  - **`SmsSender`**: Wire-Sheet boolean rising-edge SMS trigger.
+  - **`SmsAlarmRecipient`**: Routes Niagara `AlarmService` alarm classes directly to SMS contacts and groups.
 
 ---
 
 ## Installation in Niagara 4 Supervisor / Workbench
 
-1. **Import the Ignitechs Root CA Certificate (Workbench & Platform)**:
-   - **Workbench Trust Store (`My Host`)**: Open Niagara Workbench -> **My Host -> Certificate Management -> User Trust Store** (or **Tools -> Certificate Management -> User Trust Store**), click **Import**, and select [`certs/IgnitechsRootCA.pem`](certs/IgnitechsRootCA.pem) (or [`certs/IgnitechsRootCA.cer`](certs/IgnitechsRootCA.cer)).
-   - **Platform / Station Trust Store (`Platform`)**: In the Nav tree, expand **Platform -> Certificate Management -> User Trust Store** (or **Station -> Config -> Services -> PlatformServices -> CertManagerService -> User Trust Store**), click **Import**, and select [`certs/IgnitechsRootCA.pem`](certs/IgnitechsRootCA.pem).
+1. **Import the Tecum Root CA Certificate (Workbench & Platform)**:
+   - **Workbench Trust Store (`My Host`)**: Open Niagara Workbench -> **My Host -> Certificate Management -> User Trust Store** (or **Tools -> Certificate Management -> User Trust Store**), click **Import**, and select [`certs/TecumRootCA.pem`](certs/TecumRootCA.pem) (or [`certs/TecumRootCA.cer`](certs/TecumRootCA.cer)).
+   - **Platform / Station Trust Store (`Platform`)**: In the Nav tree, expand **Platform -> Certificate Management -> User Trust Store** (or **Station -> Config -> Services -> PlatformServices -> CertManagerService -> User Trust Store**), click **Import**, and select [`certs/TecumRootCA.pem`](certs/TecumRootCA.pem).
 2. **Install the Module JAR**:
-   - Copy [`dist/ignitechsSms-rt.jar`](dist/ignitechsSms-rt.jar) to your Niagara `modules` directory (e.g., `C:\Niagara\Niagara-4.x.x.x\modules\ignitechsSms-rt.jar`), or run:
+   - Copy [`dist/TecumSMS-rt.jar`](dist/TecumSMS-rt.jar) to your Niagara `modules` directory (e.g., `C:\Niagara\Niagara-4.x.x.x\modules\TecumSMS-rt.jar`), or run:
      ```powershell
      .\build.ps1 -Install
      ```
-   - Restart the Niagara Station / Workbench.
+   - Restart the Niagara Station and Niagara Workbench.
 3. **Add to Station**:
-   - Open the **`ignitechsSms`** palette in Workbench and drag **`SmsService`** under `station:|slot:/Services` (or **`SmsNetwork`** under `station:|slot:/Drivers`), or drag **`SmsAlarmRecipient`** under `station:|slot:/Services/AlarmService`.
+   - Open the **`TecumSMS`** palette in Workbench and drag **`SmsService`** under `station:|slot:/Services` (or **`SmsNetwork`** under `station:|slot:/Drivers`).
 
 ---
 
@@ -63,48 +52,47 @@ Place one or more gateways inside `SmsNetwork` (or `SmsGatewayFolder`). Gateways
 ### Signed Module Artifact
 | Field | Value |
 |---|---|
-| **Module File** | `dist/ignitechsSms-rt.jar` |
-| **Module Name / Symbol** | `ignitechsSms-rt` (`isms`) |
-| **Vendor / Version** | `Ignitechs` / `1.0.0` |
-| **JAR SHA-256 Digest** | `3645E34B653A60092D102A0C6736D1EB884DB6089087E306E3D420F9842CE5AB` |
-| **Signature Files** | `META-INF/IGNITECH.SF`, `META-INF/IGNITECH.RSA` |
+| **Module File** | [`dist/TecumSMS-rt.jar`](dist/TecumSMS-rt.jar) |
+| **Module Name / Symbol** | `TecumSMS-rt` (`tsms`) |
+| **Vendor / Version** | `Tecum` / `1.0.0` |
+| **JAR SHA-256 Digest** | `C818E10D378D7F6AD343BB6649F531552EB3F2139C577EC53BA7CD569EFAC8BF` |
+| **Signature Files** | `META-INF/TECUM.SF`, `META-INF/TECUM.RSA` |
 | **Signature Algorithm** | `SHA256withRSA` (2048-bit RSA, `SHA-256` entry digests) |
-| **`MANIFEST.MF` Main-Attributes Digest** | `QmS47fn9fWSd89F6hK9RKBfJkaHyIJcOLdKNuGi+dVY=` |
-| **`MANIFEST.MF` Full Digest** | `/dWI7XOeFXiQnLRn3YOlIiqCBuFXgmTKfz2KfDkUhpU=` |
-| **`META-INF/module.xml` Digest** | `7VJ3ZphCqQ+oftneUZtkC7FQV85CrdxgDZ51MRTk3UY=` |
+| **`MANIFEST.MF` Main-Attributes Digest** | `UKyVs9x6Up//559D1s8UIfiyG3khT3/NHmB/l/P/aNw=` |
+| **`MANIFEST.MF` Full Digest** | `lWi8yi4o16Obs7y9yWWj6RJnvponURTJbQl/vryCAQ4=` |
 
-### Code Signing Certificate (`certs/IgnitechsCodeSigner.pem`)
+### Code Signing Certificate ([`certs/TecumCodeSigner.pem`](certs/TecumCodeSigner.pem))
 | Field | Value |
 |---|---|
-| **Subject DN** | `CN=Ignitechs Module Signer, OU=Building Automation, O=Ignitechs, L=Dubai, ST=Dubai, C=AE` |
-| **Issuer DN** | `CN=Ignitechs Root CA, OU=Building Automation, O=Ignitechs, L=Dubai, ST=Dubai, C=AE` |
-| **Serial Number** | `4f34d73e` |
-| **Validity** | `2026-11-09` to `2036-11-06` |
+| **Subject DN** | `CN=Tecum Module Signer, OU=Building Automation, O=Tecum, L=Dubai, ST=Dubai, C=AE` |
+| **Issuer DN** | `CN=Tecum Root CA, OU=Building Automation, O=Tecum, L=Dubai, ST=Dubai, C=AE` |
+| **Serial Number** | `7f1b71a9` |
+| **Validity** | `2026-11-11` to `2036-11-08` |
 | **Key Usage / EKU** | `DigitalSignature` (critical), `codeSigning (1.3.6.1.5.5.7.3.3)` (critical) |
-| **SHA-256 Fingerprint** | `8A:78:23:89:2B:A0:1D:9E:D2:05:A7:34:6C:EA:FB:F5:18:86:F1:63:AB:77:BE:DF:7C:09:04:7A:B3:AD:C7:B9` |
-| **SHA-1 Fingerprint** | `D9:61:FC:44:C5:83:1B:58:2B:EE:A9:A6:C7:23:72:13:AC:57:C0:8D` |
+| **SHA-256 Fingerprint** | `68:55:87:5C:3A:A8:54:DA:7B:C0:CF:A7:81:E2:2E:42:11:90:BC:44:BE:32:4F:D7:A9:EF:EC:7D:21:CF:BF:52` |
+| **SHA-1 Fingerprint** | `F9:F0:A5:8B:04:75:94:29:23:54:87:10:0B:CD:C6:C2:F0:80:DA:45` |
 
-### Root CA Certificate (`certs/IgnitechsRootCA.pem`)
+### Root CA Certificate ([`certs/TecumRootCA.pem`](certs/TecumRootCA.pem))
 | Field | Value |
 |---|---|
-| **Subject / Issuer DN** | `CN=Ignitechs Root CA, OU=Building Automation, O=Ignitechs, L=Dubai, ST=Dubai, C=AE` |
-| **Serial Number** | `1206db9e` |
-| **Validity** | `2026-11-09` to `2036-11-06` |
+| **Subject / Issuer DN** | `CN=Tecum Root CA, OU=Building Automation, O=Tecum, L=Dubai, ST=Dubai, C=AE` |
+| **Serial Number** | `2095868` |
+| **Validity** | `2026-11-11` to `2036-11-08` |
 | **Basic Constraints / Key Usage** | `CA:true, pathlen:1` (critical), `Key_CertSign, Crl_Sign` (critical) |
-| **SHA-256 Fingerprint** | `A9:A9:F0:A8:2C:1C:5F:4C:9D:86:1A:A5:11:22:CA:D4:D3:4F:6C:D4:71:3F:DE:B0:D4:0B:9E:0E:82:2E:67:F4` |
-| **SHA-1 Fingerprint** | `DC:D7:38:22:8C:9E:9F:65:8D:83:93:BB:D6:7C:77:78:00:7F:4B:53` |
+| **SHA-256 Fingerprint** | `76:A4:88:9A:EB:2E:3B:8F:25:26:CB:6A:E7:65:4D:9C:70:1D:C1:E7:FE:4F:B8:BA:99:6B:89:A1:6C:2B:05:9C` |
+| **SHA-1 Fingerprint** | `60:F5:38:9F:0C:77:8E:BF:49:13:67:68:FC:D8:D1:E4:BD:FE:C6:71` |
 
 ---
 
 ## Building & Testing
 
 ```powershell
-# Run standalone protocol & rule engine unit tests (24 test suites)
+# Run standalone protocol & rule engine unit tests (26 test suites)
 .\build.ps1 -Test
 
 # Full build, test, package, sign, and verify with Niagara nverify.exe
 .\build.ps1
 
-# Build, sign, and copy dist\ignitechsSms-rt.jar into C:\Niagara\Niagara-4.x.x.x\modules
+# Build, sign, and copy dist\TecumSMS-rt.jar into C:\Niagara\Niagara-4.x.x.x\modules
 .\build.ps1 -Install
 ```

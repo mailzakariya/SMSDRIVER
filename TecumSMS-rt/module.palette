@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bajaObjectGraph version="1.0">
+<p m="b=baja" t="b:UnrestrictedFolder">
+  <p n="SmsService" m="tsms=TecumSMS" t="tsms:SmsService"/>
+  <p n="SmsNetwork" t="tsms:SmsNetwork"/>
+  <p n="Gateways" t="b:UnrestrictedFolder">
+    <p n="EmailSmsGateway" t="tsms:EmailSmsGateway"/>
+    <p n="TextBeeCloud" t="tsms:HttpGateway">
+      <p n="preset" v="textBeeCloud"/>
+      <p n="method" v="POST"/>
+      <p n="url" v="https://api.textbee.dev/api/v1/gateway/devices/{username}/send-sms"/>
+      <p n="contentType" v="application/json"/>
+      <p n="headers" v="x-api-key: {apiKey}"/>
+      <p n="body" v="{&quot;recipients&quot;:[&quot;{phone}&quot;],&quot;message&quot;:&quot;{message}&quot;}"/>
+      <p n="basicAuth" v="false"/>
+    </p>
+    <p n="SmsGateCloud" t="tsms:HttpGateway">
+      <p n="preset" v="androidSmsGatewayCloud"/>
+      <p n="method" v="POST"/>
+      <p n="url" v="https://api.sms-gate.app/3rdparty/v1/message"/>
+      <p n="contentType" v="application/json"/>
+      <p n="headers" v=""/>
+      <p n="body" v="{&quot;textMessage&quot;:{&quot;text&quot;:&quot;{message}&quot;},&quot;phoneNumbers&quot;:[&quot;{phone}&quot;]}"/>
+      <p n="basicAuth" v="true"/>
+    </p>
+    <p n="TraccarSmsCloud" t="tsms:HttpGateway">
+      <p n="preset" v="traccarSms"/>
+      <p n="method" v="POST"/>
+      <p n="url" v="https://www.traccar.org/sms/"/>
+      <p n="contentType" v="application/json"/>
+      <p n="headers" v="Authorization: {apiKey}"/>
+      <p n="body" v="{&quot;to&quot;:&quot;{phone}&quot;,&quot;message&quot;:&quot;{message}&quot;}"/>
+      <p n="basicAuth" v="false"/>
+    </p>
+    <p n="NtfyInternetAlert" t="tsms:HttpGateway">
+      <p n="preset" v="ntfySh"/>
+      <p n="method" v="POST"/>
+      <p n="url" v="https://ntfy.sh/{username}"/>
+      <p n="contentType" v="text/plain"/>
+      <p n="headers" v="Title: Niagara SMS Alert ({phone})"/>
+      <p n="body" v="{message}"/>
+      <p n="basicAuth" v="false"/>
+    </p>
+    <p n="TwilioSmsGateway" t="tsms:HttpGateway">
+      <p n="preset" v="twilio"/>
+      <p n="method" v="POST"/>
+      <p n="url" v="https://api.twilio.com/2010-04-01/Accounts/{username}/Messages.json"/>
+      <p n="contentType" v="application/x-www-form-urlencoded"/>
+      <p n="headers" v=""/>
+      <p n="body" v="To={phone}&amp;From={sender}&amp;Body={message}"/>
+      <p n="basicAuth" v="true"/>
+      <p n="successPattern" v="&quot;sid&quot;"/>
+    </p>
+    <p n="ClickSendSmsGateway" t="tsms:HttpGateway">
+      <p n="preset" v="clickSend"/>
+      <p n="method" v="POST"/>
+      <p n="url" v="https://rest.clicksend.com/v3/sms/send"/>
+      <p n="contentType" v="application/json"/>
+      <p n="headers" v=""/>
+      <p n="body" v="{&quot;messages&quot;:[{&quot;source&quot;:&quot;niagara&quot;,&quot;from&quot;:&quot;{sender}&quot;,&quot;body&quot;:&quot;{message}&quot;,&quot;to&quot;:&quot;{phone}&quot;}]}"/>
+      <p n="basicAuth" v="true"/>
+      <p n="successPattern" v="&quot;SUCCESS&quot;"/>
+    </p>
+    <p n="VonageSmsGateway" t="tsms:HttpGateway">
+      <p n="preset" v="vonage"/>
+      <p n="method" v="POST"/>
+      <p n="url" v="https://rest.nexmo.com/sms/json"/>
+      <p n="contentType" v="application/x-www-form-urlencoded"/>
+      <p n="headers" v=""/>
+      <p n="body" v="api_key={username}&amp;api_secret={apiKey}&amp;to={phoneDigits}&amp;from={sender}&amp;text={message}"/>
+      <p n="basicAuth" v="false"/>
+      <p n="successPattern" v="&quot;status&quot;\s*:\s*&quot;0&quot;"/>
+    </p>
+    <p n="TextbeltSmsGateway" t="tsms:HttpGateway">
+      <p n="preset" v="textbelt"/>
+      <p n="method" v="POST"/>
+      <p n="url" v="https://textbelt.com/text"/>
+      <p n="contentType" v="application/x-www-form-urlencoded"/>
+      <p n="headers" v=""/>
+      <p n="body" v="phone={phone}&amp;message={message}&amp;key={apiKey}"/>
+      <p n="basicAuth" v="false"/>
+      <p n="successPattern" v="&quot;success&quot;\s*:\s*true"/>
+    </p>
+    <p n="MessageBirdSmsGateway" t="tsms:HttpGateway">
+      <p n="preset" v="messageBird"/>
+      <p n="method" v="POST"/>
+      <p n="url" v="https://rest.messagebird.com/messages"/>
+      <p n="contentType" v="application/json"/>
+      <p n="headers" v="Authorization: AccessKey {apiKey}"/>
+      <p n="body" v="{&quot;originator&quot;:&quot;{sender}&quot;,&quot;recipients&quot;:[&quot;{phoneDigits}&quot;],&quot;body&quot;:&quot;{message}&quot;}"/>
+      <p n="basicAuth" v="false"/>
+      <p n="successPattern" v="&quot;id&quot;"/>
+    </p>
+    <p n="JasminHttpGateway" t="tsms:HttpGateway">
+      <p n="preset" v="jasminHttp"/>
+      <p n="method" v="GET"/>
+      <p n="url" v="http://&lt;jasmin-host&gt;:1401/send?username={username}&amp;password={apiKey}&amp;to={phone}&amp;content={message}"/>
+      <p n="contentType" v=""/>
+      <p n="headers" v=""/>
+      <p n="body" v=""/>
+      <p n="basicAuth" v="false"/>
+      <p n="successPattern" v="Success"/>
+    </p>
+    <p n="PlaySmsGateway" t="tsms:HttpGateway">
+      <p n="preset" v="playSms"/>
+      <p n="method" v="GET"/>
+      <p n="url" v="http://&lt;server&gt;/playsms/index.php?app=ws&amp;op=pv&amp;u={username}&amp;h={apiKey}&amp;to={phone}&amp;msg={message}"/>
+      <p n="contentType" v=""/>
+      <p n="headers" v=""/>
+      <p n="body" v=""/>
+      <p n="basicAuth" v="false"/>
+      <p n="successPattern" v="&quot;status&quot;\s*:\s*&quot;OK&quot;|&quot;error&quot;\s*:\s*&quot;0&quot;"/>
+    </p>
+    <p n="KannelGateway" t="tsms:HttpGateway">
+      <p n="preset" v="kannel"/>
+      <p n="method" v="GET"/>
+      <p n="url" v="http://&lt;kannel-host&gt;:13013/cgi-bin/sendsms?username={username}&amp;password={apiKey}&amp;to={phone}&amp;text={message}&amp;charset=UTF-8"/>
+      <p n="contentType" v=""/>
+      <p n="headers" v=""/>
+      <p n="body" v=""/>
+      <p n="basicAuth" v="false"/>
+      <p n="successPattern" v="Accepted|Queued|Sent"/>
+    </p>
+    <p n="HttpGateway" t="tsms:HttpGateway"/>
+    <p n="SmppGateway" t="tsms:SmppGateway"/>
+    <p n="TcpModem" t="tsms:TcpModemGateway"/>
+  </p>
+  <p n="SmsContact" t="tsms:SmsContact"/>
+  <p n="SmsGroup" t="tsms:SmsGroup"/>
+  <p n="Rules" t="b:UnrestrictedFolder">
+    <p n="SmsPointRule" t="tsms:SmsPointRule"/>
+    <p n="HighValueRule" t="tsms:SmsPointRule">
+      <p n="condition" v="greaterThan"/>
+      <p n="limit" v="30"/>
+      <p n="deadband" v="1"/>
+      <p n="activeDelay" v="300000"/>
+    </p>
+    <p n="StateRule" t="tsms:SmsPointRule">
+      <p n="condition" v="valueEquals"/>
+      <p n="compareValue" v="Fault|Trip|Alarm"/>
+    </p>
+    <p n="OfflineRule" t="tsms:SmsPointRule">
+      <p n="condition" v="statusDown"/>
+      <p n="activeDelay" v="120000"/>
+      <p n="alertText" v="{station} OFFLINE: {point} is not communicating {time}"/>
+      <p n="normalText" v="{station} ONLINE: {point} is communicating again {time}"/>
+    </p>
+    <p n="SmsSender" t="tsms:SmsSender"/>
+  </p>
+  <p n="SmsAlarmRecipient" t="tsms:SmsAlarmRecipient"/>
+</p>
+</bajaObjectGraph>

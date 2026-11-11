@@ -1,0 +1,96 @@
+#
+# Lexicon for the TecumSMS Notification Service & Driver (TecumSMS-rt)
+#
+
+module.description=TecumSMS Internet, Cloud API, Niagara Email-to-SMS & Network SMS Notification Service/Driver for Niagara 4
+
+# Component Types
+SmsService=SMS Service
+SmsNetwork=SMS Network
+SmsGatewayFolder=SMS Gateway Folder
+SmsGateway=SMS Gateway
+ModemGateway=Modem Gateway
+TcpModemGateway=TCP Modem Gateway
+HttpGateway=HTTP Gateway
+EmailSmsGateway=Email-to-SMS Gateway
+SmppGateway=SMPP Gateway
+SmsContactFolder=SMS Contact Folder
+SmsContact=SMS Contact
+SmsGroupFolder=SMS Group Folder
+SmsGroup=SMS Group
+SmsRecipientList=SMS Recipient List
+SmsRuleFolder=SMS Rule Folder
+SmsPointRule=SMS Point Rule
+SmsSender=SMS Sender
+SmsAlarmRecipient=SMS Alarm Recipient
+SmsTestMessage=SMS Test Message
+
+# BHttpPreset enum display tags
+HttpPreset.custom=Custom HTTP Request
+HttpPreset.textBeeCloud=TextBee Cloud / Self-Hosted (Open-Source Internet SMS)
+HttpPreset.androidSmsGatewayCloud=Android SMS Gateway Cloud (api.sms-gate.app)
+HttpPreset.androidSmsGateway=Android SMS Gateway (Local HTTP)
+HttpPreset.traccarSms=Traccar SMS Gateway (traccar.org/sms)
+HttpPreset.ntfySh=ntfy.sh (Open-Source Internet Push/Alert)
+HttpPreset.jasminHttp=Jasmin SMS Gateway (Open-Source HTTP API)
+HttpPreset.playSms=playSMS Webservice (Open-Source)
+HttpPreset.kannel=Kannel sendsms (Open-Source)
+HttpPreset.teltonikaRouter=Teltonika Router (sms_send)
+HttpPreset.twilio=Twilio SMS API Subscription
+HttpPreset.clickSend=ClickSend Cloud SMS Subscription
+HttpPreset.vonage=Vonage / Nexmo SMS Subscription
+HttpPreset.textbelt=Textbelt SMS API Subscription
+HttpPreset.messageBird=MessageBird SMS Subscription
+
+# BSmsCondition enum display tags
+SmsCondition.valueEquals=Value equals (=)
+SmsCondition.valueNotEquals=Value not equals (!=)
+SmsCondition.greaterThan=Greater than (>)
+SmsCondition.lessThan=Less than (<)
+SmsCondition.greaterOrEqual=Greater or equal (>=)
+SmsCondition.lessOrEqual=Less or equal (<=)
+SmsCondition.outsideRange=Outside range
+SmsCondition.insideRange=Inside range
+SmsCondition.isTrue=Is true / active
+SmsCondition.isFalse=Is false / inactive
+SmsCondition.anyChange=Any value change
+SmsCondition.statusAlarm=Status is Alarm
+SmsCondition.statusFault=Status is Fault
+SmsCondition.statusDown=Status is Down (offline)
+SmsCondition.statusOverridden=Status is Overridden
+SmsCondition.statusNotOk=Status is Not OK
+
+# Properties & Actions with acronyms
+sendTestSms=Send Test SMS
+gsmFriendlyText=GSM Friendly Text
+allowSmsCommands=Allow SMS Commands
+simPin=SIM PIN
+smscNumber=SMSC Number
+receiveSms=Receive SMS
+url=URL
+apiKey=API Key
+subscriptionPreset=Subscription Website Preset
+subscriptionApiKey=Subscription API Key
+subscriptionAccountId=Subscription Account / Device ID
+subscriptionSenderId=Subscription Sender ID
+subscriptionApiUrl=Subscription API URL
+enableNiagaraEmailSms=Enable Niagara Email-to-SMS
+emailServiceOrd=Niagara EmailService ORD
+emailSmsDomain=Email-to-SMS Domain
+emailSmsToFormat=Email-to-SMS To Format
+emailSmsSubjectTemplate=Email-to-SMS Subject Template
+useNiagaraEmailService=Use Niagara EmailService
+smsGatewayDomain=SMS Gateway Domain
+toAddressFormat=To Address Format
+smtpHost=SMTP Host
+smtpPort=SMTP Port
+useSsl=Use SSL
+useStartTls=Use STARTTLS
+smtpUsername=SMTP Username
+smtpPassword=SMTP Password
+useTls=Use TLS
+systemId=System ID
+senderId=Sender ID
+sourceOrd=Source ORD
+smsNetwork=SMS Network
+includeAckCode=Include ACK Code
