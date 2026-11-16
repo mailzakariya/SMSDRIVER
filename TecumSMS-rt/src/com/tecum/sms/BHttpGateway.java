@@ -63,7 +63,7 @@ public class BHttpGateway extends BSmsGateway
   public String getMethod() { return getString(method); }
   public void setMethod(String v) { setString(method, v, null); }
 
-  public static final Property url = newProperty(0, "https://api.textbee.dev/api/v1/gateway/devices/{username}/send-sms",
+  public static final Property url = newProperty(0, "https://api.textbee.dev/api/v1/gateway/send-sms",
     BFacets.make(BFacets.FIELD_WIDTH, BInteger.make(70)));
   public String getUrl() { return getString(url); }
   public void setUrl(String v) { setString(url, v, null); }
@@ -191,9 +191,9 @@ public class BHttpGateway extends BSmsGateway
     switch (ordinal)
     {
       case BHttpPreset.TEXTBEE_CLOUD:
-        // TextBee (open source MIT, textbee.dev): username = Device ID, apiKey = API Key
+        // TextBee Free Tier (300 SMS/month, textbee.dev): only apiKey is required
         setMethod("POST");
-        setUrl("https://api.textbee.dev/api/v1/gateway/devices/{username}/send-sms");
+        setUrl("https://api.textbee.dev/api/v1/gateway/send-sms");
         setContentType("application/json");
         setHeaders("x-api-key: {apiKey}");
         setBody("{\"recipients\":[\"{phone}\"],\"message\":\"{message}\"}");

@@ -7,10 +7,11 @@ Native, dependency-free **SMS Notification Service & Driver** (`TecumSMS-rt`) fo
 - **Drop Under `Services` or `Drivers` (`tsms`)**:
   - **`SmsService` (`tsms:SmsService`)**: Drop directly under `Station -> Config -> Services` (recommended).
   - **`SmsNetwork` (`tsms:SmsNetwork`)**: Drop under `Station -> Config -> Drivers`.
-- **Built-in SMS Subscription Website API Key Configuration**:
-  - Enter your **Subscription API Key**, **Account / Device ID**, **Sender ID**, and **Subscription Preset** directly on the `SmsService` / `SmsNetwork` Property Sheet, or on individual `HttpGateway` components (`Api Key`, `Username`, `Sender Id`).
+- **Built-in SMS Subscription Website API Key Configuration (TextBee 300 SMS/Month Free Plan)**:
+  - Works out-of-the-box with the **TextBee Free Account (300 SMS/month)** using **only your API Key** (`POST https://api.textbee.dev/api/v1/gateway/send-sms` with header `x-api-key: {apiKey}` — no `Username` or `Device ID` required in the URL).
+  - Enter your **Subscription API Key** directly on the `SmsService` / `SmsNetwork` Property Sheet, or on individual `HttpGateway` components (`Api Key`).
   - Ready-made presets in `Palette -> Gateways` for both open-source internet SMS platforms and commercial SMS subscription websites:
-    - **`TextBeeCloud`** (`textbee.dev` — Open-Source MIT)
+    - **`TextBeeCloud`** (`textbee.dev` — 300 SMS/Month Free Plan using only `Api Key`)
     - **`SmsGateCloud`** (`api.sms-gate.app` — Open-Source Apache-2.0)
     - **`TraccarSmsCloud`** (`traccar.org/sms` — Open-Source Apache-2.0)
     - **`NtfyInternetAlert`** (`ntfy.sh` — Zero-SIM Mobile Push Alert)
@@ -55,7 +56,7 @@ Native, dependency-free **SMS Notification Service & Driver** (`TecumSMS-rt`) fo
 | **Module File** | [`dist/TecumSMS-rt.jar`](dist/TecumSMS-rt.jar) |
 | **Module Name / Symbol** | `TecumSMS-rt` (`tsms`) |
 | **Vendor / Version** | `Tecum` / `1.0.0` |
-| **JAR SHA-256 Digest** | `C818E10D378D7F6AD343BB6649F531552EB3F2139C577EC53BA7CD569EFAC8BF` |
+| **JAR SHA-256 Digest** | `E06E7AD6CCF7D818D7A2332DF9AFB25C8EC2B052FD85900BC000581F2B94E761` |
 | **Signature Files** | `META-INF/TECUM.SF`, `META-INF/TECUM.RSA` |
 | **Signature Algorithm** | `SHA256withRSA` (2048-bit RSA, `SHA-256` entry digests) |
 | **`MANIFEST.MF` Main-Attributes Digest** | `UKyVs9x6Up//559D1s8UIfiyG3khT3/NHmB/l/P/aNw=` |

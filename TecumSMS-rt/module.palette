@@ -8,7 +8,7 @@
     <p n="TextBeeCloud" t="tsms:HttpGateway">
       <p n="preset" v="textBeeCloud"/>
       <p n="method" v="POST"/>
-      <p n="url" v="https://api.textbee.dev/api/v1/gateway/devices/{username}/send-sms"/>
+      <p n="url" v="https://api.textbee.dev/api/v1/gateway/send-sms"/>
       <p n="contentType" v="application/json"/>
       <p n="headers" v="x-api-key: {apiKey}"/>
       <p n="body" v="{&quot;recipients&quot;:[&quot;{phone}&quot;],&quot;message&quot;:&quot;{message}&quot;}"/>

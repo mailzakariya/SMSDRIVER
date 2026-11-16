@@ -15,27 +15,27 @@ import java.nio.charset.StandardCharsets;
 import java.util.Base64;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 /**
- * Template-driven HTTP(S) SMS sender. Works with any SMS gateway or subscription
- * website that has an HTTP API (TextBee, Android SMS Gateway, Traccar, ntfy.sh,
- * Twilio, ClickSend, Vonage/Nexmo, Textbelt, MessageBird, playSMS, Kannel).
+ * Template-driven HTTP(S) SMS sender. Works with TextBee (300 SMS/month free tier
+ * using only the API key at https://api.textbee.dev/api/v1/gateway/send-sms) as
+ * well as any other cloud SMS subscription website or gateway (Twilio, ClickSend,
+ * Vonage/Nexmo, Textbelt, MessageBird, Traccar, ntfy.sh, Jasmin, playSMS, Kannel).
  *
  * Placeholders: {phone} {phoneDigits} {message} {apiKey} {token} {username}
  *               {accountId} {deviceId} {password} {sender} {senderId}.
- * Values are URL-encoded in the URL, JSON-escaped in JSON bodies and
- * form-encoded in form bodies.
  */
 public class HttpSmsClient
 {
   public static final class Config
   {
     public String method = "POST";
-    public String url = "";
+    public String url = "https://api.textbee.dev/api/v1/gateway/send-sms";
     public String contentType = "application/json";
-    public String headers = "";
-    public String body = "";
+    public String headers = "x-api-key: {apiKey}";
+    public String body = "{\"recipients\":[\"{phone}\"],\"message\":\"{message}\"}";
     public String apiKey = "";
     public String username = "";
     public String password = "";
@@ -59,7 +59,13 @@ public class HttpSmsClient
   public Result send(String phone, String text) throws IOException
   {
     Map<String, String> v = values(phone, text);
-    String url = Templates.render(cfg.url, encodeAll(v, Encoding.URL));
+    String renderedUrl = Templates.render(cfg.url, encodeAll(v, Encoding.URL));
+    // Automatically upgrade legacy TextBee URLs (/devices//send-sms) when only API key is provided
+    if (renderedUrl.contains("textbee.dev") && renderedUrl.contains("/devices//send-sms"))
+    {
+      renderedUrl = renderedUrl.replace("/devices//send-sms", "/send-sms");
+    }
+
     String method = cfg.method == null || cfg.method.trim().isEmpty() ? "POST" : cfg.method.trim().toUpperCase();
     boolean hasBody = !"GET".equals(method) && cfg.body != null && !cfg.body.trim().isEmpty();
     String body = null;
@@ -70,6 +76,33 @@ public class HttpSmsClient
       body = Templates.render(cfg.body, encodeAll(v, enc));
     }
 
+    try
+    {
+      return executeHttp(method, renderedUrl, v, body);
+    }
+    catch (IOException primaryEx)
+    {
+      // Fallback for TextBee accounts that require deviceId resolution via GET /api/v1/gateway/devices
+      if (renderedUrl.contains("textbee.dev") && renderedUrl.endsWith("/gateway/send-sms"))
+      {
+        String key = v.get("apiKey");
+        if (key != null && !key.isEmpty())
+        {
+          String resolvedDeviceId = resolveTextBeeDefaultDeviceId(renderedUrl, key);
+          if (resolvedDeviceId != null && !resolvedDeviceId.isEmpty())
+          {
+            String deviceUrl = renderedUrl.substring(0, renderedUrl.length() - "/send-sms".length())
+              + "/devices/" + encode(resolvedDeviceId, Encoding.URL) + "/send-sms";
+            return executeHttp(method, deviceUrl, v, body);
+          }
+        }
+      }
+      throw primaryEx;
+    }
+  }
+
+  private Result executeHttp(String method, String url, Map<String, String> v, String body) throws IOException
+  {
     HttpURLConnection c = (HttpURLConnection) new URL(url).openConnection();
     try
     {
@@ -111,6 +144,39 @@ public class HttpSmsClient
     finally { c.disconnect(); }
   }
 
+  /**
+   * Queries GET https://api.textbee.dev/api/v1/gateway/devices using only x-api-key
+   * to auto-discover the account's first device _id if needed.
+   */
+  private String resolveTextBeeDefaultDeviceId(String sendSmsUrl, String apiKey)
+  {
+    String devicesUrl = sendSmsUrl.substring(0, sendSmsUrl.length() - "/send-sms".length()) + "/devices";
+    HttpURLConnection c = null;
+    try
+    {
+      c = (HttpURLConnection) new URL(devicesUrl).openConnection();
+      c.setConnectTimeout(cfg.timeoutMs);
+      c.setReadTimeout(cfg.timeoutMs);
+      c.setRequestMethod("GET");
+      c.setRequestProperty("x-api-key", apiKey);
+      c.setRequestProperty("Accept", "application/json");
+      c.setRequestProperty("User-Agent", "TecumSMS-Niagara-Driver/1.0");
+      int code = c.getResponseCode();
+      if (code >= 200 && code <= 299)
+      {
+        String json = read(c.getInputStream());
+        Matcher m = Pattern.compile("\"_id\"\\s*:\\s*\"([^\"]+)\"").matcher(json);
+        if (m.find()) return m.group(1);
+      }
+    }
+    catch (Exception ignored) {}
+    finally
+    {
+      if (c != null) c.disconnect();
+    }
+    return null;
+  }
+
   Map<String, String> values(String phone, String text)
   {
     Map<String, String> v = new HashMap<>();
@@ -118,7 +184,7 @@ public class HttpSmsClient
     String user = cfg.username == null ? "" : cfg.username;
     String key = (cfg.apiKey != null && !cfg.apiKey.isEmpty())
       ? cfg.apiKey
-      : (cfg.password == null ? "" : cfg.password);
+      : (cfg.password != null && !cfg.password.isEmpty() ? cfg.password : user);
     String pass = (cfg.password != null && !cfg.password.isEmpty())
       ? cfg.password
       : (cfg.apiKey == null ? "" : cfg.apiKey);
